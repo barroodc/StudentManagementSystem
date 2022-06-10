@@ -3,9 +3,11 @@ package com.chrisportfolio.StudentManagementSystem.service;
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.repository.AdmissionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AdmissionsService {
 
     @Autowired
