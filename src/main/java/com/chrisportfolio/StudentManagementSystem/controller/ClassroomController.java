@@ -33,6 +33,7 @@ public class ClassroomController {
         return classroomService.updateClassroom(id, classroomDetails);
     }
 
+    @RequestMapping(value = "classroom/{classroomId}")
     public void deleteClassroom(@PathVariable(value = "classroomId") Long id) {
         classroomService.deleteClassroom(id);
     }
