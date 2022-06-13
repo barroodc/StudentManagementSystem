@@ -12,6 +12,9 @@ public class ExamResult {
     @Id
     @Column(name = "exam_result_id")
     private Long examResultID;
+
+    @Column(name = "exam_id")
+    private Long examID;
     @Column(name = "mark")
     private Double mark;
     @Column(name = "grade")
@@ -23,6 +26,14 @@ public class ExamResult {
 
     public void setExamResultID(Long examResultID) {
         this.examResultID = examResultID;
+    }
+
+    public Long getExamID() {
+        return examID;
+    }
+
+    public void setExamID(Long examID) {
+        this.examID = examID;
     }
 
     public Double getMark() {
