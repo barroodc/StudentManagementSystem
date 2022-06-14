@@ -30,7 +30,7 @@ public class AdmissionsController {
     }
 
     @RequestMapping(value = "admissions/{admissionsId}", method = RequestMethod.PUT)
-    public Admissions readAdmissions(@PathVariable(value = "admissionsId") Long id, @RequestBody Admissions admissionDetails) {
+    public Admissions updateAdmissions(@PathVariable(value = "admissionsId") Long id, @RequestBody Admissions admissionDetails) {
         return admissionsService.updateAdmissions(id, admissionDetails);
     }
 

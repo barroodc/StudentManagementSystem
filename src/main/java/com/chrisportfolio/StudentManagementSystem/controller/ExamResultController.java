@@ -25,17 +25,17 @@ public class ExamResultController {
     }
 
     @RequestMapping(value = "examResult", method = RequestMethod.GET)
-    public List<ExamResult> readExamResult() {
+    public List<ExamResult> readExamResults() {
         return examResultService.getExamResult();
     }
 
     @RequestMapping(value = "examResult/{examResultId}", method = RequestMethod.PUT)
-    public ExamResult readExamResult(@PathVariable(value = "examResultId") Long id, @RequestBody ExamResult examResultDetails) {
+    public ExamResult updateExamResults(@PathVariable(value = "examResultId") Long id, @RequestBody ExamResult examResultDetails) {
         return examResultService.updateExamResult(id, examResultDetails);
     }
 
     @RequestMapping(value = "examResult/{examResultId}")
-    public void deleteExamResult(@PathVariable(value = "examResultId") Long id) {
+    public void deleteExamResults(@PathVariable(value = "examResultId") Long id) {
         examResultService.deleteExamResult(id);
     }
 }

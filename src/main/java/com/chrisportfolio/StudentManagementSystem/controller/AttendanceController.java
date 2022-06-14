@@ -20,22 +20,22 @@ public class AttendanceController {
     AttendanceRepository attendanceRepository;
 
     @RequestMapping(value = "attendance", method = RequestMethod.POST)
-    public Attendance createAttendance(@RequestBody Attendance attendance) {
+    public Attendance createAttendances(@RequestBody Attendance attendance) {
         return attendanceService.createAttendance(attendance);
     }
 
     @RequestMapping(value = "attendance", method = RequestMethod.GET)
-    public List<Attendance> readAttendance() {
+    public List<Attendance> readAttendances() {
         return attendanceService.getAttendance();
     }
 
     @RequestMapping(value = "attendance/{attendanceId}", method = RequestMethod.PUT)
-    public Attendance readAttendance(@PathVariable(value = "attendanceId") Long id, @RequestBody Attendance attendanceDetails) {
+    public Attendance updateAttendances(@PathVariable(value = "attendanceId") Long id, @RequestBody Attendance attendanceDetails) {
         return attendanceService.updateAttendance(id, attendanceDetails);
     }
 
     @RequestMapping(value = "attendance/{attendanceId}", method = RequestMethod.DELETE)
-    public void deleteStudents(@PathVariable(value = "attendanceId") Long id) {
+    public void deleteAttendances(@PathVariable(value = "attendanceId") Long id) {
         attendanceService.deleteAttendance(id);
     }
 }

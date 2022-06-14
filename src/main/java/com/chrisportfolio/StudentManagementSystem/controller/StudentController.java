@@ -31,7 +31,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "students/{stdId}", method = RequestMethod.PUT)
-    public Student readStudents(@PathVariable(value = "stdId") Long id, @RequestBody Student stdDetails) {
+    public Student updateStudents(@PathVariable(value = "stdId") Long id, @RequestBody Student stdDetails) {
         return stdService.updateStudent(id, stdDetails);
     }
 

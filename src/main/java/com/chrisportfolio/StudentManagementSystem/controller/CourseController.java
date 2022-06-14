@@ -19,22 +19,22 @@ public class CourseController {
     CourseRepository courseRepository;
 
     @RequestMapping(value = "course", method = RequestMethod.POST)
-    public Course createCourse(@RequestBody Course course) {
+    public Course createCourses(@RequestBody Course course) {
         return courseService.createCourse(course);
     }
 
     @RequestMapping(value = "course", method = RequestMethod.GET)
-    public List<Course> readCourse() {
+    public List<Course> readCourses() {
         return courseService.getCourse();
     }
 
     @RequestMapping(value = "course/{courseId}", method = RequestMethod.PUT)
-    public Course readCourse(@PathVariable(value = "courseId") Long id, @RequestBody Course courseDetails) {
+    public Course updateCourses(@PathVariable(value = "courseId") Long id, @RequestBody Course courseDetails) {
         return courseService.updateCourse(id, courseDetails);
     }
 
     @RequestMapping(value = "course/{courseId}", method = RequestMethod.DELETE)
-    public void deleteCourse(@PathVariable(value = "courseId") Long id) {
+    public void deleteCourses(@PathVariable(value = "courseId") Long id) {
         courseService.deleteCourse(id);
     }
 }
