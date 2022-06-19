@@ -1,9 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "exam")
@@ -19,6 +18,8 @@ public class Exam {
     @Column(name = "class_name")
     private String className;
 
+    @ManyToMany(mappedBy = "exam")
+    private Set<Student> studentSet = new HashSet<Student>();
     public Long getExamID() {
         return examID;
     }
@@ -49,5 +50,13 @@ public class Exam {
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
     }
 }

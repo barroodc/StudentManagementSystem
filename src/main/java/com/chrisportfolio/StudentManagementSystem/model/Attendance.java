@@ -1,9 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "attendance")
@@ -11,7 +10,7 @@ public class Attendance {
 
     @Id
     @Column(name = "attendance_id")
-    private Long attendanceID = 1L;
+    private Long attendanceID;
     @Column(name = "perfect_attendance")
     private byte perfectAttendance;
     @Column(name = "acceptable_attendance")
@@ -26,6 +25,9 @@ public class Attendance {
     private int tardy;
     @Column(name = "remark")
     private String remark;
+
+    @ManyToMany(mappedBy = "attendance")
+    private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getAttendanceID() {
         return attendanceID;
@@ -89,5 +91,13 @@ public class Attendance {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
     }
 }

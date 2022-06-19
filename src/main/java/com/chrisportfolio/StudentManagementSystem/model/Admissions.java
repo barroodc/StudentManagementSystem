@@ -12,7 +12,7 @@ public class Admissions {
 
     @Id
     @Column(name = "admission_id")
-    private Long admissionsID = 1L;
+    private Long admissionsID;
     @Column(name = "student_id")
     private Long studentID;
     @Column(name = "application_number")

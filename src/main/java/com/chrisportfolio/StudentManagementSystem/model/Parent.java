@@ -2,11 +2,10 @@ package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "parent")
@@ -34,6 +33,9 @@ public class Parent {
     private Date lastLoginDate;
     @Column(name = "last_login_ip")
     private String lastLoginIP;
+
+    @ManyToMany(mappedBy = "parent")
+    private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getParentID() {
         return parentID;
@@ -113,5 +115,13 @@ public class Parent {
 
     public void setLastLoginIP(String lastLoginIP) {
         this.lastLoginIP = lastLoginIP;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
     }
 }

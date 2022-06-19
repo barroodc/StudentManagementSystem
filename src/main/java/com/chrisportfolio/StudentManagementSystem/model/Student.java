@@ -4,15 +4,19 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "student")
-public class Student {
-
+public class Student{
     @Id
     @Column(name = "student_id")
-    private Long studentID = 1L;
+    private Long studentID;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -45,6 +49,37 @@ public class Student {
     @Column(name = "last_login_ip")
     private String lastLoginIP;
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "student_has_attendance",
+                    joinColumns = {@JoinColumn(name = "student_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "attendance_id")}
+            )
+    Set<Attendance> attendanceSet = new HashSet<Attendance>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "student_has_parent",
+                    joinColumns = {@JoinColumn(name = "student_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "parent_id")}
+            )
+    Set<Parent> parentSet = new HashSet<Parent>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "student_has_course",
+                    joinColumns = {@JoinColumn(name = "student_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "course_id")}
+            )
+    Set<Course> courseSet = new HashSet<Course>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "student_has_exam",
+                    joinColumns = {@JoinColumn(name = "student_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "exam_id")}
+            )
+    Set<Exam> examSet = new HashSet<Exam>();
 
     public Long getStudentID() {
         return studentID;
@@ -164,5 +199,37 @@ public class Student {
 
     public void setLastLoginIP(String lastLoginIP) {
         this.lastLoginIP = lastLoginIP;
+    }
+
+    public Set<Attendance> getAttendanceSet() {
+        return attendanceSet;
+    }
+
+    public void setAttendanceSet(Set<Attendance> attendanceSet) {
+        this.attendanceSet = attendanceSet;
+    }
+
+    public Set<Parent> getParentSet() {
+        return parentSet;
+    }
+
+    public void setParentSet(Set<Parent> parentSet) {
+        this.parentSet = parentSet;
+    }
+
+    public Set<Course> getCourseSet() {
+        return courseSet;
+    }
+
+    public void setCourseSet(Set<Course> courseSet) {
+        this.courseSet = courseSet;
+    }
+
+    public Set<Exam> getExamSet() {
+        return examSet;
+    }
+
+    public void setExamSet(Set<Exam> examSet) {
+        this.examSet = examSet;
     }
 }
