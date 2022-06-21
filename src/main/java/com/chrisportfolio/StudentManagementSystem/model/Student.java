@@ -81,6 +81,14 @@ public class Student{
             )
     Set<Exam> examSet = new HashSet<Exam>();
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "student_has_teacher",
+                    joinColumns = {@JoinColumn(name = "student_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "teacher_id")}
+            )
+    Set<Teacher> teacherSet = new HashSet<Teacher>();
+
     public Long getStudentID() {
         return studentID;
     }
@@ -231,5 +239,13 @@ public class Student{
 
     public void setExamSet(Set<Exam> examSet) {
         this.examSet = examSet;
+    }
+
+    public Set<Teacher> getTeacherSet() {
+        return teacherSet;
+    }
+
+    public void setTeacherSet(Set<Teacher> teacherSet) {
+        this.teacherSet = teacherSet;
     }
 }
