@@ -21,6 +21,12 @@ public class Course {
     @ManyToMany(mappedBy = "course")
     private Set<Student> studentSet = new HashSet<Student>();
 
+    @ManyToMany(mappedBy = "course")
+    private Set<Teacher> teacherSet = new HashSet<Teacher>();
+
+    @ManyToMany(mappedBy = "course")
+    private Set<GradeLevel> gradeLevelSet = new HashSet<GradeLevel>();
+
     public Long getCourseID() {
         return courseID;
     }
@@ -59,5 +65,21 @@ public class Course {
 
     public void setStudentSet(Set<Student> studentSet) {
         this.studentSet = studentSet;
+    }
+
+    public Set<Teacher> getTeacherSet() {
+        return teacherSet;
+    }
+
+    public void setTeacherSet(Set<Teacher> teacherSet) {
+        this.teacherSet = teacherSet;
+    }
+
+    public Set<GradeLevel> getGradeLevelSet() {
+        return gradeLevelSet;
+    }
+
+    public void setGradeLevelSet(Set<GradeLevel> gradeLevelSet) {
+        this.gradeLevelSet = gradeLevelSet;
     }
 }

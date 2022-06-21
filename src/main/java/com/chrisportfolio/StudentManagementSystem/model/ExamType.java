@@ -1,9 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "exam_type")
@@ -17,6 +16,8 @@ public class ExamType {
     @Column(name = "description")
     private String description;
 
+    @ManyToMany(mappedBy = "examType")
+    private Set<Exam> examSet = new HashSet<Exam>();
     public Long getExamTypeID() {
         return examTypeID;
     }
@@ -39,5 +40,13 @@ public class ExamType {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Exam> getExamSet() {
+        return examSet;
+    }
+
+    public void setExamSet(Set<Exam> examSet) {
+        this.examSet = examSet;
     }
 }

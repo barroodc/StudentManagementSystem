@@ -20,6 +20,14 @@ public class Exam {
 
     @ManyToMany(mappedBy = "exam")
     private Set<Student> studentSet = new HashSet<Student>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "exam_has_exam_type",
+                    joinColumns = {@JoinColumn(name = "exam_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "exam_type_id")}
+            )
+    Set<ExamType> examTypeSet = new HashSet<ExamType>();
     public Long getExamID() {
         return examID;
     }
@@ -59,4 +67,13 @@ public class Exam {
     public void setStudentSet(Set<Student> studentSet) {
         this.studentSet = studentSet;
     }
+
+    public Set<ExamType> getExamTypeSet() {
+        return examTypeSet;
+    }
+
+    public void setExamTypeSet(Set<ExamType> examTypeSet) {
+        this.examTypeSet = examTypeSet;
+    }
+
 }
