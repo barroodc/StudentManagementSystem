@@ -57,6 +57,22 @@ public class Teacher {
                     inverseJoinColumns = {@JoinColumn(name = "course_id")}
             )
     Set<Course> courseSet = new HashSet<Course>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "teacher_has_homework",
+                    joinColumns = {@JoinColumn(name = "teacher_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "homework_id")}
+            )
+    Set<Homework> homeworkSet = new HashSet<Homework>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+            @JoinTable(
+                    name = "teacher_has_exam",
+                    joinColumns = {@JoinColumn(name = "teacher_id")},
+                    inverseJoinColumns = {@JoinColumn(name = "exam_id")}
+            )
+    Set<Exam> examSet = new HashSet<Exam>();
     public Long getTeacherID() {
         return teacherID;
     }
@@ -175,5 +191,21 @@ public class Teacher {
 
     public void setCourseSet(Set<Course> courseSet) {
         this.courseSet = courseSet;
+    }
+
+    public Set<Homework> getHomeworkSet() {
+        return homeworkSet;
+    }
+
+    public void setHomeworkSet(Set<Homework> homeworkSet) {
+        this.homeworkSet = homeworkSet;
+    }
+
+    public Set<Exam> getExamSet() {
+        return examSet;
+    }
+
+    public void setExamSet(Set<Exam> examSet) {
+        this.examSet = examSet;
     }
 }

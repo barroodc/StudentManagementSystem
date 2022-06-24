@@ -21,6 +21,9 @@ public class Classroom {
     @ManyToMany(mappedBy = "classroom")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
+    @ManyToMany(mappedBy = "student")
+    private Set<Student> studentSet = new HashSet<Student>();
+
     public Long getClassroomID() {
         return classroomID;
     }

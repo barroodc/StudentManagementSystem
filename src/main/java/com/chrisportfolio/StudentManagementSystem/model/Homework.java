@@ -2,11 +2,10 @@ package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "homework")
@@ -33,6 +32,12 @@ public class Homework {
     private String teacherName;
     @Column(name = "description")
     private String description;
+
+    @ManyToMany(mappedBy = "homework")
+    private Set<Teacher> teacherSet = new HashSet<Teacher>();
+
+    @ManyToMany(mappedBy = "homework")
+    private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getHomeworkID() {
         return homeworkID;
@@ -104,5 +109,21 @@ public class Homework {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Teacher> getTeacherSet() {
+        return teacherSet;
+    }
+
+    public void setTeacherSet(Set<Teacher> teacherSet) {
+        this.teacherSet = teacherSet;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
     }
 }

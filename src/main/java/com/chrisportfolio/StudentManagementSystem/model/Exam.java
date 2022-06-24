@@ -28,6 +28,9 @@ public class Exam {
                     inverseJoinColumns = {@JoinColumn(name = "exam_type_id")}
             )
     Set<ExamType> examTypeSet = new HashSet<ExamType>();
+
+    @ManyToMany(mappedBy = "exam")
+    private Set<Teacher> teacherSet = new HashSet<Teacher>();
     public Long getExamID() {
         return examID;
     }
@@ -76,4 +79,11 @@ public class Exam {
         this.examTypeSet = examTypeSet;
     }
 
+    public Set<Teacher> getTeacherSet() {
+        return teacherSet;
+    }
+
+    public void setTeacherSet(Set<Teacher> teacherSet) {
+        this.teacherSet = teacherSet;
+    }
 }
