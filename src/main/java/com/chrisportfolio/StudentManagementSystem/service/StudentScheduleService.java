@@ -23,7 +23,7 @@ public class StudentScheduleService {
 
     public StudentSchedule updateStudentSchedule(Long studentScheduleID, StudentSchedule studentScheduleInformation) {
         StudentSchedule studentSchedule = studentScheduleRepository.findById(studentScheduleID).get();
-        studentSchedule.setStudentID(studentScheduleInformation.getStudentID());
+        studentSchedule.setStudent(studentScheduleInformation.getStudent());
         studentSchedule.setDayOfWeek(studentScheduleInformation.getDayOfWeek());
         studentSchedule.setTime(studentScheduleInformation.getTime());
         studentSchedule.setLocation(studentScheduleInformation.getLocation());

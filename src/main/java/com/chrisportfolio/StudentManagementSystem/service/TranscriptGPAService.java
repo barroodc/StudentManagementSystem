@@ -23,7 +23,7 @@ public class TranscriptGPAService {
 
     public TranscriptGPA updateTranscriptGPA(Long transcriptGPAID, TranscriptGPA transcriptGPAInformation) {
         TranscriptGPA transcriptGPA = transcriptGPARepository.findById(transcriptGPAID).get();
-        transcriptGPA.setTranscriptID(transcriptGPAInformation.getTranscriptID());
+        transcriptGPA.setTranscripts(transcriptGPAInformation.getTranscripts());
         transcriptGPA.setTotalCreditsEarned(transcriptGPAInformation.getTotalCreditsEarned());
         transcriptGPA.setGpa(transcriptGPAInformation.getGpa());
 

@@ -23,9 +23,9 @@ public class GradeLevelService {
 
     public GradeLevel updateGradeLevel(Long gradeLevelId, GradeLevel gradeLevelInformation) {
         GradeLevel gradeLevel = gradeLevelRepository.findById(gradeLevelId).get();
-        gradeLevel.setStudentID(gradeLevel.getStudentID());
-        gradeLevel.setName(gradeLevel.getName());
-        gradeLevel.setDescription(gradeLevel.getDescription());
+        gradeLevel.setStudent(gradeLevelInformation.getStudent());
+        gradeLevel.setName(gradeLevelInformation.getName());
+        gradeLevel.setDescription(gradeLevelInformation.getDescription());
 
         return gradeLevelRepository.save(gradeLevel);
     }

@@ -24,7 +24,7 @@ public class TranscriptsService {
 
     public Transcripts updateTranscripts(Long transcriptsID, Transcripts transcriptsInformation) {
         Transcripts transcripts = transcriptsRepository.findById(transcriptsID).get();
-        transcripts.setStudentID(transcriptsInformation.getStudentID());
+        transcripts.setStudent(transcriptsInformation.getStudent());
         transcripts.setClassName(transcriptsInformation.getClassName());
         transcripts.setYearOrSemester(transcriptsInformation.getYearOrSemester());
         transcripts.setFinalGrade(transcriptsInformation.getFinalGrade());

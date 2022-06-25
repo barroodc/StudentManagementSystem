@@ -23,7 +23,7 @@ public class ExamResultService {
 
     public ExamResult updateExamResult(Long examResultID, ExamResult examResultInformation) {
         ExamResult examResult = examResultRepository.findById(examResultID).get();
-        examResult.setExamID(examResultInformation.getExamID());
+        examResult.setExam(examResultInformation.getExam());
         examResult.setMark(examResultInformation.getMark());
         examResult.setGrade(examResultInformation.getGrade());
 

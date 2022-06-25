@@ -23,7 +23,7 @@ public class ReportCardService {
 
     public ReportCard updateReportCard(Long reportCardID, ReportCard reportCardInformation) {
         ReportCard reportCard = reportCardRepository.findById(reportCardID).get();
-        reportCard.setStudentID(reportCardInformation.getStudentID());
+        reportCard.setStudent(reportCardInformation.getStudent());
         reportCard.setStudentName(reportCardInformation.getStudentName());
         reportCard.setGradeLevel(reportCardInformation.getGradeLevel());
         reportCard.setSubject(reportCardInformation.getSubject());

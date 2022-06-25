@@ -23,7 +23,7 @@ public class ClassroomService {
 
     public Classroom updateClassroom(Long classroomID, Classroom classroomInformation) {
         Classroom classroom = classroomRepository.findById(classroomID).get();
-        classroom.setCourseID(classroomInformation.getCourseID());
+        classroom.setCourse(classroomInformation.getCourse());
         classroom.setSection(classroomInformation.getSection());
         classroom.setRemarks(classroomInformation.getRemarks());
 
