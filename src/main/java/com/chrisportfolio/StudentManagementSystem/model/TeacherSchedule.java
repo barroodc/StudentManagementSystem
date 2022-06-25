@@ -10,8 +10,9 @@ public class TeacherSchedule {
     @Id
     @Column(name = "teacher_schedule_id")
     private Long teacherScheduleID;
-    @Column(name = "teacher_id")
-    private Long teacherID;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
     @Column(name = "day_of_week")
     private String dayOfWeek;
     @Column(name = "time")
@@ -21,10 +22,6 @@ public class TeacherSchedule {
     @Column(name = "course_taught")
     private String courseTaught;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
-
     public Long getTeacherScheduleID() {
         return teacherScheduleID;
     }
@@ -33,12 +30,12 @@ public class TeacherSchedule {
         this.teacherScheduleID = teacherScheduleID;
     }
 
-    public Long getTeacherID() {
-        return teacherID;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherID(Long teacherID) {
-        this.teacherID = teacherID;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public String getDayOfWeek() {
@@ -73,12 +70,5 @@ public class TeacherSchedule {
         this.courseTaught = courseTaught;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
 
 }
