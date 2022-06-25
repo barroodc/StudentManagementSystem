@@ -11,8 +11,10 @@ public class GradeLevel {
     @Id
     @Column(name = "grade_level_id")
     private Long gradeLevelID;
-    @Column(name = "student_id")
-    private Long studentID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private Student student;
     @Column(name = "name")
     private String name;
     @Column(name = "description")
@@ -33,12 +35,12 @@ public class GradeLevel {
         this.gradeLevelID = gradeLevelID;
     }
 
-    public Long getStudentID() {
-        return studentID;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentID(Long studentID) {
-        this.studentID = studentID;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public String getName() {

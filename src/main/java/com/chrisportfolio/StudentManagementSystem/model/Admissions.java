@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -13,8 +10,10 @@ public class Admissions {
     @Id
     @Column(name = "admission_id")
     private Long admissionsID;
-    @Column(name = "student_id")
-    private Long studentID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private Student student;
     @Column(name = "application_number")
     private Long applicationNumber;
     @Column(name = "applicant_name")
@@ -36,12 +35,12 @@ public class Admissions {
         this.admissionsID = admissionsID;
     }
 
-    public Long getStudentID() {
-        return studentID;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentID(Long studentID) {
-        this.studentID = studentID;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public Long getApplicationNumber() {

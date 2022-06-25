@@ -18,6 +18,9 @@ public class Exam {
     @Column(name = "class_name")
     private String className;
 
+    @OneToOne(mappedBy = "exam")
+    private ExamResult examResult;
+
     @ManyToMany(mappedBy = "exam")
     private Set<Student> studentSet = new HashSet<Student>();
 

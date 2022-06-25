@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "exam_result")
@@ -13,8 +10,9 @@ public class ExamResult {
     @Column(name = "exam_result_id")
     private Long examResultID;
 
-    @Column(name = "exam_id")
-    private Long examID;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "exam_id")
+    private Exam exam;
     @Column(name = "mark")
     private Double mark;
     @Column(name = "grade")
@@ -28,12 +26,12 @@ public class ExamResult {
         this.examResultID = examResultID;
     }
 
-    public Long getExamID() {
-        return examID;
+    public Exam getExam() {
+        return exam;
     }
 
-    public void setExamID(Long examID) {
-        this.examID = examID;
+    public void setExam(Exam exam) {
+        this.exam = exam;
     }
 
     public Double getMark() {

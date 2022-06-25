@@ -17,6 +17,11 @@ public class Student{
     @Id
     @Column(name = "student_id")
     private Long studentID;
+
+    @OneToOne(mappedBy = "student")
+    private GradeLevel gradeLevel;
+    @OneToOne(mappedBy = "admissions")
+    private Admissions admissions;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -35,8 +40,6 @@ public class Student{
     @Column(name = "first_day_on_campus")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private Date firstDayOnCampus;
-    @Column(name = "grade_level")
-    private String gradeLevel;
     @Column(name = "gpa")
     private double gpa;
     @Column(name = "sat_score")
@@ -113,6 +116,14 @@ public class Student{
         this.studentID = studentID;
     }
 
+    public Admissions getAdmissions() {
+        return admissions;
+    }
+
+    public void setAdmissions(Admissions admissions) {
+        this.admissions = admissions;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -177,11 +188,11 @@ public class Student{
         this.firstDayOnCampus = firstDayOnCampus;
     }
 
-    public String getGradeLevel() {
+    public GradeLevel getGradeLevel() {
         return gradeLevel;
     }
 
-    public void setGradeLevel(String gradeLevel) {
+    public void setGradeLevel(GradeLevel gradeLevel) {
         this.gradeLevel = gradeLevel;
     }
 
