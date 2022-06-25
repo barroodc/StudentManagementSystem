@@ -39,6 +39,9 @@ public class Teacher {
     @Column(name = "last_login_ip")
     private String lastLoginIP;
 
+    @OneToOne(mappedBy = "teacher")
+    private TeacherSchedule teacherSchedule;
+
     @ManyToMany(mappedBy = "teacher")
     private Set<Student> studentSet = new HashSet<>();
 
@@ -207,5 +210,13 @@ public class Teacher {
 
     public void setExamSet(Set<Exam> examSet) {
         this.examSet = examSet;
+    }
+
+    public TeacherSchedule getTeacherSchedule() {
+        return teacherSchedule;
+    }
+
+    public void setTeacherSchedule(TeacherSchedule teacherSchedule) {
+        this.teacherSchedule = teacherSchedule;
     }
 }

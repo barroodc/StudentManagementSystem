@@ -11,8 +11,10 @@ public class Classroom {
     @Id
     @Column(name = "classroom_id")
     private Long classroomID;
-    @Column(name = "course_id")
-    private Long courseID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
+    private Course course;
     @Column(name = "section")
     private String section;
     @Column(name = "remarks")
@@ -32,12 +34,12 @@ public class Classroom {
         this.classroomID = classroomID;
     }
 
-    public Long getCourseID() {
-        return courseID;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseID(Long courseID) {
-        this.courseID = courseID;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public String getSection() {
@@ -62,5 +64,13 @@ public class Classroom {
 
     public void setTeacherSet(Set<Teacher> teacherSet) {
         this.teacherSet = teacherSet;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
     }
 }

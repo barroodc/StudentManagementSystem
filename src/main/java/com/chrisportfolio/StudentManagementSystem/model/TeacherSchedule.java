@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Time;
 
 @Entity
@@ -23,6 +20,10 @@ public class TeacherSchedule {
     private String lunchBreak;
     @Column(name = "course_taught")
     private String courseTaught;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     public Long getTeacherScheduleID() {
         return teacherScheduleID;
@@ -71,4 +72,13 @@ public class TeacherSchedule {
     public void setCourseTaught(String courseTaught) {
         this.courseTaught = courseTaught;
     }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
 }

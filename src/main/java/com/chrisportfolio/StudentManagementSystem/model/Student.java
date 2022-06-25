@@ -18,10 +18,6 @@ public class Student{
     @Column(name = "student_id")
     private Long studentID;
 
-    @OneToOne(mappedBy = "student")
-    private GradeLevel gradeLevel;
-    @OneToOne(mappedBy = "admissions")
-    private Admissions admissions;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -51,6 +47,21 @@ public class Student{
     private Date lastLoginDate;
     @Column(name = "last_login_ip")
     private String lastLoginIP;
+
+    @OneToOne(mappedBy = "student")
+    private GradeLevel gradeLevel;
+
+    @OneToOne(mappedBy = "student")
+    private Admissions admissions;
+
+    @OneToOne(mappedBy = "student")
+    private StudentSchedule studentSchedule;
+
+    @OneToOne(mappedBy = "student")
+    private Transcripts transcripts;
+
+    @OneToOne(mappedBy = "student")
+    private ReportCard reportCard;
 
     @ManyToMany(cascade = {CascadeType.ALL})
             @JoinTable(
@@ -290,5 +301,29 @@ public class Student{
 
     public void setClassroomSet(Set<Classroom> classroomSet) {
         this.classroomSet = classroomSet;
+    }
+
+    public StudentSchedule getStudentSchedule() {
+        return studentSchedule;
+    }
+
+    public void setStudentSchedule(StudentSchedule studentSchedule) {
+        this.studentSchedule = studentSchedule;
+    }
+
+    public Transcripts getTranscripts() {
+        return transcripts;
+    }
+
+    public void setTranscripts(Transcripts transcripts) {
+        this.transcripts = transcripts;
+    }
+
+    public ReportCard getReportCard() {
+        return reportCard;
+    }
+
+    public void setReportCard(ReportCard reportCard) {
+        this.reportCard = reportCard;
     }
 }

@@ -10,13 +10,16 @@ public class Course {
 
     @Id
     @Column(name = "course_id")
-    private Long courseID = 1L;
+    private Long courseID;
     @Column(name = "name")
     private String name;
     @Column(name = "credits")
     private Double credits;
     @Column(name = "description")
     private String description;
+
+    @OneToOne(mappedBy = "course")
+    private Classroom classroom;
 
     @ManyToMany(mappedBy = "course")
     private Set<Student> studentSet = new HashSet<Student>();
@@ -81,5 +84,13 @@ public class Course {
 
     public void setGradeLevelSet(Set<GradeLevel> gradeLevelSet) {
         this.gradeLevelSet = gradeLevelSet;
+    }
+
+    public Classroom getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 }

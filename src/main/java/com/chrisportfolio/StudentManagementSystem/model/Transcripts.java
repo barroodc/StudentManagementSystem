@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "transcripts")
@@ -12,8 +9,9 @@ public class Transcripts {
     @Id
     @Column(name = "transcript_id")
     private Long transcriptID;
-    @Column(name = "student_id")
-    private Long studentID;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private Student student;
     @Column(name = "class_name")
     private String className;
     @Column(name = "year_or_semester")
@@ -23,6 +21,9 @@ public class Transcripts {
     @Column(name = "credits")
     private Double credits;
 
+    @OneToOne(mappedBy = "transcripts")
+    private TranscriptGPA transcriptGPA;
+
     public Long getTranscriptID() {
         return transcriptID;
     }
@@ -31,12 +32,12 @@ public class Transcripts {
         this.transcriptID = transcriptID;
     }
 
-    public Long getStudentID() {
-        return studentID;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentID(Long studentID) {
-        this.studentID = studentID;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public String getClassName() {
@@ -69,5 +70,13 @@ public class Transcripts {
 
     public void setCredits(Double credits) {
         this.credits = credits;
+    }
+
+    public TranscriptGPA getTranscriptGPA() {
+        return transcriptGPA;
+    }
+
+    public void setTranscriptGPA(TranscriptGPA transcriptGPA) {
+        this.transcriptGPA = transcriptGPA;
     }
 }

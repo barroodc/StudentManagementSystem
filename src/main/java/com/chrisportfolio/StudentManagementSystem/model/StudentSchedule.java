@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Time;
 
 @Entity
@@ -13,8 +10,10 @@ public class StudentSchedule {
     @Id
     @Column(name = "student_schedule_id")
     private Long studentScheduleID;
-    @Column(name = "student_id")
-    private Long studentID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private Student student;
     @Column(name = "day_of_week")
     private String dayOfWeek;
     @Column(name = "time")
@@ -38,12 +37,12 @@ public class StudentSchedule {
         this.studentScheduleID = studentScheduleID;
     }
 
-    public Long getStudentID() {
-        return studentID;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentID(Long studentID) {
-        this.studentID = studentID;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public String getDayOfWeek() {
