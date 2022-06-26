@@ -26,7 +26,7 @@ public class Attendance {
     @Column(name = "remark")
     private String remark;
 
-    @ManyToMany(mappedBy = "attendance")
+    @ManyToMany(mappedBy = "attendanceSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getAttendanceID() {

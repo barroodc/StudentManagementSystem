@@ -21,13 +21,13 @@ public class Course {
     @OneToOne(mappedBy = "course")
     private Classroom classroom;
 
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany(mappedBy = "courseSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany(mappedBy = "courseSet")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany(mappedBy = "courseSet")
     private Set<GradeLevel> gradeLevelSet = new HashSet<GradeLevel>();
 
     public Long getCourseID() {

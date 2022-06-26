@@ -33,10 +33,10 @@ public class Homework {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(mappedBy = "homework")
+    @ManyToMany(mappedBy = "homeworkSet")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
-    @ManyToMany(mappedBy = "homework")
+    @ManyToMany(mappedBy = "homeworkSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getHomeworkID() {

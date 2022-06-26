@@ -16,7 +16,7 @@ public class ExamType {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(mappedBy = "examType")
+    @ManyToMany(mappedBy = "examTypeSet")
     private Set<Exam> examSet = new HashSet<Exam>();
     public Long getExamTypeID() {
         return examTypeID;

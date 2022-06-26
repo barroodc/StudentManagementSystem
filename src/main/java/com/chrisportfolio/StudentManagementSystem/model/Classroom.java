@@ -20,10 +20,10 @@ public class Classroom {
     @Column(name = "remarks")
     private String remarks;
 
-    @ManyToMany(mappedBy = "classroom")
+    @ManyToMany(mappedBy = "classroomSet")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
-    @ManyToMany(mappedBy = "student")
+    @ManyToMany(mappedBy = "classroomSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getClassroomID() {

@@ -34,7 +34,7 @@ public class Parent {
     @Column(name = "last_login_ip")
     private String lastLoginIP;
 
-    @ManyToMany(mappedBy = "parent")
+    @ManyToMany(mappedBy = "parentSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Long getParentID() {

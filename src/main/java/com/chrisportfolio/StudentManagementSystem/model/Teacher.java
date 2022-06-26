@@ -42,7 +42,7 @@ public class Teacher {
     @OneToOne(mappedBy = "teacher")
     private TeacherSchedule teacherSchedule;
 
-    @ManyToMany(mappedBy = "teacher")
+    @ManyToMany(mappedBy = "teacherSet")
     private Set<Student> studentSet = new HashSet<>();
 
     @ManyToMany(cascade = {CascadeType.ALL})

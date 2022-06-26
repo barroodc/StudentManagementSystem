@@ -23,7 +23,7 @@ public class AdmissionsService {
 
     public Admissions updateAdmissions(Long admissionsID, Admissions admissionsInformation) {
         Admissions admissions = admissionsRepository.findById(admissionsID).get();
-        admissions.setStudentID(admissionsInformation.getStudentID());
+        admissions.setStudent(admissionsInformation.getStudent());
         admissions.setApplicationNumber(admissionsInformation.getApplicationNumber());
         admissions.setApplicantName(admissionsInformation.getApplicantName());
         admissions.setIncomingYear(admissionsInformation.getIncomingYear());

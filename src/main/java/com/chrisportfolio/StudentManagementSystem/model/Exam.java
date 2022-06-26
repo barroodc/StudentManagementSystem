@@ -21,7 +21,7 @@ public class Exam {
     @OneToOne(mappedBy = "exam")
     private ExamResult examResult;
 
-    @ManyToMany(mappedBy = "exam")
+    @ManyToMany(mappedBy = "examSet")
     private Set<Student> studentSet = new HashSet<Student>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -32,7 +32,7 @@ public class Exam {
             )
     Set<ExamType> examTypeSet = new HashSet<ExamType>();
 
-    @ManyToMany(mappedBy = "exam")
+    @ManyToMany(mappedBy = "examSet")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
     public Long getExamID() {
         return examID;
