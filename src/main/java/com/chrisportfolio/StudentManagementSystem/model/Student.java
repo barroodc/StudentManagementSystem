@@ -119,6 +119,48 @@ public class Student{
             )
     Set<Classroom> classroomSet = new HashSet<Classroom>();
 
+    public Student() {
+        super();
+    }
+
+    public Student(Long studentID) {
+        this.studentID = studentID;
+    }
+
+    public Student(Long studentID, String email, String password, String firstName, String lastName, Date dob,
+                   String homePhone, String mobile, Date firstDayOnCampus, double gpa, int satScore, int actScore,
+                   Date lastLoginDate, String lastLoginIP, GradeLevel gradeLevel, Admissions admissions,
+                   StudentSchedule studentSchedule, Transcripts transcripts, ReportCard reportCard, Set<Attendance> attendanceSet,
+                   Set<Parent> parentSet, Set<Course> courseSet, Set<Exam> examSet, Set<Teacher> teacherSet, Set<Homework> homeworkSet,
+                   Set<Classroom> classroomSet) {
+        this.studentID = studentID;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.homePhone = homePhone;
+        this.mobile = mobile;
+        this.firstDayOnCampus = firstDayOnCampus;
+        this.gpa = gpa;
+        this.satScore = satScore;
+        this.actScore = actScore;
+        this.lastLoginDate = lastLoginDate;
+        this.lastLoginIP = lastLoginIP;
+        this.gradeLevel = gradeLevel;
+        this.admissions = admissions;
+        this.studentSchedule = studentSchedule;
+        this.transcripts = transcripts;
+        this.reportCard = reportCard;
+        this.attendanceSet = attendanceSet;
+        this.parentSet = parentSet;
+        this.courseSet = courseSet;
+        this.examSet = examSet;
+        this.teacherSet = teacherSet;
+        this.homeworkSet = homeworkSet;
+        this.classroomSet = classroomSet;
+    }
+
     public Long getStudentID() {
         return studentID;
     }

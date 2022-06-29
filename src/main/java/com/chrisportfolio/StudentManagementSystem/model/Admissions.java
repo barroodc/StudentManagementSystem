@@ -1,31 +1,62 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
-import java.sql.Date;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "admissions")
-public class Admissions {
+@XmlRootElement(name = "admissions")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"admissionsID", "student", "applicationNumber", "applicantName", "incomingYear", "status",
+"lastModified", "inquiries"})
+public class Admissions implements Serializable {
 
     @Id
     @Column(name = "admission_id")
+    @XmlElement(name = "admissionsID")
     private Long admissionsID;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
+    @XmlElement(name = "student")
     private Student student;
     @Column(name = "application_number")
+    @XmlElement(name = "applicationNumber")
     private Long applicationNumber;
     @Column(name = "applicant_name")
+    @XmlElement(name = "applicantName")
     private String applicantName;
     @Column(name = "incoming_year")
+    @XmlElement(name = "incomingYear")
     private String incomingYear;
     @Column(name = "status")
+    @XmlElement(name = "status")
     private String status;
     @Column(name = "last_modified")
+    @XmlElement(name = "lastModified")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private Date lastModified;
     @Column(name = "inquiries")
+    @XmlElement(name = "inquiries")
     private String inquiries;
+
+    public Admissions() {
+        super();
+    }
+
+    public Admissions(Long admissionsID, Student student, Long applicationNumber, String applicantName, String incomingYear, String status, Date lastModified, String inquiries) {
+        this.admissionsID = admissionsID;
+        this.student = student;
+        this.applicationNumber = applicationNumber;
+        this.applicantName = applicantName;
+        this.incomingYear = incomingYear;
+        this.status = status;
+        this.lastModified = lastModified;
+        this.inquiries = inquiries;
+    }
 
     public Long getAdmissionsID() {
         return admissionsID;
