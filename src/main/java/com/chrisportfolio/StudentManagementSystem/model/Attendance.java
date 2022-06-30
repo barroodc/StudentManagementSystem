@@ -1,33 +1,63 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "attendance")
-public class Attendance {
+@XmlRootElement(name = "attendance")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"attendanceID", "perfectAttendance", "acceptableAttendance", "unacceptableAttendance",
+"excusedAbsences", "unexcusedAbsences", "tardy", "remark"})
+public class Attendance implements Serializable {
 
     @Id
     @Column(name = "attendance_id")
+    @XmlElement(name = "attendanceID")
     private Long attendanceID;
     @Column(name = "perfect_attendance")
+    @XmlElement(name = "perfectAttendance")
     private byte perfectAttendance;
     @Column(name = "acceptable_attendance")
+    @XmlElement(name = "acceptableAttendance")
     private byte acceptableAttendance;
     @Column(name = "unacceptable_attendance")
+    @XmlElement(name = "unacceptableAttendance")
     private byte unacceptableAttendance;
     @Column(name = "excused_absences")
+    @XmlElement(name = "excusedAbsences")
     private int excusedAbsences;
     @Column(name = "unexcused_absences")
+    @XmlElement(name = "unexcusedAbsences")
     private int unexcusedAbsences;
     @Column(name = "tardy")
+    @XmlElement(name = "tardy")
     private int tardy;
     @Column(name = "remark")
+    @XmlElement(name = "remark")
     private String remark;
 
     @ManyToMany(mappedBy = "attendanceSet")
     private Set<Student> studentSet = new HashSet<Student>();
+
+    public Attendance() {
+        super();
+    }
+
+    public Attendance(Long attendanceID, byte perfectAttendance, byte acceptableAttendance, byte unacceptableAttendance,
+                      int excusedAbsences, int unexcusedAbsences, int tardy, String remark) {
+        this.attendanceID = attendanceID;
+        this.perfectAttendance = perfectAttendance;
+        this.acceptableAttendance = acceptableAttendance;
+        this.unacceptableAttendance = unacceptableAttendance;
+        this.excusedAbsences = excusedAbsences;
+        this.unexcusedAbsences = unexcusedAbsences;
+        this.tardy = tardy;
+        this.remark = remark;
+    }
 
     public Long getAttendanceID() {
         return attendanceID;

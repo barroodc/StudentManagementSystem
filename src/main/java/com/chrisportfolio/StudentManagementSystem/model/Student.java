@@ -4,48 +4,65 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 
 @Entity
 @Table(name = "student")
-public class Student{
+@XmlRootElement(name = "student")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"studentID", "email", "password", "firstName", "lastName", "dob", "homePhone", "mobile",
+"firstDayOnCampus", "gpa", "satScore", "actScore", "lastLoginDate", "lastLoginIP"})
+public class Student implements Serializable{
     @Id
     @Column(name = "student_id")
+    @XmlElement(name = "studentID")
     private Long studentID;
-
     @Column(name = "email")
+    @XmlElement(name = "email")
     private String email;
     @Column(name = "password")
+    @XmlElement(name = "password")
     private String password;
     @Column(name = "first_name")
+    @XmlElement(name = "firstName")
     private String firstName;
     @Column(name = "last_name")
+    @XmlElement(name = "lastName")
     private String lastName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "dob")
     private Date dob;
     @Column(name = "home_phone")
+    @XmlElement(name = "homePhone")
     private String homePhone;
     @Column(name = "mobile")
+    @XmlElement(name = "mobile")
     private String mobile;
     @Column(name = "first_day_on_campus")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "firstDayOnCampus")
     private Date firstDayOnCampus;
     @Column(name = "gpa")
+    @XmlElement(name = "gpa")
     private double gpa;
     @Column(name = "sat_score")
+    @XmlElement(name = "satScore")
     private int satScore;
     @Column(name = "act_score")
+    @XmlElement(name = "actScore")
     private int actScore;
     @Column(name = "last_login_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "lastLoginDate")
     private Date lastLoginDate;
     @Column(name = "last_login_ip")
+    @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
     @OneToOne(mappedBy = "student")
@@ -129,10 +146,7 @@ public class Student{
 
     public Student(Long studentID, String email, String password, String firstName, String lastName, Date dob,
                    String homePhone, String mobile, Date firstDayOnCampus, double gpa, int satScore, int actScore,
-                   Date lastLoginDate, String lastLoginIP, GradeLevel gradeLevel, Admissions admissions,
-                   StudentSchedule studentSchedule, Transcripts transcripts, ReportCard reportCard, Set<Attendance> attendanceSet,
-                   Set<Parent> parentSet, Set<Course> courseSet, Set<Exam> examSet, Set<Teacher> teacherSet, Set<Homework> homeworkSet,
-                   Set<Classroom> classroomSet) {
+                   Date lastLoginDate, String lastLoginIP) {
         this.studentID = studentID;
         this.email = email;
         this.password = password;
@@ -147,18 +161,6 @@ public class Student{
         this.actScore = actScore;
         this.lastLoginDate = lastLoginDate;
         this.lastLoginIP = lastLoginIP;
-        this.gradeLevel = gradeLevel;
-        this.admissions = admissions;
-        this.studentSchedule = studentSchedule;
-        this.transcripts = transcripts;
-        this.reportCard = reportCard;
-        this.attendanceSet = attendanceSet;
-        this.parentSet = parentSet;
-        this.courseSet = courseSet;
-        this.examSet = examSet;
-        this.teacherSet = teacherSet;
-        this.homeworkSet = homeworkSet;
-        this.classroomSet = classroomSet;
     }
 
     public Long getStudentID() {

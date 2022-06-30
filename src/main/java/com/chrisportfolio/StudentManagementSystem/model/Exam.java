@@ -1,12 +1,20 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "exam")
-public class Exam {
+@XmlRootElement(name = "exam")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"examID", "subjects", "term", "className"})
+public class Exam implements Serializable {
 
     @Id
     @Column(name = "exam_id")
@@ -34,6 +42,18 @@ public class Exam {
 
     @ManyToMany(mappedBy = "examSet")
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
+
+    public Exam() {
+        super();
+    }
+
+    public Exam(Long examID, String subjects, String term, String className) {
+        this.examID = examID;
+        this.subjects = subjects;
+        this.term = term;
+        this.className = className;
+    }
+
     public Long getExamID() {
         return examID;
     }

@@ -1,23 +1,32 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "grade_level")
-public class GradeLevel {
+@XmlRootElement(name = "gradeLevel")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"gradeLevelID", "student", "name", "description"})
+public class GradeLevel implements Serializable {
 
     @Id
     @Column(name = "grade_level_id")
+    @XmlElement(name = "gradeLevelID")
     private Long gradeLevelID;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
+    @XmlElement(name = "student")
     private Student student;
     @Column(name = "name")
+    @XmlElement(name = "name")
     private String name;
     @Column(name = "description")
+    @XmlElement(name = "description")
     private String description;
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -27,6 +36,18 @@ public class GradeLevel {
                     inverseJoinColumns = {@JoinColumn(name = "course_id")}
             )
     Set<Course> courseSet = new HashSet<Course>();
+
+    public GradeLevel() {
+        super();
+    }
+
+    public GradeLevel(Long gradeLevelID, Student student, String name, String description) {
+        this.gradeLevelID = gradeLevelID;
+        this.student = student;
+        this.name = name;
+        this.description = description;
+    }
+
     public Long getGradeLevelID() {
         return gradeLevelID;
     }

@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class JaxbMarshaller {
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, 2022);
@@ -23,6 +23,8 @@ public class JaxbMarshaller {
 
         jaxbObjectToXML(admissions);
     }
+
+    */
 
     public static void jaxbObjectToXML(Admissions admissions) {
 

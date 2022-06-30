@@ -1,21 +1,30 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "course")
-public class Course {
+@XmlRootElement(name = "course")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"courseID", "name", "credits", "description"})
+public class Course implements Serializable {
 
     @Id
     @Column(name = "course_id")
+    @XmlElement(name = "courseID")
     private Long courseID;
     @Column(name = "name")
+    @XmlElement(name = "name")
     private String name;
     @Column(name = "credits")
+    @XmlElement(name = "credits")
     private Double credits;
     @Column(name = "description")
+    @XmlElement(name = "description")
     private String description;
 
     @OneToOne(mappedBy = "course")
@@ -29,6 +38,17 @@ public class Course {
 
     @ManyToMany(mappedBy = "courseSet")
     private Set<GradeLevel> gradeLevelSet = new HashSet<GradeLevel>();
+
+    public Course() {
+        super();
+    }
+
+    public Course(Long courseID, String name, Double credits, String description) {
+        this.courseID = courseID;
+        this.name = name;
+        this.credits = credits;
+        this.description = description;
+    }
 
     public Long getCourseID() {
         return courseID;

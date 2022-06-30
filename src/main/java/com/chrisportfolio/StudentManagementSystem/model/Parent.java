@@ -3,39 +3,73 @@ package com.chrisportfolio.StudentManagementSystem.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "parent")
-public class Parent {
+@XmlRootElement(name = "parent")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"parentID", "email", "password", "firstName", "lastName", "dob", "homePhone", "mobile",
+"lastLoginDate", "lastLoginIP"})
+public class Parent implements Serializable {
     @Id
     @Column(name = "parent_id")
-    private Long parentID = 1L;
+    @XmlElement(name = "parentID")
+    private Long parentID;
     @Column(name = "email")
+    @XmlElement(name = "email")
     private String email;
     @Column(name = "password")
+    @XmlElement(name = "password")
     private String password;
     @Column(name = "first_name")
+    @XmlElement(name = "firstName")
     private String firstName;
     @Column(name = "last_name")
+    @XmlElement(name = "lastName")
     private String lastName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "dob")
     private Date dob;
     @Column(name = "home_phone")
+    @XmlElement(name = "homePhone")
     private String homePhone;
     @Column(name = "mobile")
+    @XmlElement(name = "mobile")
     private String mobile;
     @Column(name = "last_login_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "lastLoginDate")
     private Date lastLoginDate;
     @Column(name = "last_login_ip")
+    @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
     @ManyToMany(mappedBy = "parentSet")
     private Set<Student> studentSet = new HashSet<Student>();
+
+    public Parent() {
+        super();
+    }
+
+    public Parent(Long parentID, String email, String password, String firstName, String lastName, Date dob,
+                  String homePhone, String mobile, Date lastLoginDate, String lastLoginIP) {
+        this.parentID = parentID;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.homePhone = homePhone;
+        this.mobile = mobile;
+        this.lastLoginDate = lastLoginDate;
+        this.lastLoginIP = lastLoginIP;
+    }
 
     public Long getParentID() {
         return parentID;

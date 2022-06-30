@@ -1,22 +1,41 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "exam_result")
-public class ExamResult {
+@XmlRootElement(name = "examResult")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"examResultID", "exam", "mark", "grade"})
+public class ExamResult implements Serializable {
 
     @Id
     @Column(name = "exam_result_id")
+    @XmlElement(name = "examResultID")
     private Long examResultID;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exam_id")
+    @XmlElement(name = "exam")
     private Exam exam;
     @Column(name = "mark")
+    @XmlElement(name = "mark")
     private Double mark;
     @Column(name = "grade")
+    @XmlElement(name = "grade")
     private String grade;
+
+    public ExamResult() {
+        super();
+    }
+
+    public ExamResult(Long examResultID, Exam exam, Double mark, String grade) {
+        this.examResultID = examResultID;
+        this.exam = exam;
+        this.mark = mark;
+        this.grade = grade;
+    }
 
     public Long getExamResultID() {
         return examResultID;

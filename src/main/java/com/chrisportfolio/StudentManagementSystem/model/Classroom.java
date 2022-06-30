@@ -1,23 +1,32 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "classroom")
-public class Classroom {
+@XmlRootElement(name = "classroom")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"classroomID", "course", "section", "remarks"})
+public class Classroom implements Serializable {
 
     @Id
     @Column(name = "classroom_id")
+    @XmlElement(name = "classroomID")
     private Long classroomID;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id")
+    @XmlElement(name = "course")
     private Course course;
     @Column(name = "section")
+    @XmlElement(name = "section")
     private String section;
     @Column(name = "remarks")
+    @XmlElement(name = "remarks")
     private String remarks;
 
     @ManyToMany(mappedBy = "classroomSet")
@@ -25,6 +34,17 @@ public class Classroom {
 
     @ManyToMany(mappedBy = "classroomSet")
     private Set<Student> studentSet = new HashSet<Student>();
+
+    public Classroom() {
+        super();
+    }
+
+    public Classroom(Long classroomID, Course course, String section, String remarks) {
+        this.classroomID = classroomID;
+        this.course = course;
+        this.section = section;
+        this.remarks = remarks;
+    }
 
     public Long getClassroomID() {
         return classroomID;

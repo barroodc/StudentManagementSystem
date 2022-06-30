@@ -3,34 +3,49 @@ package com.chrisportfolio.StudentManagementSystem.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "homework")
-public class Homework {
+@XmlRootElement(name = "homework")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"homeworkID", "yearOrSemester", "subject", "assignedDate", "dueDate", "mark",
+"grade", "teacherName", "description"})
+public class Homework implements Serializable {
 
     @Id
     @Column(name = "homework_id")
+    @XmlElement(name = "homeworkID")
     private Long homeworkID;
     @Column(name = "year_or_semester")
+    @XmlElement(name = "yearOrSemester")
     private String yearOrSemester;
     @Column(name = "subject")
+    @XmlElement(name = "subject")
     private String subject;
     @Column(name = "assigned_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "assignedDate")
     private Date assignedDate;
     @Column(name = "due_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "dueDate")
     private Date dueDate;
     @Column(name = "mark")
+    @XmlElement(name = "mark")
     private Double mark;
     @Column(name = "grade")
+    @XmlElement(name = "grade")
     private String grade;
     @Column(name = "teacher_name")
+    @XmlElement(name = "teacherName")
     private String teacherName;
     @Column(name = "description")
+    @XmlElement(name = "description")
     private String description;
 
     @ManyToMany(mappedBy = "homeworkSet")
@@ -38,6 +53,23 @@ public class Homework {
 
     @ManyToMany(mappedBy = "homeworkSet")
     private Set<Student> studentSet = new HashSet<Student>();
+
+    public Homework() {
+        super();
+    }
+
+    public Homework(Long homeworkID, String yearOrSemester, String subject, Date assignedDate, Date dueDate,
+                    Double mark, String grade, String teacherName, String description) {
+        this.homeworkID = homeworkID;
+        this.yearOrSemester = yearOrSemester;
+        this.subject = subject;
+        this.assignedDate = assignedDate;
+        this.dueDate = dueDate;
+        this.mark = mark;
+        this.grade = grade;
+        this.teacherName = teacherName;
+        this.description = description;
+    }
 
     public Long getHomeworkID() {
         return homeworkID;
