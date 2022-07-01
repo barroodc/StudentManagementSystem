@@ -3,40 +3,58 @@ package com.chrisportfolio.StudentManagementSystem.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "teacher")
-public class Teacher {
+@XmlRootElement(name = "teacher")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"teacherID", "email", "password", "firstName", "lastName", "dob", "subject", "homePhone",
+"mobile", "tenured", "lastLoginDate", "lastLoginIP"})
+public class Teacher implements Serializable {
 
     @Id
     @Column(name = "teacher_id")
+    @XmlElement(name = "teacherID")
     private Long teacherID;
     @Column(name = "email")
+    @XmlElement(name = "email")
     private String email;
     @Column(name = "password")
+    @XmlElement(name = "password")
     private String password;
     @Column(name = "first_name")
+    @XmlElement(name = "firstName")
     private String firstName;
     @Column(name = "last_name")
+    @XmlElement(name = "lastName")
     private String lastName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "dob")
     private Date dob;
     @Column(name = "subject")
+    @XmlElement(name = "subject")
     private String subject;
     @Column(name = "home_phone")
+    @XmlElement(name = "homePhone")
     private String homePhone;
     @Column(name = "mobile")
+    @XmlElement(name = "mobile")
     private String mobile;
     @Column(name = "tenured")
+    @XmlElement(name = "tenured")
     private String tenured;
     @Column(name = "last_login_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    @XmlElement(name = "lastLoginDate")
     private Date lastLoginDate;
     @Column(name = "last_login_ip")
+    @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
     @OneToOne(mappedBy = "teacher")
@@ -76,6 +94,27 @@ public class Teacher {
                     inverseJoinColumns = {@JoinColumn(name = "exam_id")}
             )
     Set<Exam> examSet = new HashSet<Exam>();
+
+    public Teacher() {
+        super();
+    }
+
+    public Teacher(Long teacherID, String email, String password, String firstName, String lastName, Date dob, String subject,
+                   String homePhone, String mobile, String tenured, Date lastLoginDate, String lastLoginIP) {
+        this.teacherID = teacherID;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.subject = subject;
+        this.homePhone = homePhone;
+        this.mobile = mobile;
+        this.tenured = tenured;
+        this.lastLoginDate = lastLoginDate;
+        this.lastLoginIP = lastLoginIP;
+    }
+
     public Long getTeacherID() {
         return teacherID;
     }

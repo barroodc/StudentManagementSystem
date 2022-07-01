@@ -1,28 +1,53 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "transcripts")
-public class Transcripts {
+@XmlRootElement(name = "transcripts")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"transcriptID", "student", "yearOrSemester", "finalGrade", "credits"})
+public class Transcripts implements Serializable {
 
     @Id
     @Column(name = "transcript_id")
+    @XmlElement(name = "transcriptID")
     private Long transcriptID;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
+    @XmlElement(name = "student")
     private Student student;
     @Column(name = "class_name")
+    @XmlElement(name = "className")
     private String className;
     @Column(name = "year_or_semester")
+    @XmlElement(name = "yearOrSemester")
     private String yearOrSemester;
     @Column(name = "final_grade")
+    @XmlElement(name = "finalGrade")
     private String finalGrade;
     @Column(name = "credits")
+    @XmlElement(name = "credits")
     private Double credits;
 
     @OneToOne(mappedBy = "transcripts")
     private TranscriptGPA transcriptGPA;
+
+    public Transcripts() {
+        super();
+    }
+
+    public Transcripts(Long transcriptID, Student student, String className, String yearOrSemester,
+                       String finalGrade, Double credits) {
+        this.transcriptID = transcriptID;
+        this.student = student;
+        this.className = className;
+        this.yearOrSemester = yearOrSemester;
+        this.finalGrade = finalGrade;
+        this.credits = credits;
+    }
 
     public Long getTranscriptID() {
         return transcriptID;

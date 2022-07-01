@@ -1,33 +1,64 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
 @Table(name = "student_schedule")
-public class StudentSchedule {
+@XmlRootElement(name = "studentSchedule")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"studentScheduleID", "student", "dayOfWeek", "time", "location", "lunchBreak", "classRoom",
+"courseName", "totalNumberOfCredits"})
+public class StudentSchedule implements Serializable {
 
     @Id
     @Column(name = "student_schedule_id")
+    @XmlElement(name = "studentScheduleID")
     private Long studentScheduleID;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
+    @XmlElement(name = "student")
     private Student student;
     @Column(name = "day_of_week")
+    @XmlElement(name = "dayOfWeek")
     private String dayOfWeek;
     @Column(name = "time")
+    @XmlElement(name = "time")
     private Time time;
     @Column(name = "location")
+    @XmlElement(name = "location")
     private String location;
     @Column(name = "lunch_break")
+    @XmlElement(name = "lunchBreak")
     private String lunchBreak;
     @Column(name = "class_room")
+    @XmlElement(name = "classRoom")
     private String classRoom;
     @Column(name = "course_name")
+    @XmlElement(name = "courseName")
     private String courseName;
     @Column(name = "total_number_of_credits")
+    @XmlElement(name = "totalNumberOfCredits")
     private String totalNumberOfCredits;
+
+    public StudentSchedule() {
+        super();
+    }
+
+    public StudentSchedule(Long studentScheduleID, Student student, String dayOfWeek, Time time, String location,
+                           String lunchBreak, String classRoom, String courseName, String totalNumberOfCredits) {
+        this.studentScheduleID = studentScheduleID;
+        this.student = student;
+        this.dayOfWeek = dayOfWeek;
+        this.time = time;
+        this.location = location;
+        this.lunchBreak = lunchBreak;
+        this.classRoom = classRoom;
+        this.courseName = courseName;
+        this.totalNumberOfCredits = totalNumberOfCredits;
+    }
 
     public Long getStudentScheduleID() {
         return studentScheduleID;
