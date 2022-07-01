@@ -1,16 +1,15 @@
-package com.chrisportfolio.StudentManagementSystem.utils;
+package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
-import com.chrisportfolio.StudentManagementSystem.model.Student;
 
-import javax.xml.bind.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
 
-public class JaxbMarshaller {
+public class JaxbAdmissionsMarshaller {
 
-   /* public static void main(String[] args) {
+    /* public static void main(String[] args) {
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, 2022);
