@@ -10,7 +10,14 @@ import java.io.File;
 
 public class JaxbTranscriptGPAMarshaller {
 
-    public static void jaxbObjectToXML(TranscriptGPA transcriptGPA) {
+     /*
+    public static void main(String[] args) {
+       TranscriptGPA transcriptGPA = new TranscriptGPA();
+       jaxbObjectToXML(transcriptGPA);
+    }
+     */
+
+   /* public static void jaxbObjectToXML(TranscriptGPA transcriptGPA) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(TranscriptGPA.class);
@@ -23,4 +30,6 @@ public class JaxbTranscriptGPAMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+    */
 }

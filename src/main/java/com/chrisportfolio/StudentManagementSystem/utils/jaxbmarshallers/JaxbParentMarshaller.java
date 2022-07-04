@@ -10,7 +10,13 @@ import java.io.File;
 
 public class JaxbParentMarshaller {
 
-    public static void jaxbObjectToXML(Parent parent) {
+    /*
+   public static void main(String[] args) {
+      Parent parent = new Parent();
+      jaxbObjectToXML(parent);
+   }
+    */
+    /*public static void jaxbObjectToXML(Parent parent) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Parent.class);
@@ -23,4 +29,6 @@ public class JaxbParentMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }

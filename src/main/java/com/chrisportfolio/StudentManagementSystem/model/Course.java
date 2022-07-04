@@ -28,15 +28,19 @@ public class Course implements Serializable {
     private String description;
 
     @OneToOne(mappedBy = "course")
+    @XmlTransient
     private Classroom classroom;
 
     @ManyToMany(mappedBy = "courseSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<Student>();
 
     @ManyToMany(mappedBy = "courseSet")
+    @XmlTransient
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
     @ManyToMany(mappedBy = "courseSet")
+    @XmlTransient
     private Set<GradeLevel> gradeLevelSet = new HashSet<GradeLevel>();
 
     public Course() {

@@ -16,7 +16,7 @@ import java.util.Set;
 @XmlRootElement(name = "student")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"studentID", "email", "password", "firstName", "lastName", "dob", "homePhone", "mobile",
-"firstDayOnCampus", "gpa", "satScore", "actScore", "lastLoginDate", "lastLoginIP"})
+"firstDayOnCampus","studentLevel", "gpa", "satScore", "actScore", "lastLoginDate", "lastLoginIP"})
 public class Student implements Serializable{
     @Id
     @Column(name = "student_id")
@@ -48,6 +48,10 @@ public class Student implements Serializable{
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "firstDayOnCampus")
     private Date firstDayOnCampus;
+
+    @Column(name = "student_level")
+    @XmlElement(name = "studentLevel")
+    private String studentLevel;
     @Column(name = "gpa")
     @XmlElement(name = "gpa")
     private double gpa;
@@ -66,18 +70,23 @@ public class Student implements Serializable{
     private String lastLoginIP;
 
     @OneToOne(mappedBy = "student")
+    @XmlTransient
     private GradeLevel gradeLevel;
 
     @OneToOne(mappedBy = "student")
+    @XmlTransient
     private Admissions admissions;
 
     @OneToOne(mappedBy = "student")
+    @XmlTransient
     private StudentSchedule studentSchedule;
 
     @OneToOne(mappedBy = "student")
+    @XmlTransient
     private Transcripts transcripts;
 
     @OneToOne(mappedBy = "student")
+    @XmlTransient
     private ReportCard reportCard;
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -86,6 +95,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "attendance_id")}
             )
+            @XmlTransient
     Set<Attendance> attendanceSet = new HashSet<Attendance>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -94,6 +104,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "parent_id")}
             )
+            @XmlTransient
     Set<Parent> parentSet = new HashSet<Parent>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -102,6 +113,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "course_id")}
             )
+            @XmlTransient
     Set<Course> courseSet = new HashSet<Course>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -110,6 +122,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "exam_id")}
             )
+            @XmlTransient
     Set<Exam> examSet = new HashSet<Exam>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -118,6 +131,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "teacher_id")}
             )
+            @XmlTransient
     Set<Teacher> teacherSet = new HashSet<Teacher>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -126,6 +140,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "homework_id")}
             )
+            @XmlTransient
     Set<Homework> homeworkSet = new HashSet<Homework>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -134,6 +149,7 @@ public class Student implements Serializable{
                     joinColumns = {@JoinColumn(name = "student_id")},
                     inverseJoinColumns = {@JoinColumn(name = "classroom_id")}
             )
+            @XmlTransient
     Set<Classroom> classroomSet = new HashSet<Classroom>();
 
     public Student() {

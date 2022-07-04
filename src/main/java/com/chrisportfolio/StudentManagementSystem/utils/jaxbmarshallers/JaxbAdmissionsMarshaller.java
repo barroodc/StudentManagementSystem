@@ -1,15 +1,21 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
+import com.chrisportfolio.StudentManagementSystem.model.Student;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
+import java.util.Calendar;
+import java.util.Date;
 
 public class JaxbAdmissionsMarshaller {
 
-    /* public static void main(String[] args) {
+      private static final Logger LOGGER = LogManager.getLogger(JaxbAdmissionsMarshaller.class);
+       public static void main(String[] args) {
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, 2022);
@@ -23,7 +29,6 @@ public class JaxbAdmissionsMarshaller {
         jaxbObjectToXML(admissions);
     }
 
-    */
 
     public static void jaxbObjectToXML(Admissions admissions) {
 
@@ -35,7 +40,7 @@ public class JaxbAdmissionsMarshaller {
 
             jaxbMarshaller.marshal(admissions, new File("admissions.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+           LOGGER.info(e);
         }
     }
 }

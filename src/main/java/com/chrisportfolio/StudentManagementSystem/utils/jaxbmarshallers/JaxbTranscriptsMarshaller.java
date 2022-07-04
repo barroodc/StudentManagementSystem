@@ -10,7 +10,14 @@ import java.io.File;
 
 public class JaxbTranscriptsMarshaller {
 
-    public static void jaxbObjectToXML(Transcripts transcripts) {
+     /*
+    public static void main(String[] args) {
+       Transcripts transcripts = new Transcripts();
+       jaxbObjectToXML(transcripts);
+    }
+     */
+
+    /*public static void jaxbObjectToXML(Transcripts transcripts) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Transcripts.class);
@@ -23,4 +30,6 @@ public class JaxbTranscriptsMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }

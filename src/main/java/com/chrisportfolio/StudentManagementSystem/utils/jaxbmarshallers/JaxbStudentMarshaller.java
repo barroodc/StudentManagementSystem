@@ -10,7 +10,14 @@ import java.io.File;
 
 public class JaxbStudentMarshaller {
 
-    public static void jaxbObjectToXML(Student student) {
+     /*
+    public static void main(String[] args) {
+       Student student = new Student();
+       jaxbObjectToXML(student);
+    }
+     */
+
+    /*public static void jaxbObjectToXML(Student student) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Student.class);
@@ -23,4 +30,6 @@ public class JaxbStudentMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }

@@ -10,7 +10,14 @@ import java.io.File;
 
 public class JaxbReportCardMarshaller {
 
-    public static void jaxbObjectToXML(ReportCard reportCard) {
+     /*
+    public static void main(String[] args) {
+       ReportCard reportCard = new ReportCard();
+       jaxbObjectToXML(reportCard);
+    }
+     */
+
+   /* public static void jaxbObjectToXML(ReportCard reportCard) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(ReportCard.class);
@@ -23,4 +30,6 @@ public class JaxbReportCardMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+    */
 }

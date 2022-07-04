@@ -10,7 +10,15 @@ import java.io.File;
 
 public class JaxbAttendanceMarshaller {
 
-    public static void jaxbObjectToXML(Attendance attendance) {
+    /*
+    public static void main(String[] args) {
+       Attendance attendance = new Attendance();
+       jaxbObjectToXML(attendance);
+    }
+
+     */
+
+    /*public static void jaxbObjectToXML(Attendance attendance) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Attendance.class);
@@ -23,4 +31,6 @@ public class JaxbAttendanceMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }

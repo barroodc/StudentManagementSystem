@@ -35,6 +35,7 @@ public class GradeLevel implements Serializable {
                     joinColumns = {@JoinColumn(name = "grade_level_id")},
                     inverseJoinColumns = {@JoinColumn(name = "course_id")}
             )
+            @XmlTransient
     Set<Course> courseSet = new HashSet<Course>();
 
     public GradeLevel() {
@@ -87,4 +88,5 @@ public class GradeLevel implements Serializable {
     public void setCourseSet(Set<Course> courseSet) {
         this.courseSet = courseSet;
     }
+
 }

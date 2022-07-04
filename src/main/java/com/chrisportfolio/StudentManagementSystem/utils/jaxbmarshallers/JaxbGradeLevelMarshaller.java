@@ -10,7 +10,14 @@ import java.io.File;
 
 public class JaxbGradeLevelMarshaller {
 
-    public static void jaxbObjectToXML(GradeLevel gradeLevel) {
+     /*
+    public static void main(String[] args) {
+       GradeLevel gradeLevel = new GradeLevel();
+       jaxbObjectToXML(gradeLevel);
+    }
+     */
+
+    /*public static void jaxbObjectToXML(GradeLevel gradeLevel) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(GradeLevel.class);
@@ -23,4 +30,6 @@ public class JaxbGradeLevelMarshaller {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }
