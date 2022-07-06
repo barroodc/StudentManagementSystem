@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!-- Update Charlie Browns Student ID Value in MySQL Database-->
+<student>
+    <student>
+        <studentID>17365429</studentID>
+        <email>charliebrown@gmail.com</email>
+        <password>goodgrief72</password>
+        <firstName>Charlie</firstName>
+        <lastName>Brown</lastName>
+        <dob>2008-10-09T12:10:15.646-04:00</dob>
+        <homePhone>2025550186</homePhone>
+        <mobile>2025550186</mobile>
+        <firstDayOnCampus>2022-09-11T19:05:15.655-04:00</firstDayOnCampus>
+        <studentLevel>Freshman</studentLevel>
+        <gpa>4.0</gpa>
+        <satScore>0</satScore>
+        <actScore>0</actScore>
+        <lastLoginDate>2022-06-06T19:05:15.655-04:00</lastLoginDate>
+        <lastLoginIP>165.220.147.72</lastLoginIP>
+    </student>
+
+    <student>
+        <studentID>38688296</studentID>
+        <email>lucyvanpelt@gmail.com</email>
+        <password>charliesGrief5464</password>
+        <firstName>Lucy</firstName>
+        <lastName>Van Pelt</lastName>
+        <dob>2008-04-17T19:05:15.646-04:00</dob>
+        <homePhone>3088784008</homePhone>
+        <mobile>2029171639</mobile>
+        <firstDayOnCampus>2022-09-11T19:05:15.655-04:00</firstDayOnCampus>
+        <studentLevel>Freshman</studentLevel>
+        <gpa>0.0</gpa>
+        <satScore>0</satScore>
+        <actScore>0</actScore>
+        <lastLoginDate>2022-06-06T19:05:15.655-04:00</lastLoginDate>
+        <lastLoginIP>165.220.147.72</lastLoginIP>
+    </student>
+
+</student>

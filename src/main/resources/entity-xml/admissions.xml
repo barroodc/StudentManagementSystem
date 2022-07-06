@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<admissions>
+    <admissions>
+        <admissionsID>307912</admissionsID>
+        <student>
+            <studentID>17365429</studentID>
+            <gpa>4.0</gpa>
+            <satScore>0</satScore>
+            <actScore>0</actScore>
+        </student>
+        <applicationNumber>1</applicationNumber>
+        <applicantName>Charlie Brown</applicantName>
+        <incomingYear>Freshman</incomingYear>
+        <status>Approved</status>
+        <lastModified>2021-12-12T19:05:37.686-05:00</lastModified>
+        <inquiries>n/a</inquiries>
+    </admissions>
+
+    <admissions>
+        <admissionsID>570894</admissionsID>
+        <student>
+            <studentID>38688296</studentID>
+            <gpa>0.0</gpa>
+            <satScore>0</satScore>
+            <actScore>0</actScore>
+        </student>
+        <applicationNumber>2</applicationNumber>
+        <applicantName>Lucy Van Pelt</applicantName>
+        <incomingYear>Freshman</incomingYear>
+        <status>Approved</status>
+        <lastModified>2021-12-09T23:08:37.521-05:00</lastModified>
+        <inquiries>n/a</inquiries>
+    </admissions>
+</admissions>
+

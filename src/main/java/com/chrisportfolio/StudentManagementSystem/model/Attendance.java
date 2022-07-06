@@ -10,7 +10,7 @@ import java.util.Set;
 @Table(name = "attendance")
 @XmlRootElement(name = "attendance")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"attendanceID", "perfectAttendance", "acceptableAttendance", "unacceptableAttendance",
+@XmlType(propOrder = {"attendanceID", "student", "perfectAttendance", "acceptableAttendance", "unacceptableAttendance",
 "excusedAbsences", "unexcusedAbsences", "tardy", "remark"})
 public class Attendance implements Serializable {
 
@@ -18,6 +18,11 @@ public class Attendance implements Serializable {
     @Column(name = "attendance_id")
     @XmlElement(name = "attendanceID")
     private Long attendanceID;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    @XmlElement(name = "student")
+    private Student student;
     @Column(name = "perfect_attendance")
     @XmlElement(name = "perfectAttendance")
     private byte perfectAttendance;
@@ -40,16 +45,14 @@ public class Attendance implements Serializable {
     @XmlElement(name = "remark")
     private String remark;
 
-    @ManyToMany(mappedBy = "attendanceSet")
-    private Set<Student> studentSet = new HashSet<Student>();
-
     public Attendance() {
         super();
     }
 
-    public Attendance(Long attendanceID, byte perfectAttendance, byte acceptableAttendance, byte unacceptableAttendance,
-                      int excusedAbsences, int unexcusedAbsences, int tardy, String remark) {
+    public Attendance(Long attendanceID, Student student, byte perfectAttendance, byte acceptableAttendance,
+                      byte unacceptableAttendance, int excusedAbsences, int unexcusedAbsences, int tardy, String remark) {
         this.attendanceID = attendanceID;
+        this.student = student;
         this.perfectAttendance = perfectAttendance;
         this.acceptableAttendance = acceptableAttendance;
         this.unacceptableAttendance = unacceptableAttendance;
@@ -123,11 +126,4 @@ public class Attendance implements Serializable {
         this.remark = remark;
     }
 
-    public Set<Student> getStudentSet() {
-        return studentSet;
-    }
-
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
-    }
 }

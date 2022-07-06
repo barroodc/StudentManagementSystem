@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -89,14 +89,10 @@ public class Student implements Serializable{
     @XmlTransient
     private ReportCard reportCard;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_attendance",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "attendance_id")}
-            )
-            @XmlTransient
-    Set<Attendance> attendanceSet = new HashSet<Attendance>();
+    @OneToOne(mappedBy = "student")
+    @XmlTransient
+    private Attendance attendance;
+
 
     @ManyToMany(cascade = {CascadeType.ALL})
             @JoinTable(
@@ -161,8 +157,8 @@ public class Student implements Serializable{
     }
 
     public Student(Long studentID, String email, String password, String firstName, String lastName, Date dob,
-                   String homePhone, String mobile, Date firstDayOnCampus, double gpa, int satScore, int actScore,
-                   Date lastLoginDate, String lastLoginIP) {
+                   String homePhone, String mobile, Date firstDayOnCampus, String studentLevel, double gpa,
+                   int satScore, int actScore, Date lastLoginDate, String lastLoginIP) {
         this.studentID = studentID;
         this.email = email;
         this.password = password;
@@ -172,6 +168,7 @@ public class Student implements Serializable{
         this.homePhone = homePhone;
         this.mobile = mobile;
         this.firstDayOnCampus = firstDayOnCampus;
+        this.studentLevel = studentLevel;
         this.gpa = gpa;
         this.satScore = satScore;
         this.actScore = actScore;
@@ -305,14 +302,6 @@ public class Student implements Serializable{
 
     public void setLastLoginIP(String lastLoginIP) {
         this.lastLoginIP = lastLoginIP;
-    }
-
-    public Set<Attendance> getAttendanceSet() {
-        return attendanceSet;
-    }
-
-    public void setAttendanceSet(Set<Attendance> attendanceSet) {
-        this.attendanceSet = attendanceSet;
     }
 
     public Set<Parent> getParentSet() {

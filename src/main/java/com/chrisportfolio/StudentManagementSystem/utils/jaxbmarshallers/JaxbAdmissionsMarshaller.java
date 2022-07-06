@@ -18,12 +18,12 @@ public class JaxbAdmissionsMarshaller {
        public static void main(String[] args) {
 
         Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.YEAR, 2022);
-        cal.set(Calendar.MONTH, Calendar.JUNE);
-        cal.set(Calendar.DAY_OF_MONTH, 12);
+        cal.set(Calendar.YEAR, 2021);
+        cal.set(Calendar.MONTH, Calendar.DECEMBER);
+        cal.set(Calendar.DAY_OF_MONTH, 9);
         Date dateRepresentation = cal.getTime();
 
-        Admissions admissions = new Admissions(307912L, new Student(1L), 1L, "Charlie Brown",
+        Admissions admissions = new Admissions(570894L, new Student(38688296L), 2L, "Lucy Van Pelt",
                 "Freshman", "Approved", dateRepresentation, "n/a");
 
         jaxbObjectToXML(admissions);
