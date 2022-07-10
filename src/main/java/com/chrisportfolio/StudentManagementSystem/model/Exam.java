@@ -1,10 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,9 +24,11 @@ public class Exam implements Serializable {
     private String className;
 
     @OneToOne(mappedBy = "exam")
+    @XmlTransient
     private ExamResult examResult;
 
     @ManyToMany(mappedBy = "examSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<Student>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -38,9 +37,11 @@ public class Exam implements Serializable {
                     joinColumns = {@JoinColumn(name = "exam_id")},
                     inverseJoinColumns = {@JoinColumn(name = "exam_type_id")}
             )
+            @XmlTransient
     Set<ExamType> examTypeSet = new HashSet<ExamType>();
 
     @ManyToMany(mappedBy = "examSet")
+    @XmlTransient
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
     public Exam() {
@@ -52,6 +53,10 @@ public class Exam implements Serializable {
         this.subjects = subjects;
         this.term = term;
         this.className = className;
+    }
+
+    public Exam(Long examID) {
+        this.examID = examID;
     }
 
     public Long getExamID() {

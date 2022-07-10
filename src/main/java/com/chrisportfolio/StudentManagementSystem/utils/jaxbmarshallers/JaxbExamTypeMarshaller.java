@@ -10,14 +10,14 @@ import java.io.File;
 
 public class JaxbExamTypeMarshaller {
 
-     /*
+
     public static void main(String[] args) {
-       ExamType examType = new ExamType();
+       ExamType examType = new ExamType(105L, "Calculus 1", "Differential Calculus");
        jaxbObjectToXML(examType);
     }
-     */
 
-   /* public static void jaxbObjectToXML(ExamType examType) {
+
+    public static void jaxbObjectToXML(ExamType examType) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(ExamType.class);
@@ -31,5 +31,5 @@ public class JaxbExamTypeMarshaller {
         }
     }
 
-    */
+
 }

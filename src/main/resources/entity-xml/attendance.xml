@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<attendance>
+    <attendance>
+        <attendanceID>956636</attendanceID>
+        <student>
+            <studentID>17365429</studentID>
+            <gpa>0.0</gpa>
+            <satScore>0</satScore>
+            <actScore>0</actScore>
+        </student>
+        <perfectAttendance>0</perfectAttendance>
+        <acceptableAttendance>0</acceptableAttendance>
+        <unacceptableAttendance>0</unacceptableAttendance>
+        <excusedAbsences>0</excusedAbsences>
+        <unexcusedAbsences>0</unexcusedAbsences>
+        <tardy>0</tardy>
+        <remark>n/a</remark>
+    </attendance>
+
+    <attendance>
+        <attendanceID>373416</attendanceID>
+        <student>
+            <studentID>38688296</studentID>
+            <gpa>0.0</gpa>
+            <satScore>0</satScore>
+            <actScore>0</actScore>
+        </student>
+        <perfectAttendance>0</perfectAttendance>
+        <acceptableAttendance>0</acceptableAttendance>
+        <unacceptableAttendance>0</unacceptableAttendance>
+        <excusedAbsences>0</excusedAbsences>
+        <unexcusedAbsences>0</unexcusedAbsences>
+        <tardy>0</tardy>
+        <remark>n/a</remark>
+    </attendance>
+</attendance>
+

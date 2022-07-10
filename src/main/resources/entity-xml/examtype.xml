@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<examType>
+    <examType>
+        <examTypeID>105</examTypeID>
+        <name>Calculus 1</name>
+        <description>Differential Calculus</description>
+    </examType>
+
+    <examType>
+        <examTypeID>205</examTypeID>
+        <name>Calculus 2</name>
+        <description>Integral Calculus</description>
+    </examType>
+</examType>
+

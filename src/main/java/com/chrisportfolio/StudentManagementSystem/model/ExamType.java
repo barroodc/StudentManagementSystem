@@ -25,6 +25,7 @@ public class ExamType implements Serializable {
     private String description;
 
     @ManyToMany(mappedBy = "examTypeSet")
+    @XmlTransient
     private Set<Exam> examSet = new HashSet<Exam>();
 
     public ExamType() {

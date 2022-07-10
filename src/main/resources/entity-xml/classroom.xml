@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<classroom>
+    <classroom>
+        <classroomID>110</classroomID>
+        <course>
+            <courseID>127</courseID>
+        </course>
+        <section>1</section>
+        <remarks>Building A</remarks>
+    </classroom>
+
+    <classroom>
+        <classroomID>115</classroomID>
+        <course>
+            <courseID>137</courseID>
+        </course>
+        <section>1</section>
+        <remarks>Building A</remarks>
+    </classroom>
+</classroom>
+

@@ -30,9 +30,11 @@ public class Classroom implements Serializable {
     private String remarks;
 
     @ManyToMany(mappedBy = "classroomSet")
+    @XmlTransient
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
     @ManyToMany(mappedBy = "classroomSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Classroom() {

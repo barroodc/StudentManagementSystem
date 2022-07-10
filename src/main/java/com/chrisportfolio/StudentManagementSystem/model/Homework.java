@@ -49,9 +49,11 @@ public class Homework implements Serializable {
     private String description;
 
     @ManyToMany(mappedBy = "homeworkSet")
+    @XmlTransient
     private Set<Teacher> teacherSet = new HashSet<Teacher>();
 
     @ManyToMany(mappedBy = "homeworkSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Homework() {

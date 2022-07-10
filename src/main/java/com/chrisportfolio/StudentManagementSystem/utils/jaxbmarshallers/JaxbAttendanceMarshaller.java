@@ -2,6 +2,7 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.model.Attendance;
+import com.chrisportfolio.StudentManagementSystem.model.Student;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,15 +11,15 @@ import java.io.File;
 
 public class JaxbAttendanceMarshaller {
 
-    /*
+
     public static void main(String[] args) {
-       Attendance attendance = new Attendance();
-       jaxbObjectToXML(attendance);
+       Attendance charlieBrownAttendance = new Attendance(956636L, new Student(17365429L), (byte)0,
+               (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, "n/a");
+       jaxbObjectToXML(charlieBrownAttendance);
     }
 
-     */
 
-    /*public static void jaxbObjectToXML(Attendance attendance) {
+      public static void jaxbObjectToXML(Attendance attendance) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Attendance.class);
@@ -31,6 +32,4 @@ public class JaxbAttendanceMarshaller {
             throw new RuntimeException(e);
         }
     }
-
-     */
 }

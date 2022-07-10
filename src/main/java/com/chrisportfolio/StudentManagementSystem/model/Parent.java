@@ -51,6 +51,7 @@ public class Parent implements Serializable {
     private String lastLoginIP;
 
     @ManyToMany(mappedBy = "parentSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<Student>();
 
     public Parent() {
