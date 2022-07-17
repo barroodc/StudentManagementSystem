@@ -13,13 +13,16 @@ public class JaxbReportCardMarshaller {
 
    //Need to rework ERD diagram to include different subjects.
 
-    /*public static void main(String[] args) {
+    /*
+    public static void main(String[] args) {
        ReportCard reportCard = new ReportCard(6957668L, new Student(17365429L), "Charlie Brown",
                "Freshman", "Fall", );
        jaxbObjectToXML(reportCard);
     }
 
      */
+
+
 
      public static void jaxbObjectToXML(ReportCard reportCard) {
 

@@ -12,6 +12,11 @@ import java.io.Serializable;
         "finalExam", "finalGrade"})
 public class ReportCard implements Serializable {
 
+    /*
+    Successfully updated database. I should probably do a refresh when I work on this again to sync to intellij plugin.
+    Ready to add appropriate annotations.
+     */
+
     @Id
     @Column(name = "report_card_id")
     @XmlElement(name = "reportCardID")
@@ -26,34 +31,34 @@ public class ReportCard implements Serializable {
     @Column(name = "grade_level")
     @XmlElement(name = "gradeLevel")
     private String gradeLevel;
-    @Column(name = "subject")
-    @XmlElement(name = "subject")
-    private String subject;
-    @Column(name = "mid_term")
-    @XmlElement(name = "midterm")
-    private String midterm;
-    @Column(name = "final_exam")
-    @XmlElement(name = "finalExam")
-    private String finalExam;
-    @Column(name = "final_grade")
-    @XmlElement(name = "finalGrade")
-    private String finalGrade;
+
+    private String subjectOne;
+    private String subjectOneCurrentGrade;
+    private String subjectOneMidterm;
+    private String subjectOneFinalExam;
+    private String subjectTwo;
+    private String subjectTwoCurrentGrade;
+    private String subjectTwoMidterm;
+    private String subjectTwoFinalExam;
+    private String subjectThree;
+    private String subjectThreeCurrentGrade;
+    private String subjectThreeMidterm;
+    private String subjectThreeFinalExam;
+    private String subjectFour;
+    private String subjectFourCurrentGrade;
+    private String subjectFourMidterm;
+    private String subjectFourFinalExam;
+    private String subjectFive;
+    private String subjectFiveCurrentGrade;
+    private String subjectFiveMidterm;
+    private String subjectFiveFinalExam;
+
+
 
     public ReportCard() {
         super();
     }
 
-    public ReportCard(Long reportCardID, Student student, String studentName, String gradeLevel, String subject,
-                      String midterm, String finalExam, String finalGrade) {
-        this.reportCardID = reportCardID;
-        this.student = student;
-        this.studentName = studentName;
-        this.gradeLevel = gradeLevel;
-        this.subject = subject;
-        this.midterm = midterm;
-        this.finalExam = finalExam;
-        this.finalGrade = finalGrade;
-    }
 
     public Long getReportCardID() {
         return reportCardID;
@@ -87,35 +92,4 @@ public class ReportCard implements Serializable {
         this.gradeLevel = gradeLevel;
     }
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getMidterm() {
-        return midterm;
-    }
-
-    public void setMidterm(String midterm) {
-        this.midterm = midterm;
-    }
-
-    public String getFinalExam() {
-        return finalExam;
-    }
-
-    public void setFinalExam(String finalExam) {
-        this.finalExam = finalExam;
-    }
-
-    public String getFinalGrade() {
-        return finalGrade;
-    }
-
-    public void setFinalGrade(String finalGrade) {
-        this.finalGrade = finalGrade;
-    }
 }
