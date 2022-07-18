@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,9 +58,11 @@ public class Teacher implements Serializable {
     private String lastLoginIP;
 
     @OneToOne(mappedBy = "teacher")
+    @XmlTransient
     private TeacherSchedule teacherSchedule;
 
     @ManyToMany(mappedBy = "teacherSet")
+    @XmlTransient
     private Set<Student> studentSet = new HashSet<>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -69,6 +71,7 @@ public class Teacher implements Serializable {
                     joinColumns = {@JoinColumn(name = "teacher_id")},
                     inverseJoinColumns = {@JoinColumn(name = "classroom_id")}
             )
+            @XmlTransient
     Set<Classroom> classroomSet = new HashSet<Classroom>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -77,6 +80,7 @@ public class Teacher implements Serializable {
                     joinColumns = {@JoinColumn(name = "teacher_id")},
                     inverseJoinColumns = {@JoinColumn(name = "course_id")}
             )
+            @XmlTransient
     Set<Course> courseSet = new HashSet<Course>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -85,6 +89,7 @@ public class Teacher implements Serializable {
                     joinColumns = {@JoinColumn(name = "teacher_id")},
                     inverseJoinColumns = {@JoinColumn(name = "homework_id")}
             )
+            @XmlTransient
     Set<Homework> homeworkSet = new HashSet<Homework>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
@@ -93,6 +98,7 @@ public class Teacher implements Serializable {
                     joinColumns = {@JoinColumn(name = "teacher_id")},
                     inverseJoinColumns = {@JoinColumn(name = "exam_id")}
             )
+            @XmlTransient
     Set<Exam> examSet = new HashSet<Exam>();
 
     public Teacher() {

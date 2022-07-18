@@ -11,16 +11,13 @@ import java.io.File;
 
 public class JaxbReportCardMarshaller {
 
-   //Need to rework ERD diagram to include different subjects.
-
-    /*
     public static void main(String[] args) {
        ReportCard reportCard = new ReportCard(6957668L, new Student(17365429L), "Charlie Brown",
-               "Freshman", "Fall", );
+               "Freshman", "Calculus 1", "n/a", "n/a", "n/a", "n/a", "Honors English 1", "n/a", "n/a", "n/a", "n/a",
+               "Spanish 1", "n/a", "n/a", "n/a", "n/a", "Advance Placement Physics C", "n/a", "n/a", "n/a", "n/a",
+               "Honors Computer Science", "n/a", "n/a", "n/a", "n/a");
        jaxbObjectToXML(reportCard);
     }
-
-     */
 
 
 

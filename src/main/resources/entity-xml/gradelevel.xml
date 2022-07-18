@@ -4,9 +4,6 @@
         <gradeLevelID>9000</gradeLevelID>
         <student>
             <studentID>17365429</studentID>
-            <gpa>0.0</gpa>
-            <satScore>0</satScore>
-            <actScore>0</actScore>
         </student>
         <name>Charlie Brown</name>
         <description>Newly Enrolled Freshman</description>
@@ -16,9 +13,6 @@
         <gradeLevelID>9001</gradeLevelID>
         <student>
             <studentID>38688296</studentID>
-            <gpa>0.0</gpa>
-            <satScore>0</satScore>
-            <actScore>0</actScore>
         </student>
         <name>Lucy Van Pelt</name>
         <description>Newly Enrolled Freshman</description>

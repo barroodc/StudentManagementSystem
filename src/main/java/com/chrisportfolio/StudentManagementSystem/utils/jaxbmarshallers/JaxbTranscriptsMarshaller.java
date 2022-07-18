@@ -10,14 +10,19 @@ import java.io.File;
 
 public class JaxbTranscriptsMarshaller {
 
-     /*
-    public static void main(String[] args) {
-       Transcripts transcripts = new Transcripts();
-       jaxbObjectToXML(transcripts);
-    }
+    /*
+    Need to also fix this to incorporate 5 classes.
      */
 
-    /*public static void jaxbObjectToXML(Transcripts transcripts) {
+    /*
+    public static void main(String[] args) {
+       Transcripts transcripts = new Transcripts(2656653243L, new Student(17365429L), );
+       jaxbObjectToXML(transcripts);
+    }
+
+     */
+
+    public static void jaxbObjectToXML(Transcripts transcripts) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Transcripts.class);
@@ -30,6 +35,4 @@ public class JaxbTranscriptsMarshaller {
             throw new RuntimeException(e);
         }
     }
-
-     */
 }

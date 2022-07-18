@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teacher>
+    <teacherID>38430931</teacherID>
+    <email>mattamaticas@gmail.com</email>
+    <password>calcULater</password>
+    <firstName>Matt</firstName>
+    <lastName>Amaticas</lastName>
+    <dob>1970-08-11T21:24:45.795-04:00</dob>
+    <subject>Calculus 1</subject>
+    <homePhone>9272203486</homePhone>
+    <mobile>6262722483</mobile>
+    <tenured>Yes</tenured>
+    <lastLoginDate>2022-07-17T21:24:45.806-04:00</lastLoginDate>
+    <lastLoginIP>831.572.234.59</lastLoginIP>
+</teacher>

@@ -10,14 +10,18 @@ import java.io.File;
 
 public class JaxbStudentScheduleMarshaller {
 
-     /*
+    /*
+    Have to fix model class for StudentSchedule
+     */
+
+
     public static void main(String[] args) {
        StudentSchedule studentSchedule = new StudentSchedule();
        jaxbObjectToXML(studentSchedule);
     }
-     */
 
-   /*public static void jaxbObjectToXML(StudentSchedule studentSchedule) {
+
+     public static void jaxbObjectToXML(StudentSchedule studentSchedule) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(StudentSchedule.class);
@@ -30,6 +34,4 @@ public class JaxbStudentScheduleMarshaller {
             throw new RuntimeException(e);
         }
     }
-
-    */
 }

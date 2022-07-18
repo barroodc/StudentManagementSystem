@@ -10,6 +10,10 @@ import java.io.File;
 
 public class JaxbTeacherScheduleMarshaller {
 
+    /*
+    Need to fix this before moving on.
+     */
+
      /*
     public static void main(String[] args) {
        TeacherSchedule teacherSchedule = new TeacherSchedule();

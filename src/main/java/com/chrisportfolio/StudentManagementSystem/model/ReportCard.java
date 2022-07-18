@@ -137,6 +137,45 @@ public class ReportCard implements Serializable {
         super();
     }
 
+    public ReportCard(Long reportCardID, Student student, String studentName, String gradeLevel, String subjectOne,
+                      String subjectOneCurrentGrade, String subjectOneMidterm, String subjectOneFinalExam,
+                      String subjectOneFinalGrade, String subjectTwo, String subjectTwoCurrentGrade,
+                      String subjectTwoMidterm, String subjectTwoFinalExam, String subjectTwoFinalGrade,
+                      String subjectThree, String subjectThreeCurrentGrade, String subjectThreeMidterm,
+                      String subjectThreeFinalExam, String subjectThreeFinalGrade, String subjectFour,
+                      String subjectFourCurrentGrade, String subjectFourMidterm, String subjectFourFinalExam,
+                      String subjectFourFinalGrade, String subjectFive, String subjectFiveCurrentGrade,
+                      String subjectFiveMidterm, String subjectFiveFinalExam, String subjectFiveFinalGrade) {
+        this.reportCardID = reportCardID;
+        this.student = student;
+        this.studentName = studentName;
+        this.gradeLevel = gradeLevel;
+        this.subjectOne = subjectOne;
+        this.subjectOneCurrentGrade = subjectOneCurrentGrade;
+        this.subjectOneMidterm = subjectOneMidterm;
+        this.subjectOneFinalExam = subjectOneFinalExam;
+        this.subjectOneFinalGrade = subjectOneFinalGrade;
+        this.subjectTwo = subjectTwo;
+        this.subjectTwoCurrentGrade = subjectTwoCurrentGrade;
+        this.subjectTwoMidterm = subjectTwoMidterm;
+        this.subjectTwoFinalExam = subjectTwoFinalExam;
+        this.subjectTwoFinalGrade = subjectTwoFinalGrade;
+        this.subjectThree = subjectThree;
+        this.subjectThreeCurrentGrade = subjectThreeCurrentGrade;
+        this.subjectThreeMidterm = subjectThreeMidterm;
+        this.subjectThreeFinalExam = subjectThreeFinalExam;
+        this.subjectThreeFinalGrade = subjectThreeFinalGrade;
+        this.subjectFour = subjectFour;
+        this.subjectFourCurrentGrade = subjectFourCurrentGrade;
+        this.subjectFourMidterm = subjectFourMidterm;
+        this.subjectFourFinalExam = subjectFourFinalExam;
+        this.subjectFourFinalGrade = subjectFourFinalGrade;
+        this.subjectFive = subjectFive;
+        this.subjectFiveCurrentGrade = subjectFiveCurrentGrade;
+        this.subjectFiveMidterm = subjectFiveMidterm;
+        this.subjectFiveFinalExam = subjectFiveFinalExam;
+        this.subjectFiveFinalGrade = subjectFiveFinalGrade;
+    }
 
     public Long getReportCardID() {
         return reportCardID;

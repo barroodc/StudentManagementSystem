@@ -4,9 +4,6 @@
         <admissionsID>307912</admissionsID>
         <student>
             <studentID>17365429</studentID>
-            <gpa>4.0</gpa>
-            <satScore>0</satScore>
-            <actScore>0</actScore>
         </student>
         <applicationNumber>1</applicationNumber>
         <applicantName>Charlie Brown</applicantName>
@@ -20,9 +17,6 @@
         <admissionsID>570894</admissionsID>
         <student>
             <studentID>38688296</studentID>
-            <gpa>0.0</gpa>
-            <satScore>0</satScore>
-            <actScore>0</actScore>
         </student>
         <applicationNumber>2</applicationNumber>
         <applicantName>Lucy Van Pelt</applicantName>
