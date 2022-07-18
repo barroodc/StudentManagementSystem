@@ -8,14 +8,13 @@ import java.io.Serializable;
 @Table(name = "report_card")
 @XmlRootElement(name = "reportCard")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"reportCardID", "student", "studentName", "gradeLevel", "subject", "midterm",
-        "finalExam", "finalGrade"})
+@XmlType(propOrder = {"reportCardID", "student", "studentName", "gradeLevel", "subjectOne", "subjectOneCurrentGrade",
+"subjectOneMidterm", "subjectOneFinalExam", "subjectOneFinalGrade", "subjectTwo", "subjectTwoCurrentGrade",
+"subjectTwoMidterm", "subjectTwoFinalExam", "subjectTwoFinalGrade", "subjectThree", "subjectThreeCurrentGrade",
+"subjectThreeMidterm", "subjectThreeFinalExam", "subjectThreeFinalGrade", "subjectFour", "subjectFourCurrentGrade",
+"subjectFourMidterm", "subjectFourFinalExam", "subjectFourFinalGrade", "subjectFive", "subjectFiveCurrentGrade",
+"subjectFiveMidterm", "subjectFiveFinalExam", "subjectFiveFinalGrade"})
 public class ReportCard implements Serializable {
-
-    /*
-    Successfully updated database. I should probably do a refresh when I work on this again to sync to intellij plugin.
-    Ready to add appropriate annotations.
-     */
 
     @Id
     @Column(name = "report_card_id")
@@ -32,26 +31,105 @@ public class ReportCard implements Serializable {
     @XmlElement(name = "gradeLevel")
     private String gradeLevel;
 
+    @Column(name = "subject_one")
+    @XmlElement(name = "subjectOne")
     private String subjectOne;
+
+    @Column(name = "subject_one_current_grade")
+    @XmlElement(name = "subjectOneCurrentGrade")
     private String subjectOneCurrentGrade;
+
+    @Column(name = "subject_one_midterm")
+    @XmlElement(name = "subjectOneMidterm")
     private String subjectOneMidterm;
+
+    @Column(name = "subject_one_final_exam")
+    @XmlElement(name = "subjectOneFinalExam")
     private String subjectOneFinalExam;
+
+    @Column(name = "subject_one_final_grade")
+    @XmlElement(name = "subjectOneFinalGrade")
+    private String subjectOneFinalGrade;
+
+    @Column(name = "subject_two")
+    @XmlElement(name = "subjectTwo")
     private String subjectTwo;
+
+    @Column(name = "subject_two_current_grade")
+    @XmlElement(name = "subjectTwoCurrentGrade")
     private String subjectTwoCurrentGrade;
+
+    @Column(name = "subject_two_midterm")
+    @XmlElement(name = "subjectTwoMidterm")
     private String subjectTwoMidterm;
+
+    @Column(name = "subject_two_final_exam")
+    @XmlElement(name = "subjectTwoFinalExam")
     private String subjectTwoFinalExam;
+
+    @Column(name = "subject_two_final_grade")
+    @XmlElement(name = "subjectTwoFinalGrade")
+    private String subjectTwoFinalGrade;
+
+    @Column(name = "subject_three")
+    @XmlElement(name = "subjectThree")
     private String subjectThree;
+
+    @Column(name = "subject_three_current_grade")
+    @XmlElement(name = "subjectThreeCurrentGrade")
     private String subjectThreeCurrentGrade;
+
+    @Column(name = "subject_three_midterm")
+    @XmlElement(name = "subjectThreeMidterm")
     private String subjectThreeMidterm;
+
+    @Column(name = "subject_three_final_exam")
+    @XmlElement(name = "subjectThreeFinalExam")
     private String subjectThreeFinalExam;
+
+    @Column(name = "subject_three_final_grade")
+    @XmlElement(name = "subjectThreeFinalGrade")
+    private String subjectThreeFinalGrade;
+
+    @Column(name = "subject_four")
+    @XmlElement(name = "subjectFour")
     private String subjectFour;
+
+    @Column(name = "subject_four_current_grade")
+    @XmlElement(name = "subjectFourCurrentGrade")
     private String subjectFourCurrentGrade;
+
+    @Column(name = "subject_four_midterm")
+    @XmlElement(name = "subjectFourMidterm")
     private String subjectFourMidterm;
+
+    @Column(name = "subject_four_final_exam")
+    @XmlElement(name = "subjectFourFinalExam")
     private String subjectFourFinalExam;
+
+    @Column(name = "subject_four_final_grade")
+    @XmlElement(name = "subjectFourFinalGrade")
+    private String subjectFourFinalGrade;
+
+    @Column(name = "subject_five")
+    @XmlElement(name = "subjectFive")
     private String subjectFive;
+
+    @Column(name = "subject_five_current_grade")
+    @XmlElement(name = "subjectFiveCurrentGrade")
     private String subjectFiveCurrentGrade;
+
+    @Column(name = "subject_five_midterm")
+    @XmlElement(name = "subjectFiveMidterm")
     private String subjectFiveMidterm;
+
+    @Column(name = "subject_five_final_exam")
+    @XmlElement(name = "subjectFiveFinalExam")
     private String subjectFiveFinalExam;
+
+    @Column(name = "subject_five_final_grade")
+    @XmlElement(name = "subjectFiveFinalGrade")
+    private String subjectFiveFinalGrade;
 
 
 
@@ -92,4 +170,203 @@ public class ReportCard implements Serializable {
         this.gradeLevel = gradeLevel;
     }
 
+    public String getSubjectOne() {
+        return subjectOne;
+    }
+
+    public void setSubjectOne(String subjectOne) {
+        this.subjectOne = subjectOne;
+    }
+
+    public String getSubjectOneCurrentGrade() {
+        return subjectOneCurrentGrade;
+    }
+
+    public void setSubjectOneCurrentGrade(String subjectOneCurrentGrade) {
+        this.subjectOneCurrentGrade = subjectOneCurrentGrade;
+    }
+
+    public String getSubjectOneMidterm() {
+        return subjectOneMidterm;
+    }
+
+    public void setSubjectOneMidterm(String subjectOneMidterm) {
+        this.subjectOneMidterm = subjectOneMidterm;
+    }
+
+    public String getSubjectOneFinalExam() {
+        return subjectOneFinalExam;
+    }
+
+    public void setSubjectOneFinalExam(String subjectOneFinalExam) {
+        this.subjectOneFinalExam = subjectOneFinalExam;
+    }
+
+    public String getSubjectOneFinalGrade() {
+        return subjectOneFinalGrade;
+    }
+
+    public void setSubjectOneFinalGrade(String subjectOneFinalGrade) {
+        this.subjectOneFinalGrade = subjectOneFinalGrade;
+    }
+
+    public String getSubjectTwo() {
+        return subjectTwo;
+    }
+
+    public void setSubjectTwo(String subjectTwo) {
+        this.subjectTwo = subjectTwo;
+    }
+
+    public String getSubjectTwoCurrentGrade() {
+        return subjectTwoCurrentGrade;
+    }
+
+    public void setSubjectTwoCurrentGrade(String subjectTwoCurrentGrade) {
+        this.subjectTwoCurrentGrade = subjectTwoCurrentGrade;
+    }
+
+    public String getSubjectTwoMidterm() {
+        return subjectTwoMidterm;
+    }
+
+    public void setSubjectTwoMidterm(String subjectTwoMidterm) {
+        this.subjectTwoMidterm = subjectTwoMidterm;
+    }
+
+    public String getSubjectTwoFinalExam() {
+        return subjectTwoFinalExam;
+    }
+
+    public void setSubjectTwoFinalExam(String subjectTwoFinalExam) {
+        this.subjectTwoFinalExam = subjectTwoFinalExam;
+    }
+
+    public String getSubjectTwoFinalGrade() {
+        return subjectTwoFinalGrade;
+    }
+
+    public void setSubjectTwoFinalGrade(String subjectTwoFinalGrade) {
+        this.subjectTwoFinalGrade = subjectTwoFinalGrade;
+    }
+
+    public String getSubjectThree() {
+        return subjectThree;
+    }
+
+    public void setSubjectThree(String subjectThree) {
+        this.subjectThree = subjectThree;
+    }
+
+    public String getSubjectThreeCurrentGrade() {
+        return subjectThreeCurrentGrade;
+    }
+
+    public void setSubjectThreeCurrentGrade(String subjectThreeCurrentGrade) {
+        this.subjectThreeCurrentGrade = subjectThreeCurrentGrade;
+    }
+
+    public String getSubjectThreeMidterm() {
+        return subjectThreeMidterm;
+    }
+
+    public void setSubjectThreeMidterm(String subjectThreeMidterm) {
+        this.subjectThreeMidterm = subjectThreeMidterm;
+    }
+
+    public String getSubjectThreeFinalExam() {
+        return subjectThreeFinalExam;
+    }
+
+    public void setSubjectThreeFinalExam(String subjectThreeFinalExam) {
+        this.subjectThreeFinalExam = subjectThreeFinalExam;
+    }
+
+    public String getSubjectThreeFinalGrade() {
+        return subjectThreeFinalGrade;
+    }
+
+    public void setSubjectThreeFinalGrade(String subjectThreeFinalGrade) {
+        this.subjectThreeFinalGrade = subjectThreeFinalGrade;
+    }
+
+    public String getSubjectFour() {
+        return subjectFour;
+    }
+
+    public void setSubjectFour(String subjectFour) {
+        this.subjectFour = subjectFour;
+    }
+
+    public String getSubjectFourCurrentGrade() {
+        return subjectFourCurrentGrade;
+    }
+
+    public void setSubjectFourCurrentGrade(String subjectFourCurrentGrade) {
+        this.subjectFourCurrentGrade = subjectFourCurrentGrade;
+    }
+
+    public String getSubjectFourMidterm() {
+        return subjectFourMidterm;
+    }
+
+    public void setSubjectFourMidterm(String subjectFourMidterm) {
+        this.subjectFourMidterm = subjectFourMidterm;
+    }
+
+    public String getSubjectFourFinalExam() {
+        return subjectFourFinalExam;
+    }
+
+    public void setSubjectFourFinalExam(String subjectFourFinalExam) {
+        this.subjectFourFinalExam = subjectFourFinalExam;
+    }
+
+    public String getSubjectFourFinalGrade() {
+        return subjectFourFinalGrade;
+    }
+
+    public void setSubjectFourFinalGrade(String subjectFourFinalGrade) {
+        this.subjectFourFinalGrade = subjectFourFinalGrade;
+    }
+
+    public String getSubjectFive() {
+        return subjectFive;
+    }
+
+    public void setSubjectFive(String subjectFive) {
+        this.subjectFive = subjectFive;
+    }
+
+    public String getSubjectFiveCurrentGrade() {
+        return subjectFiveCurrentGrade;
+    }
+
+    public void setSubjectFiveCurrentGrade(String subjectFiveCurrentGrade) {
+        this.subjectFiveCurrentGrade = subjectFiveCurrentGrade;
+    }
+
+    public String getSubjectFiveMidterm() {
+        return subjectFiveMidterm;
+    }
+
+    public void setSubjectFiveMidterm(String subjectFiveMidterm) {
+        this.subjectFiveMidterm = subjectFiveMidterm;
+    }
+
+    public String getSubjectFiveFinalExam() {
+        return subjectFiveFinalExam;
+    }
+
+    public void setSubjectFiveFinalExam(String subjectFiveFinalExam) {
+        this.subjectFiveFinalExam = subjectFiveFinalExam;
+    }
+
+    public String getSubjectFiveFinalGrade() {
+        return subjectFiveFinalGrade;
+    }
+
+    public void setSubjectFiveFinalGrade(String subjectFiveFinalGrade) {
+        this.subjectFiveFinalGrade = subjectFiveFinalGrade;
+    }
 }
