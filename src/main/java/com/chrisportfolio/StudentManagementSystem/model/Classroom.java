@@ -18,10 +18,11 @@ public class Classroom implements Serializable {
     @XmlElement(name = "classroomID")
     private Long classroomID;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "course_id")
-    @XmlElement(name = "course")
+    @XmlElement(name = "courseID")
     private Course course;
+
     @Column(name = "section")
     @XmlElement(name = "section")
     private String section;
@@ -29,13 +30,9 @@ public class Classroom implements Serializable {
     @XmlElement(name = "remarks")
     private String remarks;
 
-    @ManyToMany(mappedBy = "classroomSet")
+    @OneToMany(mappedBy = "classroom")
     @XmlTransient
-    private Set<Teacher> teacherSet = new HashSet<Teacher>();
-
-    @ManyToMany(mappedBy = "classroomSet")
-    @XmlTransient
-    private Set<Student> studentSet = new HashSet<Student>();
+    private Set<StudentSchedule> studentSchedule;
 
     public Classroom() {
         super();
@@ -80,19 +77,11 @@ public class Classroom implements Serializable {
         this.remarks = remarks;
     }
 
-    public Set<Teacher> getTeacherSet() {
-        return teacherSet;
+    public Set<StudentSchedule> getStudentSchedule() {
+        return studentSchedule;
     }
 
-    public void setTeacherSet(Set<Teacher> teacherSet) {
-        this.teacherSet = teacherSet;
-    }
-
-    public Set<Student> getStudentSet() {
-        return studentSet;
-    }
-
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
+    public void setStudentSchedule(Set<StudentSchedule> studentSchedule) {
+        this.studentSchedule = studentSchedule;
     }
 }

@@ -19,9 +19,9 @@ public class Attendance implements Serializable {
     @XmlElement(name = "attendanceID")
     private Long attendanceID;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "student_id")
-    @XmlElement(name = "student")
+    @XmlElement(name = "studentID")
     private Student student;
     @Column(name = "perfect_attendance")
     @XmlElement(name = "perfectAttendance")
@@ -44,6 +44,10 @@ public class Attendance implements Serializable {
     @Column(name = "remark")
     @XmlElement(name = "remark")
     private String remark;
+
+    @OneToMany(mappedBy = "attendance")
+    @XmlTransient
+    private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
     public Attendance() {
         super();
@@ -68,6 +72,14 @@ public class Attendance implements Serializable {
 
     public void setAttendanceID(Long attendanceID) {
         this.attendanceID = attendanceID;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public byte getPerfectAttendance() {
@@ -125,5 +137,7 @@ public class Attendance implements Serializable {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+
 
 }

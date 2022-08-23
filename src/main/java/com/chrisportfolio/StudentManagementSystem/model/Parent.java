@@ -50,9 +50,9 @@ public class Parent implements Serializable {
     @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
-    @ManyToMany(mappedBy = "parentSet")
+    @OneToMany(mappedBy = "parent")
     @XmlTransient
-    private Set<Student> studentSet = new HashSet<Student>();
+    private Set<StudentHasParent> studentHasParent;
 
     public Parent() {
         super();
@@ -152,11 +152,11 @@ public class Parent implements Serializable {
         this.lastLoginIP = lastLoginIP;
     }
 
-    public Set<Student> getStudentSet() {
-        return studentSet;
+    public Set<StudentHasParent> getStudentHasParent() {
+        return studentHasParent;
     }
 
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
+    public void setStudentHasParent(Set<StudentHasParent> studentHasParent) {
+        this.studentHasParent = studentHasParent;
     }
 }

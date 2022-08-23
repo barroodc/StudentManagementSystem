@@ -13,8 +13,8 @@ import java.util.Set;
 @Table(name = "teacher")
 @XmlRootElement(name = "teacher")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacherID", "email", "password", "firstName", "lastName", "dob", "subject", "homePhone",
-"mobile", "tenured", "lastLoginDate", "lastLoginIP"})
+@XmlType(propOrder = {"teacherID", "email", "password", "firstName", "lastName", "dob", "department", "departmentName",
+        "homePhone", "mobile", "tenured", "lastLoginDate", "lastLoginIP"})
 public class Teacher implements Serializable {
 
     @Id
@@ -37,9 +37,16 @@ public class Teacher implements Serializable {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "dob")
     private Date dob;
-    @Column(name = "subject")
-    @XmlElement(name = "subject")
-    private String subject;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    @XmlElement(name = "departmentID")
+    private Department department;
+
+    @Column(name = "department_name")
+    @XmlElement(name = "departmentName")
+    private String departmentName;
+
     @Column(name = "home_phone")
     @XmlElement(name = "homePhone")
     private String homePhone;
@@ -57,63 +64,46 @@ public class Teacher implements Serializable {
     @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
-    @OneToOne(mappedBy = "teacher")
+    @OneToMany(mappedBy = "teacher")
     @XmlTransient
-    private TeacherSchedule teacherSchedule;
+    private Set<Course> course;
 
-    @ManyToMany(mappedBy = "teacherSet")
+    @OneToMany(mappedBy = "teacher")
     @XmlTransient
-    private Set<Student> studentSet = new HashSet<>();
+    private Set<HomeworkAssignment> homeworkAssignment;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "teacher_has_classroom",
-                    joinColumns = {@JoinColumn(name = "teacher_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "classroom_id")}
-            )
-            @XmlTransient
-    Set<Classroom> classroomSet = new HashSet<Classroom>();
+    @OneToMany(mappedBy = "teacher")
+    @XmlTransient
+    private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "teacher_has_course",
-                    joinColumns = {@JoinColumn(name = "teacher_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "course_id")}
-            )
-            @XmlTransient
-    Set<Course> courseSet = new HashSet<Course>();
+    @OneToMany(mappedBy = "teacher")
+    @XmlTransient
+    private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "teacher_has_homework",
-                    joinColumns = {@JoinColumn(name = "teacher_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "homework_id")}
-            )
-            @XmlTransient
-    Set<Homework> homeworkSet = new HashSet<Homework>();
+    @OneToMany(mappedBy = "teacher")
+    @XmlTransient
+    private Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "teacher_has_exam",
-                    joinColumns = {@JoinColumn(name = "teacher_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "exam_id")}
-            )
-            @XmlTransient
-    Set<Exam> examSet = new HashSet<Exam>();
+    @OneToMany(mappedBy = "teacher")
+    @XmlTransient
+    private Set<TeacherDirectory> teacherDirectory;
 
     public Teacher() {
         super();
     }
 
-    public Teacher(Long teacherID, String email, String password, String firstName, String lastName, Date dob, String subject,
-                   String homePhone, String mobile, String tenured, Date lastLoginDate, String lastLoginIP) {
+
+    public Teacher(Long teacherID, String email, String password, String firstName, String lastName, Date dob,
+                   Department department, String departmentName, String homePhone, String mobile,
+                   String tenured, Date lastLoginDate, String lastLoginIP) {
         this.teacherID = teacherID;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
-        this.subject = subject;
+        this.department = department;
+        this.departmentName = departmentName;
         this.homePhone = homePhone;
         this.mobile = mobile;
         this.tenured = tenured;
@@ -169,12 +159,20 @@ public class Teacher implements Serializable {
         this.dob = dob;
     }
 
-    public String getSubject() {
-        return subject;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public String getHomePhone() {
@@ -217,51 +215,51 @@ public class Teacher implements Serializable {
         this.lastLoginIP = lastLoginIP;
     }
 
-    public Set<Student> getStudentSet() {
-        return studentSet;
+    public Set<Course> getCourse() {
+        return course;
     }
 
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
+    public void setCourse(Set<Course> course) {
+        this.course = course;
     }
 
-    public Set<Classroom> getClassroomSet() {
-        return classroomSet;
+    public Set<HomeworkAssignment> getHomeworkAssignment() {
+        return homeworkAssignment;
     }
 
-    public void setClassroomSet(Set<Classroom> classroomSet) {
-        this.classroomSet = classroomSet;
+    public void setHomeworkAssignment(Set<HomeworkAssignment> homeworkAssignment) {
+        this.homeworkAssignment = homeworkAssignment;
     }
 
-    public Set<Course> getCourseSet() {
-        return courseSet;
+    public Set<HomeworkAssignmentResultsStudentView> getHomeworkAssignmentResultsStudentView() {
+        return homeworkAssignmentResultsStudentView;
     }
 
-    public void setCourseSet(Set<Course> courseSet) {
-        this.courseSet = courseSet;
+    public void setHomeworkAssignmentResultsStudentView(Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView) {
+        this.homeworkAssignmentResultsStudentView = homeworkAssignmentResultsStudentView;
     }
 
-    public Set<Homework> getHomeworkSet() {
-        return homeworkSet;
+    public Set<StudentDashboardSnapshotInfo> getStudentDashboardSnapshotInfo() {
+        return studentDashboardSnapshotInfo;
     }
 
-    public void setHomeworkSet(Set<Homework> homeworkSet) {
-        this.homeworkSet = homeworkSet;
+    public void setStudentDashboardSnapshotInfo(Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo) {
+        this.studentDashboardSnapshotInfo = studentDashboardSnapshotInfo;
     }
 
-    public Set<Exam> getExamSet() {
-        return examSet;
+    public Set<StudentViewAllGradesInCourseSnapshot> getStudentViewAllGradesInCourseSnapshot() {
+        return studentViewAllGradesInCourseSnapshot;
     }
 
-    public void setExamSet(Set<Exam> examSet) {
-        this.examSet = examSet;
+    public void setStudentViewAllGradesInCourseSnapshot(Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot) {
+        this.studentViewAllGradesInCourseSnapshot = studentViewAllGradesInCourseSnapshot;
     }
 
-    public TeacherSchedule getTeacherSchedule() {
-        return teacherSchedule;
+    public Set<TeacherDirectory> getTeacherDirectory() {
+        return teacherDirectory;
     }
 
-    public void setTeacherSchedule(TeacherSchedule teacherSchedule) {
-        this.teacherSchedule = teacherSchedule;
+    public void setTeacherDirectory(Set<TeacherDirectory> teacherDirectory) {
+        this.teacherDirectory = teacherDirectory;
     }
 }

@@ -1,9 +1,6 @@
 package com.chrisportfolio.StudentManagementSystem.controller;
 
 
-import com.chrisportfolio.StudentManagementSystem.model.ExamResult;
-import com.chrisportfolio.StudentManagementSystem.repository.ExamResultRepository;
-import com.chrisportfolio.StudentManagementSystem.service.ExamResultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

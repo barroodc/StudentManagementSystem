@@ -18,9 +18,9 @@ public class GradeLevel implements Serializable {
     @XmlElement(name = "gradeLevelID")
     private Long gradeLevelID;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "student_id")
-    @XmlElement(name = "student")
+    @XmlElement(name = "studentID")
     private Student student;
     @Column(name = "name")
     @XmlElement(name = "name")
@@ -29,14 +29,17 @@ public class GradeLevel implements Serializable {
     @XmlElement(name = "description")
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "course_has_grade_level",
-                    joinColumns = {@JoinColumn(name = "grade_level_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "course_id")}
-            )
-            @XmlTransient
-    Set<Course> courseSet = new HashSet<Course>();
+    @OneToMany(mappedBy = "gradeLevel")
+    @XmlTransient
+    private Set<CourseHasGradeLevel> courseHasGradeLevel;
+
+    @OneToMany(mappedBy = "gradeLevel")
+    @XmlTransient
+    private Set<CourseRoster> courseRoster;
+
+    @OneToMany(mappedBy = "studentDirectory")
+    @XmlTransient
+    private Set<StudentDirectory> studentDirectory;
 
     public GradeLevel() {
         super();
@@ -81,12 +84,27 @@ public class GradeLevel implements Serializable {
         this.description = description;
     }
 
-    public Set<Course> getCourseSet() {
-        return courseSet;
+    public Set<CourseHasGradeLevel> getCourseHasGradeLevel() {
+        return courseHasGradeLevel;
     }
 
-    public void setCourseSet(Set<Course> courseSet) {
-        this.courseSet = courseSet;
+    public void setCourseHasGradeLevel(Set<CourseHasGradeLevel> courseHasGradeLevel) {
+        this.courseHasGradeLevel = courseHasGradeLevel;
     }
 
+    public Set<CourseRoster> getCourseRoster() {
+        return courseRoster;
+    }
+
+    public void setCourseRoster(Set<CourseRoster> courseRoster) {
+        this.courseRoster = courseRoster;
+    }
+
+    public Set<StudentDirectory> getStudentDirectory() {
+        return studentDirectory;
+    }
+
+    public void setStudentDirectory(Set<StudentDirectory> studentDirectory) {
+        this.studentDirectory = studentDirectory;
+    }
 }

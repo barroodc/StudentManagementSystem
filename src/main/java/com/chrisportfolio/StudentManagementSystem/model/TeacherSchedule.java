@@ -9,7 +9,8 @@ import java.sql.Time;
 @Table(name = "teacher_schedule")
 @XmlRootElement(name = "teacherSchedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacherScheduleID", "teacher", "dayOfWeek", "time", "lunchBreak", "courseTaught"})
+@XmlType(propOrder = {"teacherScheduleID", "teacher", "dayOfWeek", "time", "courseTaught", "teacherLunchBreakRotation",
+"timeOfBreak"})
 public class TeacherSchedule implements Serializable {
 
     @Id
@@ -26,26 +27,23 @@ public class TeacherSchedule implements Serializable {
     @Column(name = "time")
     @XmlElement(name = "time")
     private Time time;
-    @Column(name = "lunch_break")
-    @XmlElement(name = "lunchBreak")
-    private String lunchBreak;
     @Column(name = "course_taught")
     @XmlElement(name = "courseTaught")
     private String courseTaught;
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_lunch_break_rotation_id")
+    @XmlElement(name = "teacherLunchBreakRotationID")
+    private TeacherLunchBreakRotation teacherLunchBreakRotation;
+
+    @Column(name = "time_of_break")
+    @XmlElement(name = "timeOfBreak")
+    private Time timeOfBreak;
 
     public TeacherSchedule() {
         super();
     }
 
-    public TeacherSchedule(Long teacherScheduleID, Teacher teacher, String dayOfWeek, Time time,
-                           String lunchBreak, String courseTaught) {
-        this.teacherScheduleID = teacherScheduleID;
-        this.teacher = teacher;
-        this.dayOfWeek = dayOfWeek;
-        this.time = time;
-        this.lunchBreak = lunchBreak;
-        this.courseTaught = courseTaught;
-    }
 
     public Long getTeacherScheduleID() {
         return teacherScheduleID;
@@ -79,14 +77,6 @@ public class TeacherSchedule implements Serializable {
         this.time = time;
     }
 
-    public String getLunchBreak() {
-        return lunchBreak;
-    }
-
-    public void setLunchBreak(String lunchBreak) {
-        this.lunchBreak = lunchBreak;
-    }
-
     public String getCourseTaught() {
         return courseTaught;
     }
@@ -95,5 +85,19 @@ public class TeacherSchedule implements Serializable {
         this.courseTaught = courseTaught;
     }
 
+    public TeacherLunchBreakRotation getTeacherLunchBreakRotation() {
+        return teacherLunchBreakRotation;
+    }
 
+    public void setTeacherLunchBreakRotation(TeacherLunchBreakRotation teacherLunchBreakRotation) {
+        this.teacherLunchBreakRotation = teacherLunchBreakRotation;
+    }
+
+    public Time getTimeOfBreak() {
+        return timeOfBreak;
+    }
+
+    public void setTimeOfBreak(Time timeOfBreak) {
+        this.timeOfBreak = timeOfBreak;
+    }
 }

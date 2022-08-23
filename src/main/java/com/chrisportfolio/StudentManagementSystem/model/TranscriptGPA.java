@@ -7,14 +7,14 @@ import javax.xml.bind.annotation.*;
 @Table(name = "transcript_gpa")
 @XmlRootElement(name = "transcriptGPA")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"transcriptGPAID", "transcriptID", "totalCreditsEarned", "gpa"})
+@XmlType(propOrder = {"transcriptGPAID", "transcripts", "totalCreditsEarned", "gpa"})
 public class TranscriptGPA {
 
     @Id
     @Column(name = "transcript_gpa_id")
     @XmlElement(name = "transcriptGPAID")
     private Long transcriptGPAID;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "transcript_id")
     @XmlElement(name = "transcripts")
     private Transcripts transcripts;

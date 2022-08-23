@@ -15,30 +15,38 @@ import java.util.Date;
 "lastModified", "inquiries"})
 public class Admissions implements Serializable {
 
+
     @Id
     @Column(name = "admission_id")
     @XmlElement(name = "admissionsID")
     private Long admissionsID;
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @Column(name = "student_id")
+    @XmlElement(name = "studentID")
+    @ManyToOne
     @JoinColumn(name = "student_id")
-    @XmlElement(name = "student")
     private Student student;
+
     @Column(name = "application_number")
-    @XmlElement(name = "applicationNumber")
+    @XmlElement(name = "applicationID")
     private Long applicationNumber;
+
     @Column(name = "applicant_name")
     @XmlElement(name = "applicantName")
     private String applicantName;
+
     @Column(name = "incoming_year")
     @XmlElement(name = "incomingYear")
     private String incomingYear;
+
     @Column(name = "status")
     @XmlElement(name = "status")
     private String status;
+
     @Column(name = "last_modified")
     @XmlElement(name = "lastModified")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private Date lastModified;
+
     @Column(name = "inquiries")
     @XmlElement(name = "inquiries")
     private String inquiries;
@@ -121,4 +129,5 @@ public class Admissions implements Serializable {
     public void setInquiries(String inquiries) {
         this.inquiries = inquiries;
     }
+
 }

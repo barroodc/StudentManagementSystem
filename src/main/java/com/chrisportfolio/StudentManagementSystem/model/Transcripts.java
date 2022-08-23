@@ -3,6 +3,7 @@ package com.chrisportfolio.StudentManagementSystem.model;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "transcripts")
@@ -15,7 +16,7 @@ public class Transcripts implements Serializable {
     @Column(name = "transcript_id")
     @XmlElement(name = "transcriptID")
     private Long transcriptID;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "student_id")
     @XmlElement(name = "student")
     private Student student;
@@ -32,8 +33,9 @@ public class Transcripts implements Serializable {
     @XmlElement(name = "credits")
     private Double credits;
 
-    @OneToOne(mappedBy = "transcripts")
-    private TranscriptGPA transcriptGPA;
+    @OneToMany
+    @XmlTransient
+    private Set<TranscriptGPA> transcriptGPA;
 
     public Transcripts() {
         super();
@@ -97,11 +99,11 @@ public class Transcripts implements Serializable {
         this.credits = credits;
     }
 
-    public TranscriptGPA getTranscriptGPA() {
+    public Set<TranscriptGPA> getTranscriptGPA() {
         return transcriptGPA;
     }
 
-    public void setTranscriptGPA(TranscriptGPA transcriptGPA) {
+    public void setTranscriptGPA(Set<TranscriptGPA> transcriptGPA) {
         this.transcriptGPA = transcriptGPA;
     }
 }

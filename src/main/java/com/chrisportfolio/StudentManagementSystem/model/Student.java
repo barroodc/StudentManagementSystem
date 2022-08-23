@@ -69,85 +69,65 @@ public class Student implements Serializable{
     @XmlElement(name = "lastLoginIP")
     private String lastLoginIP;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private GradeLevel gradeLevel;
+    private Set<Admissions> admissions;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private Admissions admissions;
+    private Set<Attendance> attendance;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private StudentSchedule studentSchedule;
+    private Set<CourseRoster> courseRoster;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private Transcripts transcripts;
+    private Set<ExamResultsStudentView> examResultsStudentView;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private ReportCard reportCard;
+    private Set<ExamResultsTeacherView> examResultsTeacherView;
 
-    @OneToOne(mappedBy = "student")
+    @OneToMany(mappedBy = "student")
     @XmlTransient
-    private Attendance attendance;
+    private Set<GradeLevel> gradeLevel;
 
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_parent",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "parent_id")}
-            )
-            @XmlTransient
-    Set<Parent> parentSet = new HashSet<Parent>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<HomeworkAssignmentResultsTeacherView> homeworkAssignmentResultsTeacherView;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_course",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "course_id")}
-            )
-            @XmlTransient
-    Set<Course> courseSet = new HashSet<Course>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_exam",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "exam_id")}
-            )
-            @XmlTransient
-    Set<Exam> examSet = new HashSet<Exam>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<ReportCard> reportCard;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_teacher",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "teacher_id")}
-            )
-            @XmlTransient
-    Set<Teacher> teacherSet = new HashSet<Teacher>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<StudentDirectory> studentDirectory;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_homework",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "homework_id")}
-            )
-            @XmlTransient
-    Set<Homework> homeworkSet = new HashSet<Homework>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<StudentHasParent> studentHasParent;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "student_has_classroom",
-                    joinColumns = {@JoinColumn(name = "student_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "classroom_id")}
-            )
-            @XmlTransient
-    Set<Classroom> classroomSet = new HashSet<Classroom>();
+    @OneToMany(mappedBy = "student")
+    @XmlTransient
+    private Set<StudentSchedule> studentSchedule;
 
+    @OneToMany
+    @XmlTransient
+    private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
+
+    @OneToMany
+    @XmlTransient
+    private Set<Transcripts> transcripts;
     public Student() {
         super();
     }
@@ -182,14 +162,6 @@ public class Student implements Serializable{
 
     public void setStudentID(Long studentID) {
         this.studentID = studentID;
-    }
-
-    public Admissions getAdmissions() {
-        return admissions;
-    }
-
-    public void setAdmissions(Admissions admissions) {
-        this.admissions = admissions;
     }
 
     public String getEmail() {
@@ -256,14 +228,6 @@ public class Student implements Serializable{
         this.firstDayOnCampus = firstDayOnCampus;
     }
 
-    public GradeLevel getGradeLevel() {
-        return gradeLevel;
-    }
-
-    public void setGradeLevel(GradeLevel gradeLevel) {
-        this.gradeLevel = gradeLevel;
-    }
-
     public double getGpa() {
         return gpa;
     }
@@ -304,75 +268,123 @@ public class Student implements Serializable{
         this.lastLoginIP = lastLoginIP;
     }
 
-    public Set<Parent> getParentSet() {
-        return parentSet;
+    public String getStudentLevel() {
+        return studentLevel;
     }
 
-    public void setParentSet(Set<Parent> parentSet) {
-        this.parentSet = parentSet;
+    public void setStudentLevel(String studentLevel) {
+        this.studentLevel = studentLevel;
     }
 
-    public Set<Course> getCourseSet() {
-        return courseSet;
+    public Set<Admissions> getAdmissions() {
+        return admissions;
     }
 
-    public void setCourseSet(Set<Course> courseSet) {
-        this.courseSet = courseSet;
+    public void setAdmissions(Set<Admissions> admissions) {
+        this.admissions = admissions;
     }
 
-    public Set<Exam> getExamSet() {
-        return examSet;
+    public Set<Attendance> getAttendance() {
+        return attendance;
     }
 
-    public void setExamSet(Set<Exam> examSet) {
-        this.examSet = examSet;
+    public void setAttendance(Set<Attendance> attendance) {
+        this.attendance = attendance;
     }
 
-    public Set<Teacher> getTeacherSet() {
-        return teacherSet;
+    public Set<CourseRoster> getCourseRoster() {
+        return courseRoster;
     }
 
-    public void setTeacherSet(Set<Teacher> teacherSet) {
-        this.teacherSet = teacherSet;
+    public void setCourseRoster(Set<CourseRoster> courseRoster) {
+        this.courseRoster = courseRoster;
     }
 
-    public Set<Homework> getHomeworkSet() {
-        return homeworkSet;
+    public Set<ExamResultsStudentView> getExamResultsStudentView() {
+        return examResultsStudentView;
     }
 
-    public void setHomeworkSet(Set<Homework> homeworkSet) {
-        this.homeworkSet = homeworkSet;
+    public void setExamResultsStudentView(Set<ExamResultsStudentView> examResultsStudentView) {
+        this.examResultsStudentView = examResultsStudentView;
     }
 
-    public Set<Classroom> getClassroomSet() {
-        return classroomSet;
+    public Set<ExamResultsTeacherView> getExamResultsTeacherView() {
+        return examResultsTeacherView;
     }
 
-    public void setClassroomSet(Set<Classroom> classroomSet) {
-        this.classroomSet = classroomSet;
+    public void setExamResultsTeacherView(Set<ExamResultsTeacherView> examResultsTeacherView) {
+        this.examResultsTeacherView = examResultsTeacherView;
     }
 
-    public StudentSchedule getStudentSchedule() {
-        return studentSchedule;
+    public Set<GradeLevel> getGradeLevel() {
+        return gradeLevel;
     }
 
-    public void setStudentSchedule(StudentSchedule studentSchedule) {
-        this.studentSchedule = studentSchedule;
+    public void setGradeLevel(Set<GradeLevel> gradeLevel) {
+        this.gradeLevel = gradeLevel;
     }
 
-    public Transcripts getTranscripts() {
-        return transcripts;
+    public Set<HomeworkAssignmentResultsStudentView> getHomeworkAssignmentResultsStudentView() {
+        return homeworkAssignmentResultsStudentView;
     }
 
-    public void setTranscripts(Transcripts transcripts) {
-        this.transcripts = transcripts;
+    public void setHomeworkAssignmentResultsStudentView(Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView) {
+        this.homeworkAssignmentResultsStudentView = homeworkAssignmentResultsStudentView;
     }
 
-    public ReportCard getReportCard() {
+    public Set<HomeworkAssignmentResultsTeacherView> getHomeworkAssignmentResultsTeacherView() {
+        return homeworkAssignmentResultsTeacherView;
+    }
+
+    public void setHomeworkAssignmentResultsTeacherView(Set<HomeworkAssignmentResultsTeacherView> homeworkAssignmentResultsTeacherView) {
+        this.homeworkAssignmentResultsTeacherView = homeworkAssignmentResultsTeacherView;
+    }
+
+    public Set<ReportCard> getReportCard() {
         return reportCard;
     }
 
-    public void setReportCard(ReportCard reportCard) {
+    public void setReportCard(Set<ReportCard> reportCard) {
         this.reportCard = reportCard;
+    }
+
+    public Set<StudentDashboardSnapshotInfo> getStudentDashboardSnapshotInfo() {
+        return studentDashboardSnapshotInfo;
+    }
+
+    public void setStudentDashboardSnapshotInfo(Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo) {
+        this.studentDashboardSnapshotInfo = studentDashboardSnapshotInfo;
+    }
+
+    public Set<StudentDirectory> getStudentDirectory() {
+        return studentDirectory;
+    }
+
+    public void setStudentDirectory(Set<StudentDirectory> studentDirectory) {
+        this.studentDirectory = studentDirectory;
+    }
+
+    public Set<StudentHasParent> getStudentHasParent() {
+        return studentHasParent;
+    }
+
+    public void setStudentHasParent(Set<StudentHasParent> studentHasParent) {
+        this.studentHasParent = studentHasParent;
+    }
+
+    public Set<StudentSchedule> getStudentSchedule() {
+        return studentSchedule;
+    }
+
+    public void setStudentSchedule(Set<StudentSchedule> studentSchedule) {
+        this.studentSchedule = studentSchedule;
+    }
+
+    public Set<TeacherViewAllGradesInCourse> getTeacherViewAllGradesInCourse() {
+        return teacherViewAllGradesInCourse;
+    }
+
+    public void setTeacherViewAllGradesInCourse(Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse) {
+        this.teacherViewAllGradesInCourse = teacherViewAllGradesInCourse;
     }
 }

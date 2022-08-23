@@ -11,10 +11,11 @@ import java.io.File;
 public class JaxbCourseMarshaller {
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
        Course course = new Course(127L, "Calculus 1", 3.0, "Introduction to Calculus");
        jaxbObjectToXML(course);
     }
+     */
 
 
     public static void jaxbObjectToXML(Course course) {

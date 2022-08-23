@@ -34,7 +34,6 @@ public class StudentService {
         std.setHomePhone(studentInformation.getHomePhone());
         std.setMobile(studentInformation.getMobile());
         std.setFirstDayOnCampus(studentInformation.getFirstDayOnCampus());
-        std.setGradeLevel(studentInformation.getGradeLevel());
         std.setGpa(studentInformation.getGpa());
         std.setSatScore(studentInformation.getSatScore());
         std.setActScore(studentInformation.getActScore());

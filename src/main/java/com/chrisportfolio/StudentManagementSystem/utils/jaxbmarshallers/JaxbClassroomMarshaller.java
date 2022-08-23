@@ -12,10 +12,12 @@ import java.io.File;
 public class JaxbClassroomMarshaller {
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
        Classroom classroom = new Classroom(110L, new Course(127L), "1", "Building A");
        jaxbObjectToXML(classroom);
     }
+
+     */
 
 
     public static void jaxbObjectToXML(Classroom classroom) {

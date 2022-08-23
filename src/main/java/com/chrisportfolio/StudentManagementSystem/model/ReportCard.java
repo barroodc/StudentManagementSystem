@@ -20,9 +20,9 @@ public class ReportCard implements Serializable {
     @Column(name = "report_card_id")
     @XmlElement(name = "reportCardID")
     private Long reportCardID;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "student_id")
-    @XmlElement(name = "student")
+    @XmlElement(name = "studentID")
     private Student student;
     @Column(name = "student_name")
     @XmlElement(name = "studentName")

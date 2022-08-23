@@ -22,7 +22,7 @@ public class CourseService {
     }
 
     public Course updateCourse(Long courseID, Course courseInformation) {
-        Course course = courseRepository.findById(courseID).get();
+        Course course = courseRepository.findById(String.valueOf(courseID)).get();
         course.setName(courseInformation.getName());
         course.setCredits(courseInformation.getCredits());
         course.setDescription(courseInformation.getDescription());
@@ -31,6 +31,6 @@ public class CourseService {
     }
 
     public void deleteCourse(Long courseID) {
-        courseRepository.deleteById(courseID);
+        courseRepository.deleteById(String.valueOf(courseID));
     }
 }

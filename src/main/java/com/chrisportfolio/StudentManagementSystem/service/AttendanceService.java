@@ -23,6 +23,7 @@ public class AttendanceService {
 
     public Attendance updateAttendance(Long attendanceID, Attendance attendanceInformation) {
         Attendance attendance = attendanceRepository.findById(attendanceID).get();
+        attendance.setStudent(attendanceInformation.getStudent());
         attendance.setPerfectAttendance(attendanceInformation.getPerfectAttendance());
         attendance.setAcceptableAttendance(attendanceInformation.getAcceptableAttendance());
         attendance.setUnacceptableAttendance(attendanceInformation.getUnacceptableAttendance());

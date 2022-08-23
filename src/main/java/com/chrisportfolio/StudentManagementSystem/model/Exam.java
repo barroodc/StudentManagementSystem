@@ -10,53 +10,56 @@ import java.util.Set;
 @Table(name = "exam")
 @XmlRootElement(name = "exam")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"examID", "subjects", "term", "className"})
+@XmlType(propOrder = {"examID", "titleOfExam", "examTopic", "term", "className"})
 public class Exam implements Serializable {
 
     @Id
     @Column(name = "exam_id")
+    @XmlElement(name = "examID")
     private Long examID;
-    @Column(name = "subjects")
-    private String subjects;
+
+    @Column(name = "title_of_exam")
+    @XmlElement(name = "titleOfExam")
+    private String titleOfExam;
+
+    @Column(name = "exam_topic")
+    @XmlElement(name = "examTopic")
+    private String examTopic;
+
     @Column(name = "term")
+    @XmlElement(name = "term")
     private String term;
+
     @Column(name = "class_name")
+    @XmlElement(name = "className")
     private String className;
 
-    @OneToOne(mappedBy = "exam")
+    @OneToMany(mappedBy = "exam")
     @XmlTransient
-    private ExamResult examResult;
+    private Set<ExamResultsStudentView> examResultsStudentView;
 
-    @ManyToMany(mappedBy = "examSet")
+    @OneToMany(mappedBy = "exam")
     @XmlTransient
-    private Set<Student> studentSet = new HashSet<Student>();
+    private Set<ExamResultsTeacherView> examResultsTeacherView;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-            @JoinTable(
-                    name = "exam_has_exam_type",
-                    joinColumns = {@JoinColumn(name = "exam_id")},
-                    inverseJoinColumns = {@JoinColumn(name = "exam_type_id")}
-            )
-            @XmlTransient
-    Set<ExamType> examTypeSet = new HashSet<ExamType>();
-
-    @ManyToMany(mappedBy = "examSet")
+    @OneToMany(mappedBy = "exam")
     @XmlTransient
-    private Set<Teacher> teacherSet = new HashSet<Teacher>();
+    private Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot;
+
+    @OneToMany(mappedBy = "exam")
+    @XmlTransient
+    private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
 
     public Exam() {
         super();
     }
 
-    public Exam(Long examID, String subjects, String term, String className) {
+    public Exam(Long examID, String titleOfExam, String examTopic, String term, String className) {
         this.examID = examID;
-        this.subjects = subjects;
+        this.titleOfExam = titleOfExam;
+        this.examTopic = examTopic;
         this.term = term;
         this.className = className;
-    }
-
-    public Exam(Long examID) {
-        this.examID = examID;
     }
 
     public Long getExamID() {
@@ -67,12 +70,20 @@ public class Exam implements Serializable {
         this.examID = examID;
     }
 
-    public String getSubjects() {
-        return subjects;
+    public String getTitleOfExam() {
+        return titleOfExam;
     }
 
-    public void setSubjects(String subjects) {
-        this.subjects = subjects;
+    public void setTitleOfExam(String titleOfExam) {
+        this.titleOfExam = titleOfExam;
+    }
+
+    public String getExamTopic() {
+        return examTopic;
+    }
+
+    public void setExamTopic(String examTopic) {
+        this.examTopic = examTopic;
     }
 
     public String getTerm() {
@@ -91,27 +102,35 @@ public class Exam implements Serializable {
         this.className = className;
     }
 
-    public Set<Student> getStudentSet() {
-        return studentSet;
+    public Set<ExamResultsStudentView> getExamResultsStudentView() {
+        return examResultsStudentView;
     }
 
-    public void setStudentSet(Set<Student> studentSet) {
-        this.studentSet = studentSet;
+    public void setExamResultsStudentView(Set<ExamResultsStudentView> examResultsStudentView) {
+        this.examResultsStudentView = examResultsStudentView;
     }
 
-    public Set<ExamType> getExamTypeSet() {
-        return examTypeSet;
+    public Set<ExamResultsTeacherView> getExamResultsTeacherView() {
+        return examResultsTeacherView;
     }
 
-    public void setExamTypeSet(Set<ExamType> examTypeSet) {
-        this.examTypeSet = examTypeSet;
+    public void setExamResultsTeacherView(Set<ExamResultsTeacherView> examResultsTeacherView) {
+        this.examResultsTeacherView = examResultsTeacherView;
     }
 
-    public Set<Teacher> getTeacherSet() {
-        return teacherSet;
+    public Set<StudentViewAllGradesInCourseSnapshot> getStudentViewAllGradesInCourseSnapshot() {
+        return studentViewAllGradesInCourseSnapshot;
     }
 
-    public void setTeacherSet(Set<Teacher> teacherSet) {
-        this.teacherSet = teacherSet;
+    public void setStudentViewAllGradesInCourseSnapshot(Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot) {
+        this.studentViewAllGradesInCourseSnapshot = studentViewAllGradesInCourseSnapshot;
+    }
+
+    public Set<TeacherViewAllGradesInCourse> getTeacherViewAllGradesInCourse() {
+        return teacherViewAllGradesInCourse;
+    }
+
+    public void setTeacherViewAllGradesInCourse(Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse) {
+        this.teacherViewAllGradesInCourse = teacherViewAllGradesInCourse;
     }
 }

@@ -23,7 +23,8 @@ public class ExamService {
 
     public Exam updateExam(Long examID, Exam examInformation) {
         Exam exam = examRepository.findById(examID).get();
-        exam.setSubjects(examInformation.getSubjects());
+        exam.setTitleOfExam(examInformation.getTitleOfExam());
+        exam.setExamTopic(examInformation.getExamTopic());
         exam.setTerm(examInformation.getTerm());
         exam.setClassName(examInformation.getClassName());
 
