@@ -13,15 +13,6 @@ import java.io.Serializable;
 "attendance", "perfectAttendance", "acceptableAttendance", "unacceptableAttendance", "excusedAbsences",
 "unexcusedAbsences", "tardy", "remark"})
 public class StudentDashboardSnapshotInfo implements Serializable {
-
-    /*
-    Consider changing tinyint value to String. It would make more sense to have it as just a Yes or No. Or Binary.
-    The same thing exists for the teacher entity. Check all entities and assess its relevance if tinyint is a value
-    type.
-
-    Also, absences is spelled wrong.
-     */
-
     @Id
     @Column(name = "student_dashboard_snapshot_info_id")
     @XmlElement(name = "studentDashboardSnapshotInfoID")
@@ -61,6 +52,14 @@ public class StudentDashboardSnapshotInfo implements Serializable {
     @Column(name = "midterm_grade")
     @XmlElement(name = "midtermGrade")
     private String midtermGrade;
+
+    @Column(name = "final_exam_mark")
+    @XmlElement(name = "finalExamMark")
+    private Double finalExamMark;
+
+    @Column(name = "final_exam_grade")
+    @XmlElement(name = "finalExamGrade")
+    private String finalExamGrade;
 
     @Column(name = "final_mark")
     @XmlElement(name = "finalMark")
@@ -110,10 +109,10 @@ public class StudentDashboardSnapshotInfo implements Serializable {
     public StudentDashboardSnapshotInfo(Long studentDashboardSnapshotInfoID, Student student, Teacher teacher,
                                         String surname, Course course, Double courseCurrentMark,
                                         String courseCurrentGrade, Double midtermMark, String midtermGrade,
-                                        Double finalMark, String finalGrade, Attendance attendance,
-                                        String perfectAttendance, String acceptableAttendance,
-                                        String unacceptableAttendance, Long excusedAbsences,
-                                        Long unexcusedAbsences, Long tardy, String remark) {
+                                        Double finalExamMark, String finalExamGrade, Double finalMark,
+                                        String finalGrade, Attendance attendance, String perfectAttendance,
+                                        String acceptableAttendance, String unacceptableAttendance,
+                                        Long excusedAbsences, Long unexcusedAbsences, Long tardy, String remark) {
         this.studentDashboardSnapshotInfoID = studentDashboardSnapshotInfoID;
         this.student = student;
         this.teacher = teacher;
@@ -123,6 +122,8 @@ public class StudentDashboardSnapshotInfo implements Serializable {
         this.courseCurrentGrade = courseCurrentGrade;
         this.midtermMark = midtermMark;
         this.midtermGrade = midtermGrade;
+        this.finalExamMark = finalExamMark;
+        this.finalExamGrade = finalExamGrade;
         this.finalMark = finalMark;
         this.finalGrade = finalGrade;
         this.attendance = attendance;
@@ -205,6 +206,22 @@ public class StudentDashboardSnapshotInfo implements Serializable {
 
     public void setMidtermGrade(String midtermGrade) {
         this.midtermGrade = midtermGrade;
+    }
+
+    public Double getFinalExamMark() {
+        return finalExamMark;
+    }
+
+    public void setFinalExamMark(Double finalExamMark) {
+        this.finalExamMark = finalExamMark;
+    }
+
+    public String getFinalExamGrade() {
+        return finalExamGrade;
+    }
+
+    public void setFinalExamGrade(String finalExamGrade) {
+        this.finalExamGrade = finalExamGrade;
     }
 
     public Double getFinalMark() {

@@ -13,7 +13,7 @@ import java.util.Set;
 @Table(name = "parent")
 @XmlRootElement(name = "parent")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"parentID", "email", "password", "firstName", "lastName", "dob", "homePhone", "mobile",
+@XmlType(propOrder = {"parentID", "email", "password", "lastName", "firstName", "dob", "homePhone", "mobile",
 "lastLoginDate", "lastLoginIP"})
 public class Parent implements Serializable {
     @Id
@@ -26,12 +26,13 @@ public class Parent implements Serializable {
     @Column(name = "password")
     @XmlElement(name = "password")
     private String password;
-    @Column(name = "first_name")
-    @XmlElement(name = "firstName")
-    private String firstName;
+
     @Column(name = "last_name")
     @XmlElement(name = "lastName")
     private String lastName;
+    @Column(name = "first_name")
+    @XmlElement(name = "firstName")
+    private String firstName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "dob")
@@ -58,13 +59,13 @@ public class Parent implements Serializable {
         super();
     }
 
-    public Parent(Long parentID, String email, String password, String firstName, String lastName, Date dob,
+    public Parent(Long parentID, String email, String password, String lastName, String firstName, Date dob,
                   String homePhone, String mobile, Date lastLoginDate, String lastLoginIP) {
         this.parentID = parentID;
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
         this.lastName = lastName;
+        this.firstName = firstName;
         this.dob = dob;
         this.homePhone = homePhone;
         this.mobile = mobile;
@@ -96,20 +97,20 @@ public class Parent implements Serializable {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Date getDob() {

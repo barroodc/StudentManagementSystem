@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "student")
 @XmlRootElement(name = "student")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentID", "email", "password", "firstName", "lastName", "dob", "homePhone", "mobile",
+@XmlType(propOrder = {"studentID", "email", "password", "lastName", "firstName", "dob", "homePhone", "mobile",
 "firstDayOnCampus","studentLevel", "gpa", "satScore", "actScore", "lastLoginDate", "lastLoginIP"})
 public class Student implements Serializable{
     @Id
@@ -28,12 +28,13 @@ public class Student implements Serializable{
     @Column(name = "password")
     @XmlElement(name = "password")
     private String password;
-    @Column(name = "first_name")
-    @XmlElement(name = "firstName")
-    private String firstName;
+
     @Column(name = "last_name")
     @XmlElement(name = "lastName")
     private String lastName;
+    @Column(name = "first_name")
+    @XmlElement(name = "firstName")
+    private String firstName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "dob")
@@ -136,14 +137,14 @@ public class Student implements Serializable{
         this.studentID = studentID;
     }
 
-    public Student(Long studentID, String email, String password, String firstName, String lastName, Date dob,
+    public Student(Long studentID, String email, String password, String lastName, String firstName, Date dob,
                    String homePhone, String mobile, Date firstDayOnCampus, String studentLevel, double gpa,
                    int satScore, int actScore, Date lastLoginDate, String lastLoginIP) {
         this.studentID = studentID;
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
         this.lastName = lastName;
+        this.firstName = firstName;
         this.dob = dob;
         this.homePhone = homePhone;
         this.mobile = mobile;
@@ -180,20 +181,20 @@ public class Student implements Serializable{
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Date getDob() {

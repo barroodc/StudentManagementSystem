@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name = "student_has_parent")
 @XmlRootElement(name = "studentHasParent")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"student", "firstName", "lastName", "parent", "relationshipToChild", "mobile", "email",
+@XmlType(propOrder = {"student", "lastName", "firstName", "parent", "relationshipToChild", "mobile", "email",
 "address", "childLivesWithParent"})
 public class StudentHasParent implements Serializable {
 
@@ -18,13 +18,13 @@ public class StudentHasParent implements Serializable {
     @XmlElement(name = "studentID")
     private Student student;
 
-    @Column(name = "first_name")
-    @XmlElement(name = "firstName")
-    private String firstName;
-
     @Column(name = "last_name")
     @XmlElement(name = "lastName")
     private String lastName;
+
+    @Column(name = "first_name")
+    @XmlElement(name = "firstName")
+    private String firstName;
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
@@ -55,12 +55,12 @@ public class StudentHasParent implements Serializable {
         super();
     }
 
-    public StudentHasParent(Student student, String firstName, String lastName, Parent parent,
+    public StudentHasParent(Student student, String lastName, String firstName, Parent parent,
                             String relationshipToChild, String mobile, String email, String address,
                             String childLivesWithParent) {
         this.student = student;
-        this.firstName = firstName;
         this.lastName = lastName;
+        this.firstName = firstName;
         this.parent = parent;
         this.relationshipToChild = relationshipToChild;
         this.mobile = mobile;
@@ -77,20 +77,20 @@ public class StudentHasParent implements Serializable {
         this.student = student;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Parent getParent() {
