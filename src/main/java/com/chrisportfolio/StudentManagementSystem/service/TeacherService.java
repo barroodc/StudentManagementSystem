@@ -28,7 +28,8 @@ public class TeacherService {
         teacher.setFirstName(teacherInformation.getFirstName());
         teacher.setLastName(teacherInformation.getLastName());
         teacher.setDob(teacherInformation.getDob());
-        teacher.setSubject(teacherInformation.getSubject());
+        teacher.setDepartment(teacherInformation.getDepartment());
+        teacher.setDepartmentName(teacherInformation.getDepartmentName());
         teacher.setHomePhone(teacherInformation.getHomePhone());
         teacher.setMobile(teacherInformation.getMobile());
         teacher.setTenured(teacherInformation.getTenured());

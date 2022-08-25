@@ -9,7 +9,8 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"studentViewAllGradesInCourseSnapshotID", "student", "teacher", "teacherLastName",
 "teacherFirstName", "course", "courseName", "homeworkAssignment", "overallHomeworkGrade", "exam",
-"overallExamGrade", "midtermMark", "midtermGrade", "courseCurrentMark", "courseCurrentGrade", "finalMark",
+"overallExamGrade", "midtermMark", "midtermGrade", "finalExamMark", "finalExamGrade",
+        "courseCurrentMark", "courseCurrentGrade", "finalMark",
 "finalGrade"})
 public class StudentViewAllGradesInCourseSnapshot {
 

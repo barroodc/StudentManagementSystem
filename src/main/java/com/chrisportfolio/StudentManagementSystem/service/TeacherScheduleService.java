@@ -27,7 +27,7 @@ public class TeacherScheduleService {
         teacherSchedule.setTeacher(teacherScheduleInformation.getTeacher());
         teacherSchedule.setDayOfWeek(teacherScheduleInformation.getDayOfWeek());
         teacherSchedule.setTime(teacherScheduleInformation.getTime());
-        teacherSchedule.setLunchBreak(teacherScheduleInformation.getLunchBreak());
+        teacherSchedule.setTeacherLunchBreakRotation(teacherScheduleInformation.getTeacherLunchBreakRotation());
         teacherSchedule.setCourseTaught(teacherScheduleInformation.getCourseTaught());
 
         return teacherScheduleRepository.save(teacherSchedule);
