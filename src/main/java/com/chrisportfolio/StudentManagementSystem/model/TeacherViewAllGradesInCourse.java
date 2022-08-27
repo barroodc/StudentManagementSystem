@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
 @Table(name = "teacher_view_all_grades_in_course")
 @XmlRootElement(name = "teacherViewAllGradesInCourse")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacherViewAllGradesInCourseID", "student", "student_first_name", "student_last_name", "course",
+@XmlType(propOrder = {"teacherViewAllGradesInCourseID", "student", "student_last_name", "student_first_name", "course",
 "courseName", "homeworkAssignment", "overallHomeworkGrade", "exam", "overallExamGrade", "midtermMark", "midtermGrade",
 "finalExamMark", "finalExamGrade", "courseCurrentMark", "courseCurrentGrade", "finalMark", "finalGrade"})
 public class TeacherViewAllGradesInCourse {
@@ -22,13 +22,13 @@ public class TeacherViewAllGradesInCourse {
     @XmlElement(name = "studentID")
     private Student student;
 
-    @Column(name = "student_first_name")
-    @XmlElement(name = "studentFirstName")
-    private String studentFirstName;
-
     @Column(name = "student_last_name")
     @XmlElement(name = "studentLastName")
     private String studentLastName;
+
+    @Column(name = "student_first_name")
+    @XmlElement(name = "studentFirstName")
+    private String studentFirstName;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
@@ -93,16 +93,17 @@ public class TeacherViewAllGradesInCourse {
         super();
     }
 
-    public TeacherViewAllGradesInCourse(Long teacherViewAllGradesInCourseID, Student student, String studentFirstName,
-                                        String studentLastName, Course course, String courseName,
+    public TeacherViewAllGradesInCourse(Long teacherViewAllGradesInCourseID, Student student, String studentLastName,
+                                        String studentFirstName, Course course, String courseName,
                                         HomeworkAssignment homeworkAssignment, Double overallHomeworkGrade,
-                                        Exam exam, String overallExamGrade, Double midtermMark, String midtermGrade,
-                                        Double finalExamMark, String finalExamGrade, Double courseCurrentMark,
-                                        String courseCurrentGrade, Double finalMark, String finalGrade) {
+                                        Exam exam, String overallExamGrade, Double midtermMark,
+                                        String midtermGrade, Double finalExamMark, String finalExamGrade,
+                                        Double courseCurrentMark, String courseCurrentGrade, Double finalMark,
+                                        String finalGrade) {
         this.teacherViewAllGradesInCourseID = teacherViewAllGradesInCourseID;
         this.student = student;
-        this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
+        this.studentFirstName = studentFirstName;
         this.course = course;
         this.courseName = courseName;
         this.homeworkAssignment = homeworkAssignment;
@@ -135,20 +136,20 @@ public class TeacherViewAllGradesInCourse {
         this.student = student;
     }
 
-    public String getStudentFirstName() {
-        return studentFirstName;
-    }
-
-    public void setStudentFirstName(String studentFirstName) {
-        this.studentFirstName = studentFirstName;
-    }
-
     public String getStudentLastName() {
         return studentLastName;
     }
 
     public void setStudentLastName(String studentLastName) {
         this.studentLastName = studentLastName;
+    }
+
+    public String getStudentFirstName() {
+        return studentFirstName;
+    }
+
+    public void setStudentFirstName(String studentFirstName) {
+        this.studentFirstName = studentFirstName;
     }
 
     public Course getCourse() {

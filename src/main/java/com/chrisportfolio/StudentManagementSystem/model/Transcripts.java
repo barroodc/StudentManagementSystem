@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "transcripts")
 @XmlRootElement(name = "transcripts")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"transcriptID", "student", "yearOrSemester", "finalGrade", "credits"})
+@XmlType(propOrder = {"transcriptID", "student", "className", "yearOrSemester", "finalGrade", "credits"})
 public class Transcripts implements Serializable {
 
     @Id
