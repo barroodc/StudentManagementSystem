@@ -37,7 +37,7 @@ public class ExamResultsStudentViewService {
     }
 
 
-    private void deleteExamResultsStudentView(Long examResultsStudentViewID) {
+    public void deleteExamResultsStudentView(Long examResultsStudentViewID) {
         examResultsStudentViewRepository.deleteById(examResultsStudentViewID);
     }
 }

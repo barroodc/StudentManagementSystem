@@ -21,14 +21,14 @@ public class DepartmentService {
         return departmentRepository.findAll();
     }
 
-    public Department updateDepartment(Long departmentID, Department departmentInformation) {
-        Department department = departmentRepository.findById(String.valueOf(departmentID)).get();
+    public Department updateDepartment(String departmentID, Department departmentInformation) {
+        Department department = departmentRepository.findById(departmentID).get();
         department.setDepartmentID(departmentInformation.getDepartmentID());
 
         return departmentRepository.save(department);
     }
 
-    public void deleteDepartment(Long departmentID) {
-        departmentRepository.deleteById(String.valueOf(departmentID));
+    public void deleteDepartment(String departmentID) {
+        departmentRepository.deleteById(departmentID);
     }
 }

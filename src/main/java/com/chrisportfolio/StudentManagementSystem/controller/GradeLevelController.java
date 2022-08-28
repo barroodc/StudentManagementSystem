@@ -18,22 +18,22 @@ public class GradeLevelController {
     @Autowired
     GradeLevelRepository gradeLevelRepository;
 
-    @RequestMapping(value = "gradeLevel", method = RequestMethod.POST)
+    @RequestMapping(value = "gradeLevels", method = RequestMethod.POST)
     public GradeLevel createGradeLevels(@RequestBody GradeLevel gradeLevel) {
         return gradeLevelService.createGradeLevel(gradeLevel);
     }
 
-    @RequestMapping(value = "gradeLevel", method = RequestMethod.GET)
+    @RequestMapping(value = "gradeLevels", method = RequestMethod.GET)
     public List<GradeLevel> readGradeLevels() {
         return gradeLevelService.getGradeLevel();
     }
 
-    @RequestMapping(value = "gradeLevel/{gradeLevelId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "gradeLevels/{gradeLevelId}", method = RequestMethod.PUT)
     public GradeLevel updateGradeLevels(@PathVariable(value = "gradeLevelId") Long id, @RequestBody GradeLevel gradeLevelDetails) {
         return gradeLevelService.updateGradeLevel(id, gradeLevelDetails);
     }
 
-    @RequestMapping(value = "gradeLevel/{gradeLevelId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "gradeLevels/{gradeLevelId}", method = RequestMethod.DELETE)
     public void deleteGradeLevels(@PathVariable(value = "gradeLevelId") Long id) {
         gradeLevelService.deleteGradeLevel(id);
     }
