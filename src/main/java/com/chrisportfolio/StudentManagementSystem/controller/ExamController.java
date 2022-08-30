@@ -18,22 +18,22 @@ public class ExamController {
     @Autowired
     ExamRepository examRepository;
 
-    @RequestMapping(value = "exam", method = RequestMethod.POST)
+    @RequestMapping(value = "exams", method = RequestMethod.POST)
     public Exam createExams(@RequestBody Exam exam) {
         return examService.createExam(exam);
     }
 
-    @RequestMapping(value = "exam", method = RequestMethod.GET)
+    @RequestMapping(value = "exams", method = RequestMethod.GET)
     public List<Exam> readExams() {
         return examService.getExam();
     }
 
-    @RequestMapping(value = "exam/{examId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "exams/{examId}", method = RequestMethod.PUT)
     public Exam updateExams(@PathVariable(value = "examId")Long id, @RequestBody Exam examDetails) {
         return examService.updateExam(id, examDetails);
     }
 
-    @RequestMapping(value = "exam/{examId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "exams/{examId}", method = RequestMethod.DELETE)
     public void deleteExams(@PathVariable(value = "examId") Long id) {
         examService.deleteExam(id);
     }

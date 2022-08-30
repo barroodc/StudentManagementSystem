@@ -18,7 +18,7 @@ public class StudentDashboardSnapshotInfoService {
         return studentDashboardSnapshotInfoRepository.save(studentDashboardSnapshotInfo);
     }
 
-    public List<StudentDashboardSnapshotInfo> getStudentDashboardInfo() {
+    public List<StudentDashboardSnapshotInfo> getStudentDashboardSnapshotInfo() {
         return studentDashboardSnapshotInfoRepository.findAll();
     }
 

@@ -27,4 +27,15 @@ public class ExamResultsTeacherViewController {
     public List<ExamResultsTeacherView> readExamResultsTeacherViews() {
         return examResultsTeacherViewService.getExamResultsTeacherView();
     }
+
+    @RequestMapping(value = "examResultsTeacherViews/{examResultsTeacherViewId}", method = RequestMethod.PUT)
+    public ExamResultsTeacherView updateExamResultsTeacherViews(@PathVariable(value = "examResultsTeacherViewId") Long id,
+                                                                @RequestBody ExamResultsTeacherView examResultsTeacherViewDetails) {
+        return examResultsTeacherViewService.updateExamResultsTeacherView(id, examResultsTeacherViewDetails);
+    }
+
+    @RequestMapping(value = "examResultsTeacherViews/{examResultsTeacherViewId}", method = RequestMethod.DELETE)
+    public void deleteExamResultsTeacherView(@PathVariable(value = "examResultsTeacherViewId") Long id) {
+        examResultsTeacherViewService.deleteExamResultsTeacherView(id);
+    }
 }

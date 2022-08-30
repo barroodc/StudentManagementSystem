@@ -27,10 +27,7 @@ public class StudentScheduleService {
         studentSchedule.setDayOfWeek(studentScheduleInformation.getDayOfWeek());
         studentSchedule.setTime(studentScheduleInformation.getTime());
         studentSchedule.setLocation(studentScheduleInformation.getLocation());
-        studentSchedule.setLunchBreak(studentScheduleInformation.getLunchBreak());
-        studentSchedule.setClassRoom(studentScheduleInformation.getClassRoom());
         studentSchedule.setCourseName(studentScheduleInformation.getCourseName());
-        studentSchedule.setTotalNumberOfCredits(studentScheduleInformation.getTotalNumberOfCredits());
 
         return studentScheduleRepository.save(studentSchedule);
     }

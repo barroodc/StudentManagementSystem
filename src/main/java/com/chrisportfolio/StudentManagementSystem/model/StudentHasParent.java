@@ -8,8 +8,8 @@ import java.io.Serializable;
 @Table(name = "student_has_parent")
 @XmlRootElement(name = "studentHasParent")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"student", "lastName", "firstName", "parent", "relationshipToChild", "mobile", "email",
-"address", "childLivesWithParent"})
+@XmlType(propOrder = {"student", "studentLastName", "studentFirstName", "parent", "parentLastName", "parentFirstName",
+        "relationshipToChild", "mobile", "email", "address", "childLivesWithParent"})
 public class StudentHasParent implements Serializable {
 
     @Id
@@ -18,18 +18,26 @@ public class StudentHasParent implements Serializable {
     @XmlElement(name = "studentID")
     private Student student;
 
-    @Column(name = "last_name")
-    @XmlElement(name = "lastName")
-    private String lastName;
+    @Column(name = "student_last_name")
+    @XmlElement(name = "studentLastName")
+    private String studentLastName;
 
-    @Column(name = "first_name")
-    @XmlElement(name = "firstName")
-    private String firstName;
+    @Column(name = "student_first_name")
+    @XmlElement(name = "studentFirstName")
+    private String studentFirstName;
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
     @XmlElement(name = "parentID")
     private Parent parent;
+
+    @Column(name = "parent_last_name")
+    @XmlElement(name = "parentLastName")
+    private String parentLastName;
+
+    @Column(name = "parent_first_name")
+    @XmlElement(name = "parentFirstName")
+    private String parentFirstName;
 
     @Column(name = "relationship_to_child")
     @XmlElement(name = "relationshipToChild")
@@ -55,13 +63,15 @@ public class StudentHasParent implements Serializable {
         super();
     }
 
-    public StudentHasParent(Student student, String lastName, String firstName, Parent parent,
-                            String relationshipToChild, String mobile, String email, String address,
-                            String childLivesWithParent) {
+    public StudentHasParent(Student student, String studentLastName, String studentFirstName, Parent parent,
+                            String parentLastName, String parentFirstName, String relationshipToChild, String mobile,
+                            String email, String address, String childLivesWithParent) {
         this.student = student;
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.studentLastName = studentLastName;
+        this.studentFirstName = studentFirstName;
         this.parent = parent;
+        this.parentLastName = parentLastName;
+        this.parentFirstName = parentFirstName;
         this.relationshipToChild = relationshipToChild;
         this.mobile = mobile;
         this.email = email;
@@ -77,20 +87,20 @@ public class StudentHasParent implements Serializable {
         this.student = student;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getStudentLastName() {
+        return studentLastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setStudentLastName(String studentLastName) {
+        this.studentLastName = studentLastName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getStudentFirstName() {
+        return studentFirstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setStudentFirstName(String studentFirstName) {
+        this.studentFirstName = studentFirstName;
     }
 
     public Parent getParent() {
@@ -99,6 +109,22 @@ public class StudentHasParent implements Serializable {
 
     public void setParent(Parent parent) {
         this.parent = parent;
+    }
+
+    public String getParentLastName() {
+        return parentLastName;
+    }
+
+    public void setParentLastName(String parentLastName) {
+        this.parentLastName = parentLastName;
+    }
+
+    public String getParentFirstName() {
+        return parentFirstName;
+    }
+
+    public void setParentFirstName(String parentFirstName) {
+        this.parentFirstName = parentFirstName;
     }
 
     public String getRelationshipToChild() {
