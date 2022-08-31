@@ -24,10 +24,14 @@ public class StudentScheduleService {
     public StudentSchedule updateStudentSchedule(Long studentScheduleID, StudentSchedule studentScheduleInformation) {
         StudentSchedule studentSchedule = studentScheduleRepository.findById(studentScheduleID).get();
         studentSchedule.setStudent(studentScheduleInformation.getStudent());
+        studentSchedule.setClassroom(studentScheduleInformation.getClassroom());
+        studentSchedule.setCourse(studentScheduleInformation.getCourse());
+        studentSchedule.setCourseName(studentScheduleInformation.getCourseName());
         studentSchedule.setDayOfWeek(studentScheduleInformation.getDayOfWeek());
         studentSchedule.setTime(studentScheduleInformation.getTime());
         studentSchedule.setLocation(studentScheduleInformation.getLocation());
-        studentSchedule.setCourseName(studentScheduleInformation.getCourseName());
+        studentSchedule.setStudentLunchBreakRotation(studentScheduleInformation.getStudentLunchBreakRotation());
+        studentSchedule.setTimeOfBreak(studentScheduleInformation.getTimeOfBreak());
 
         return studentScheduleRepository.save(studentSchedule);
     }
