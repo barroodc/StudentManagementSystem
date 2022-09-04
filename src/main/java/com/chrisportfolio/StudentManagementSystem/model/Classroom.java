@@ -10,7 +10,6 @@ import java.util.Set;
 @Table(name = "classroom")
 @XmlRootElement(name = "classroom")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"classroomID", "course", "section", "remarks"})
 public class Classroom implements Serializable {
 
     @Id

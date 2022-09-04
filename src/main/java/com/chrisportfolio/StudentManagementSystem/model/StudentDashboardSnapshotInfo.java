@@ -8,10 +8,6 @@ import java.io.Serializable;
 @Table(name = "student_dashboard_snapshot_info")
 @XmlRootElement(name = "studentDashboardSnapshotInfo")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentDashboardSnapshotInfoID", "student", "teacher", "surname", "course", "courseCurrentMark",
-"courseCurrentGrade", "midtermMark", "midtermGrade", "finalExamMark", "finalExamGrade", "finalMark", "finalGrade",
-"attendance", "perfectAttendance", "acceptableAttendance", "unacceptableAttendance", "excusedAbsences",
-"unexcusedAbsences", "tardy", "remark"})
 public class StudentDashboardSnapshotInfo implements Serializable {
     @Id
     @Column(name = "student_dashboard_snapshot_info_id")

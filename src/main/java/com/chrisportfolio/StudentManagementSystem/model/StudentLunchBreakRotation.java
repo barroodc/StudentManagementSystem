@@ -10,7 +10,6 @@ import java.util.Set;
 @Table(name = "student_lunch_break_rotation")
 @XmlRootElement(name = "studentLunchBreakRotation")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentLunchBreakRotationID", "timeOfBreak"})
 public class StudentLunchBreakRotation implements Serializable {
 
     @Id

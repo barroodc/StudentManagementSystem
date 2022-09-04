@@ -8,8 +8,6 @@ import java.io.Serializable;
 @Table(name = "student_directory")
 @XmlRootElement(name = "studentDirectory")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentDirectoryID", "student", "lastName", "firstName", "gradeLevel", "email", "address",
-"parentMobile", "studentMobile"})
 public class StudentDirectory implements Serializable {
 
     @Id

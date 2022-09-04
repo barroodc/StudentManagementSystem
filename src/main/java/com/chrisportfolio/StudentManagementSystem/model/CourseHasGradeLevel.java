@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Table(name = "course_has_grade_level")
 @XmlRootElement(name = "courseHasGradeLevel")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"courseHasGradeLevel","course", "courseName", "gradeLevel", "gradeName"})
 public class CourseHasGradeLevel implements Serializable {
 
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<courseHasGradeLevel>
+    <courseHasGradeLevelID>Math12</courseHasGradeLevelID>
+    <courseID>
+        <courseID>127</courseID>
+    </courseID>
+    <courseName>Calculus 1</courseName>
+    <gradeLevelID>
+        <gradeLevelID>12</gradeLevelID>
+    </gradeLevelID>
+    <gradeName>Senior</gradeName>
+</courseHasGradeLevel>

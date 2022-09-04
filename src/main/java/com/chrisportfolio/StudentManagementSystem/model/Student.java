@@ -15,8 +15,6 @@ import java.util.Set;
 @Table(name = "student")
 @XmlRootElement(name = "student")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentID", "email", "password", "lastName", "firstName", "dob", "homePhone", "mobile",
-"firstDayOnCampus","studentLevel", "gpa", "satScore", "actScore", "lastLoginDate", "lastLoginIP"})
 public class Student implements Serializable{
     @Id
     @Column(name = "student_id")

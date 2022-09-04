@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.*;
 @Table(name = "transcript_gpa")
 @XmlRootElement(name = "transcriptGPA")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"transcriptGPAID", "transcripts", "totalCreditsEarned", "gpa"})
 public class TranscriptGPA {
 
     @Id

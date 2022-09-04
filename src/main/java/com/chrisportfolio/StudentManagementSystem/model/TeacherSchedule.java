@@ -9,8 +9,6 @@ import java.sql.Time;
 @Table(name = "teacher_schedule")
 @XmlRootElement(name = "teacherSchedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacherScheduleID", "teacher", "dayOfWeek", "time", "courseTaught", "teacherLunchBreakRotation",
-"timeOfBreak"})
 public class TeacherSchedule implements Serializable {
 
     @Id

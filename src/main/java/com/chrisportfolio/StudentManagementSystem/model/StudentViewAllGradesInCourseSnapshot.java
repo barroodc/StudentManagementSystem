@@ -7,11 +7,6 @@ import javax.xml.bind.annotation.*;
 @Table(name = "student_view_all_grades_in_course_snapshot")
 @XmlRootElement(name = "studentViewAllGradesInCourseSnapshot")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"studentViewAllGradesInCourseSnapshotID", "student", "teacher", "teacherLastName",
-"teacherFirstName", "course", "courseName", "homeworkAssignment", "overallHomeworkGrade", "exam",
-"overallExamGrade", "midtermMark", "midtermGrade", "finalExamMark", "finalExamGrade",
-        "courseCurrentMark", "courseCurrentGrade", "finalMark",
-"finalGrade"})
 public class StudentViewAllGradesInCourseSnapshot {
 
     @Id

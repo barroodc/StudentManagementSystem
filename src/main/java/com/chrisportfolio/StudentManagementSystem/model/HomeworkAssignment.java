@@ -12,8 +12,6 @@ import java.util.Set;
 @Table(name = "homework_assignment")
 @XmlRootElement(name = "homeworkAssignment")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacher", "firstName", "lastName", "course", "subject", "courseName", "yearOrSemester",
-"homeworkAssignmentID", "assignmentName", "assignedDate", "dueDate"})
 public class HomeworkAssignment implements Serializable {
 
     @ManyToOne

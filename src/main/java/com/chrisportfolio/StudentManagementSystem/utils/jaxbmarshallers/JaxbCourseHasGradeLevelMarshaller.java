@@ -1,6 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
+import com.chrisportfolio.StudentManagementSystem.model.Course;
 import com.chrisportfolio.StudentManagementSystem.model.CourseHasGradeLevel;
+import com.chrisportfolio.StudentManagementSystem.model.GradeLevel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,9 +13,11 @@ import java.io.File;
 
 public class JaxbCourseHasGradeLevelMarshaller {
 
+
     private static final Logger LOGGER = LogManager.getLogger(JaxbAttendanceMarshaller.class);
     public static void main(String[] args) {
-
+        CourseHasGradeLevel courseHasGradeLevel = new CourseHasGradeLevel("Math12", new Course("127"), "Calculus 1", new GradeLevel(12L), "Senior");
+        jaxbObjectToXML(courseHasGradeLevel);
     }
 
     public static void jaxbObjectToXML(CourseHasGradeLevel courseHasGradeLevel) {
@@ -24,9 +28,9 @@ public class JaxbCourseHasGradeLevelMarshaller {
 
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            jaxbMarshaller.marshal(courseHasGradeLevel, new File("CourseHasGradeLevel.xml"));
+            jaxbMarshaller.marshal(courseHasGradeLevel, new File("coursehasgradelevel.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }

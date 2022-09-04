@@ -13,8 +13,6 @@ import java.util.Set;
 @Table(name = "parent")
 @XmlRootElement(name = "parent")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"parentID", "email", "password", "lastName", "firstName", "dob", "homePhone", "mobile",
-"lastLoginDate", "lastLoginIP"})
 public class Parent implements Serializable {
     @Id
     @Column(name = "parent_id")

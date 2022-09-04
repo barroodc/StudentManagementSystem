@@ -52,6 +52,10 @@ public class GradeLevel implements Serializable {
         this.description = description;
     }
 
+    public GradeLevel(Long gradeLevelID) {
+        this.gradeLevelID = gradeLevelID;
+    }
+
     public Long getGradeLevelID() {
         return gradeLevelID;
     }

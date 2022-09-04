@@ -11,8 +11,6 @@ import java.util.Date;
 @Table(name = "admissions")
 @XmlRootElement(name = "admissions")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"admissionsID", "student", "applicationNumber", "applicantName", "incomingYear", "status",
-"lastModified", "inquiries"})
 public class Admissions implements Serializable {
 
 

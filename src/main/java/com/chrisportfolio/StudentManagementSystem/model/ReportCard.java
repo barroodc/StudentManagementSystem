@@ -8,12 +8,6 @@ import java.io.Serializable;
 @Table(name = "report_card")
 @XmlRootElement(name = "reportCard")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"reportCardID", "student", "studentName", "gradeLevel", "subjectOne", "subjectOneCurrentGrade",
-"subjectOneMidterm", "subjectOneFinalExam", "subjectOneFinalGrade", "subjectTwo", "subjectTwoCurrentGrade",
-"subjectTwoMidterm", "subjectTwoFinalExam", "subjectTwoFinalGrade", "subjectThree", "subjectThreeCurrentGrade",
-"subjectThreeMidterm", "subjectThreeFinalExam", "subjectThreeFinalGrade", "subjectFour", "subjectFourCurrentGrade",
-"subjectFourMidterm", "subjectFourFinalExam", "subjectFourFinalGrade", "subjectFive", "subjectFiveCurrentGrade",
-"subjectFiveMidterm", "subjectFiveFinalExam", "subjectFiveFinalGrade"})
 public class ReportCard implements Serializable {
 
     @Id

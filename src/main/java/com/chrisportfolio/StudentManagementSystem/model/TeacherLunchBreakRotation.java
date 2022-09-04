@@ -9,7 +9,6 @@ import java.util.Set;
 @Table(name = "teacher_lunch_break_rotation")
 @XmlRootElement(name = "teacherLunchBreakRotation")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"teacherLunchBreakRotationID", "timeOfBreak"})
 public class TeacherLunchBreakRotation {
 
     @Id
