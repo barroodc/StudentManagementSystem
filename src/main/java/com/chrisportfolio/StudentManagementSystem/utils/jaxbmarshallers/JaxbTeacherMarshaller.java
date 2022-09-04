@@ -15,7 +15,7 @@ public class JaxbTeacherMarshaller {
 
     public static void main(String[] args) {
 
-        Calendar cal = Calendar.getInstance();
+        /*Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, 1970);
         cal.set(Calendar.MONTH, Calendar.AUGUST);
         cal.set(Calendar.DAY_OF_MONTH, 11);
@@ -31,6 +31,8 @@ public class JaxbTeacherMarshaller {
                mattAmaticasBirthday, "Calculus 1", "9272203486", "6262722483", "Yes", mattAmaticasLastLoginDate,
                "831.572.234.59");
        jaxbObjectToXML(teacher);
+
+         */
     }
 
 

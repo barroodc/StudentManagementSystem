@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
-<!-- Update Charlie Browns Student ID Value in MySQL Database. Also change GPA to 0 and look at homephone-->
 <student>
     <student>
         <studentID>17365429</studentID>
