@@ -2,6 +2,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Student;
 import com.chrisportfolio.StudentManagementSystem.model.TeacherSchedule;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,6 +12,7 @@ import java.io.File;
 
 public class JaxbTeacherScheduleMarshaller {
 
+    private static final Logger LOGGER = LogManager.getLogger(JaxbTeacherScheduleMarshaller.class);
     /*
     Need to fix this before moving on.
      */
@@ -21,7 +24,8 @@ public class JaxbTeacherScheduleMarshaller {
     }
      */
 
-    /*public static void jaxbObjectToXML(TeacherSchedule teacherSchedule) {
+    /*
+    public static void jaxbObjectToXML(TeacherSchedule teacherSchedule) {
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(TeacherSchedule.class);
@@ -31,7 +35,7 @@ public class JaxbTeacherScheduleMarshaller {
 
             jaxbMarshaller.marshal(teacherSchedule, new File("teacherSchedule.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 

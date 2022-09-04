@@ -2,6 +2,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.model.Student;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,6 +13,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class JaxbStudentMarshaller {
+
+    private static final Logger LOGGER = LogManager.getLogger(JaxbStudentMarshaller.class);
 
 
     //Charlie Brown was already added to mysql database, so I should exclude him from this specific marshaller.
@@ -62,7 +66,7 @@ public class JaxbStudentMarshaller {
 
             jaxbMarshaller.marshal(student, new File("student.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 

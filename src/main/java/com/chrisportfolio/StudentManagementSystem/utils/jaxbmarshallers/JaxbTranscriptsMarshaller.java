@@ -2,6 +2,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Student;
 import com.chrisportfolio.StudentManagementSystem.model.Transcripts;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -9,6 +11,8 @@ import javax.xml.bind.Marshaller;
 import java.io.File;
 
 public class JaxbTranscriptsMarshaller {
+
+    private static final Logger LOGGER = LogManager.getLogger(JaxbTranscriptsMarshaller.class);
 
     /*
     Need to also fix this to incorporate 5 classes.
@@ -32,7 +36,7 @@ public class JaxbTranscriptsMarshaller {
 
             jaxbMarshaller.marshal(transcripts, new File("transcripts.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }

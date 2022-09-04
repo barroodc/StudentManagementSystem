@@ -2,6 +2,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.model.Parent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,6 +13,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class JaxbParentMarshaller {
+
+    private static final Logger LOGGER = LogManager.getLogger(JaxbParentMarshaller.class);
 
    public static void main(String[] args) {
        Calendar mariamBrownBirthday = Calendar.getInstance();
@@ -41,7 +45,7 @@ public class JaxbParentMarshaller {
 
             jaxbMarshaller.marshal(parent, new File("parent.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }

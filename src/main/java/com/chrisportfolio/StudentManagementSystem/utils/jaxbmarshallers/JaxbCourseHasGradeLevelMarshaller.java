@@ -1,6 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.CourseHasGradeLevel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -9,6 +11,7 @@ import java.io.File;
 
 public class JaxbCourseHasGradeLevelMarshaller {
 
+    private static final Logger LOGGER = LogManager.getLogger(JaxbAttendanceMarshaller.class);
     public static void main(String[] args) {
 
     }

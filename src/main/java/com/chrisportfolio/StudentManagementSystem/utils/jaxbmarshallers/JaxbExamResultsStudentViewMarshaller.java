@@ -1,6 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
 import com.chrisportfolio.StudentManagementSystem.model.ExamResultsStudentView;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -9,6 +11,8 @@ import javax.xml.bind.PropertyException;
 import java.io.File;
 
 public class JaxbExamResultsStudentViewMarshaller {
+
+    private static final Logger LOGGER = LogManager.getLogger(JaxbExamResultsStudentViewMarshaller.class);
 
     public static void main(String[] args) {
 
@@ -24,7 +28,7 @@ public class JaxbExamResultsStudentViewMarshaller {
 
             jaxbMarshaller.marshal(examResultsStudentView, new File("examresultsstudentview.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }

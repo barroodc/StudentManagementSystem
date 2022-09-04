@@ -3,6 +3,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.model.ReportCard;
 import com.chrisportfolio.StudentManagementSystem.model.Student;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,6 +12,8 @@ import javax.xml.bind.Marshaller;
 import java.io.File;
 
 public class JaxbReportCardMarshaller {
+
+    private static final Logger LOGGER = LogManager.getLogger(JaxbReportCardMarshaller.class);
 
     public static void main(String[] args) {
        ReportCard reportCard = new ReportCard(6957668L, new Student(17365429L), "Charlie Brown",
@@ -31,7 +35,7 @@ public class JaxbReportCardMarshaller {
 
             jaxbMarshaller.marshal(reportCard, new File("reportcard.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }

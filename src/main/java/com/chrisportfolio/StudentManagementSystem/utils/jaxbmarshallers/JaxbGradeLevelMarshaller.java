@@ -3,6 +3,8 @@ package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
 import com.chrisportfolio.StudentManagementSystem.model.GradeLevel;
 import com.chrisportfolio.StudentManagementSystem.model.Student;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,6 +13,7 @@ import java.io.File;
 
 public class JaxbGradeLevelMarshaller {
 
+    private static final Logger LOGGER = LogManager.getLogger(JaxbGradeLevelMarshaller.class);
 
     public static void main(String[] args) {
        GradeLevel gradeLevel = new GradeLevel(9000L, new Student(17365429L),
@@ -29,7 +32,7 @@ public class JaxbGradeLevelMarshaller {
 
             jaxbMarshaller.marshal(gradeLevel, new File("gradelevel.xml"));
         } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            LOGGER.info(e);
         }
     }
 }
