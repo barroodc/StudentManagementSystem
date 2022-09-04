@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <courseHasGradeLevel>
-    <courseHasGradeLevelID>Math12</courseHasGradeLevelID>
-    <courseID>
-        <courseID>127</courseID>
-    </courseID>
-    <courseName>Calculus 1</courseName>
-    <gradeLevelID>
-        <gradeLevelID>12</gradeLevelID>
-    </gradeLevelID>
-    <gradeName>Senior</gradeName>
+    <courseHasGradeLevel>
+        <courseHasGradeLevelID>M120</courseHasGradeLevelID>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <gradeLevelID>
+            <gradeLevelID>120</gradeLevelID>
+        </gradeLevelID>
+        <gradeName>Senior</gradeName>
+    </courseHasGradeLevel>
+
+
+    <courseHasGradeLevel>
+        <courseHasGradeLevelID>M121</courseHasGradeLevelID>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <gradeLevelID>
+            <gradeLevelID>121</gradeLevelID>
+        </gradeLevelID>
+        <gradeName>Senior</gradeName>
+    </courseHasGradeLevel>
+
 </courseHasGradeLevel>

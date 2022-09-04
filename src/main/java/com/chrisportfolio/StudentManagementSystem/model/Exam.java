@@ -61,6 +61,10 @@ public class Exam implements Serializable {
         this.className = className;
     }
 
+    public Exam(Long examID) {
+        this.examID = examID;
+    }
+
     public Long getExamID() {
         return examID;
     }

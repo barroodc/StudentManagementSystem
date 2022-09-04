@@ -16,7 +16,7 @@ public class JaxbCourseHasGradeLevelMarshaller {
 
     private static final Logger LOGGER = LogManager.getLogger(JaxbAttendanceMarshaller.class);
     public static void main(String[] args) {
-        CourseHasGradeLevel courseHasGradeLevel = new CourseHasGradeLevel("Math12", new Course("127"), "Calculus 1", new GradeLevel(12L), "Senior");
+        CourseHasGradeLevel courseHasGradeLevel = new CourseHasGradeLevel("M120", new Course("127"), "Calculus 1", new GradeLevel(12L), "Senior");
         jaxbObjectToXML(courseHasGradeLevel);
     }
 

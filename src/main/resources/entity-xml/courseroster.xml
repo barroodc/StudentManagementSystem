@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<courseRoster>
+    <courseRoster>
+        <courseRosterID>87450</courseRosterID>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <lastName>Brown</lastName>
+        <firstName>Charlie</firstName>
+        <gradeLevelID>
+            <gradeLevelID>9000</gradeLevelID>
+        </gradeLevelID>
+        <birthday>2008-10-09T12:10:15.646-04:00</birthday>
+        <age>13</age>
+        <gender>Male</gender>
+    </courseRoster>
+
+    <courseRoster>
+        <courseRosterID>83160</courseRosterID>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <lastName>Van Pelt</lastName>
+        <firstName>Lucy</firstName>
+        <gradeLevelID>
+            <gradeLevelID>9001</gradeLevelID>
+        </gradeLevelID>
+        <birthday>2008-04-17T19:05:15.646-04:00</birthday>
+        <age>14</age>
+        <gender>Female</gender>
+    </courseRoster>
+
+</courseRoster>

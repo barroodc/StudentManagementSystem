@@ -21,10 +21,10 @@ public class JaxbAdmissionsMarshaller {
         cal.set(Calendar.YEAR, 2021);
         cal.set(Calendar.MONTH, Calendar.DECEMBER);
         cal.set(Calendar.DAY_OF_MONTH, 9);
-        Date dateRepresentation = cal.getTime();
+        Date dateAdmitted = cal.getTime();
 
         Admissions admissions = new Admissions(570894L, new Student(38688296L), 2L, "Lucy Van Pelt",
-                "Freshman", "Approved", dateRepresentation, "n/a");
+                "Freshman", "Approved", dateAdmitted, "n/a");
 
         jaxbObjectToXML(admissions);
     }

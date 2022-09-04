@@ -1,6 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
+import com.chrisportfolio.StudentManagementSystem.model.Exam;
 import com.chrisportfolio.StudentManagementSystem.model.ExamResultsStudentView;
+import com.chrisportfolio.StudentManagementSystem.model.Student;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,7 +17,11 @@ public class JaxbExamResultsStudentViewMarshaller {
     private static final Logger LOGGER = LogManager.getLogger(JaxbExamResultsStudentViewMarshaller.class);
 
     public static void main(String[] args) {
+        ExamResultsStudentView examResultsStudentView = new ExamResultsStudentView(16771L,
+                new Student(17365429L), "Brown", "Charlie", new Exam(2794L),
+                "Limits Exam 1", 0.0, "0", "Initial test on limits");
 
+        jaxbObjectToXML(examResultsStudentView);
     }
 
     public static void jaxbObjectToXML(ExamResultsStudentView examResultsStudentView) {

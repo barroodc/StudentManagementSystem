@@ -15,12 +15,10 @@ public class JaxbExamMarshaller {
     private static final Logger LOGGER = LogManager.getLogger(JaxbExamMarshaller.class);
 
 
-    /*public static void main(String[] args) {
-       Exam exam = new Exam(2794L, "Limits", "Fall", "Calculus 1");
+    public static void main(String[] args) {
+       Exam exam = new Exam(2794L, "Limits Exam 1", "Limits", "Fall", "Calculus 1");
        jaxbObjectToXML(exam);
     }
-
-     */
 
     public static void jaxbObjectToXML(Exam exam) {
 

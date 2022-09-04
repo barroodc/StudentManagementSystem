@@ -16,6 +16,8 @@ public class JaxbDepartmentMarshaller {
 
     public static void main(String[] args) {
 
+        Department department = new Department("MathBuildingA", "Mathematics");
+        jaxbObjectToXML(department);
     }
 
     public static void jaxbObjectToXML(Department department) {

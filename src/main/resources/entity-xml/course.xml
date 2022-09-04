@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <course>
     <course>
-        <courseID>127</courseID>
+        <courseID>Math127</courseID>
         <name>Calculus 1</name>
         <credits>3.0</credits>
         <description>Differential Calculus</description>
     </course>
 
     <course>
-        <courseID>137</courseID>
+        <courseID>Math137</courseID>
         <name>Calculus 2</name>
         <credits>3.0</credits>
         <description>Integral Calculus</description>

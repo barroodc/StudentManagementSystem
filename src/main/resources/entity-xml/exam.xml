@@ -2,16 +2,18 @@
 <exam>
     <exam>
         <examID>2794</examID>
-        <subjects>Limits</subjects>
+        <titleOfExam>Limits Exam 1</titleOfExam>
+        <examTopic>Limits</examTopic>
         <term>Fall</term>
         <className>Calculus 1</className>
     </exam>
 
     <exam>
-        <examID>5424</examID>
-        <subjects>Differential Equations</subjects>
-        <term>Spring</term>
+        <examID>1432</examID>
+        <titleOfExam>Differential Equations Exam 1</titleOfExam>
+        <examTopic>Differential Equations</examTopic>
+        <term>Fall</term>
         <className>Calculus 2</className>
     </exam>
-</exam>
 
+</exam>

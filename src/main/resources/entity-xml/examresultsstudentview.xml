@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<examResultsStudentView>
+    <examResultsStudentViewID>
+        <examResultsStudentViewID>16771</examResultsStudentViewID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <lastName>Brown</lastName>
+        <firstName>Charlie</firstName>
+        <examID>
+            <examID>2794</examID>
+        </examID>
+        <titleOfExam>Limits Exam 1</titleOfExam>
+        <mark>0.0</mark>
+        <grade>0</grade>
+        <description>Initial test on limits</description>
+    </examResultsStudentViewID>
+
+    <examResultsStudentViewID>
+        <examResultsStudentViewID>63084</examResultsStudentViewID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <lastName>Van Pelt</lastName>
+        <firstName>Lucy</firstName>
+        <examID>
+            <examID>1432</examID>
+        </examID>
+        <titleOfExam>Differential Equations Exam 1</titleOfExam>
+        <mark>0.0</mark>
+        <grade>0</grade>
+        <description>Initial test on differential equations</description>
+    </examResultsStudentViewID>
+
+</examResultsStudentView>
