@@ -14,6 +14,8 @@ import java.util.Date;
 
 public class JaxbAdmissionsMarshaller {
 
+    //Need to double-check this marshaller and cross-reference with xml file.
+
       private static final Logger LOGGER = LogManager.getLogger(JaxbAdmissionsMarshaller.class);
        public static void main(String[] args) {
 

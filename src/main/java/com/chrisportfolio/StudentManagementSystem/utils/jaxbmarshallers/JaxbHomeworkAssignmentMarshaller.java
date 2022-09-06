@@ -15,7 +15,7 @@ public class JaxbHomeworkAssignmentMarshaller {
     private static final Logger LOGGER = LogManager.getLogger(JaxbHomeworkAssignmentMarshaller.class);
 
     public static void main(String[] args) {
-
+        HomeworkAssignment homeworkAssignment = new HomeworkAssignment();
     }
 
     public static void jaxbObjectToXMl(HomeworkAssignment homeworkAssignment) {
