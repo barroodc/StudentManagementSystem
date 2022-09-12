@@ -99,6 +99,9 @@ public class HomeworkAssignment implements Serializable {
         this.dueDate = dueDate;
     }
 
+    public HomeworkAssignment(long l) {
+    }
+
     public Teacher getTeacher() {
         return teacher;
     }

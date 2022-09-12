@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<homeworkAssignmentResultsTeacherView>
+
+    <homeworkAssignmentResultsTeacherView>
+        <homeworkAssignmentResultsTeacherViewID>914453</homeworkAssignmentResultsTeacherViewID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <studentLastName>Brown</studentLastName>
+        <studentFirstName>Charlie</studentFirstName>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <homeworkAssignmentID>80368</homeworkAssignmentID>
+        <homeworkAssignmentName>Differential Equations</homeworkAssignmentName>
+        <mark>0.0</mark>
+        <grade>n/a</grade>
+        <description>First assignment on differential equations.</description>
+    </homeworkAssignmentResultsTeacherView>
+
+    <homeworkAssignmentResultsTeacherView>
+        <homeworkAssignmentResultsTeacherViewID>648742</homeworkAssignmentResultsTeacherViewID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <studentLastName>Van Pelt</studentLastName>
+        <studentFirstName>Lucy</studentFirstName>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <homeworkAssignmentID>85475</homeworkAssignmentID>
+        <homeworkAssignmentName>Integral Practice Problems</homeworkAssignmentName>
+        <mark>0.0</mark>
+        <grade>n/a</grade>
+        <description>First assignment on integrals.</description>
+    </homeworkAssignmentResultsTeacherView>
+
+</homeworkAssignmentResultsTeacherView>

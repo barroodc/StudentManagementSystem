@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<homeworkAssignmentResultsStudentView>
+    <homeworkAssingmentResultsStudentView>
+        <homeworkAssignmentResultsStudentViewID>663590</homeworkAssignmentResultsStudentViewID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <studentLastName>Brown</studentLastName>
+        <studentFirstName>Charlie</studentFirstName>
+        <teacherID/>
+        <teacherLastName>Amaticas</teacherLastName>
+        <teacherFirstName>Matt</teacherFirstName>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <homeworkAssignmentID>80368</homeworkAssignmentID>
+        <homeworkAssignmentName>Differential Equations</homeworkAssignmentName>
+        <mark>0.0</mark>
+        <grade>n/a</grade>
+        <description>First assignment on differential equations.</description>
+    </homeworkAssingmentResultsStudentView>
+
+
+    <homeworkAssingmentResultsStudentView>
+        <homeworkAssignmentResultsStudentViewID>85887</homeworkAssignmentResultsStudentViewID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <studentLastName>Van Pelt</studentLastName>
+        <studentFirstName>Lucy</studentFirstName>
+        <teacherID/>
+        <teacherLastName>Nomial</teacherLastName>
+        <teacherFirstName>Polly</teacherFirstName>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <homeworkAssignmentID>85475</homeworkAssignmentID>
+        <homeworkAssignmentName>Integral Practice Problems</homeworkAssignmentName>
+        <mark>0.0</mark>
+        <grade>n/a</grade>
+        <description>First assignment on integrals.</description>
+    </homeworkAssingmentResultsStudentView>
+
+</homeworkAssignmentResultsStudentView>

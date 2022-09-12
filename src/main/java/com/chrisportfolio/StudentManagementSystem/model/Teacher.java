@@ -109,6 +109,9 @@ public class Teacher implements Serializable {
         this.lastLoginIP = lastLoginIP;
     }
 
+    public Teacher(long l) {
+    }
+
     public Long getTeacherID() {
         return teacherID;
     }

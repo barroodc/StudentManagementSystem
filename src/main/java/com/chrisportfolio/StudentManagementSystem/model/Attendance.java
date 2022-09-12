@@ -64,6 +64,9 @@ public class Attendance implements Serializable {
         this.remark = remark;
     }
 
+    public Attendance(long l) {
+    }
+
     public Long getAttendanceID() {
         return attendanceID;
     }
