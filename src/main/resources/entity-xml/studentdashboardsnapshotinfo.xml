@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentDashboardSnapshotInfo>
+    <studentDashboardSnapshotInfo>
+        <studentDashboardSnapshotInfoID>407293</studentDashboardSnapshotInfoID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <teacherID>38430931</teacherID>
+        <surname>Amaticas</surname>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+        <attendanceID>956636</attendanceID>
+        <perfectAttendance>0</perfectAttendance>
+        <acceptableAttendance>0</acceptableAttendance>
+        <unacceptableAttendance>0</unacceptableAttendance>
+        <excusedAbsences>0</excusedAbsences>
+        <unexcusedAbsences>0</unexcusedAbsences>
+        <tardy>0</tardy>
+        <remark>n/a</remark>
+    </studentDashboardSnapshotInfo>
+
+    <studentDashboardSnapshotInfo>
+        <studentDashboardSnapshotInfoID>304914</studentDashboardSnapshotInfoID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+       <teacherID>72416461</teacherID>
+        <surname>Nomial</surname>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+        <attendanceID>373416</attendanceID>
+        <perfectAttendance>0</perfectAttendance>
+        <acceptableAttendance>0</acceptableAttendance>
+        <unacceptableAttendance>0</unacceptableAttendance>
+        <excusedAbsences>0</excusedAbsences>
+        <unexcusedAbsences>0</unexcusedAbsences>
+        <tardy>0</tardy>
+        <remark>n/a</remark>
+    </studentDashboardSnapshotInfo>
+
+</studentDashboardSnapshotInfo>

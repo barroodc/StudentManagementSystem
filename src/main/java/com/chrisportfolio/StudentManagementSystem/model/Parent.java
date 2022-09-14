@@ -71,6 +71,9 @@ public class Parent implements Serializable {
         this.lastLoginIP = lastLoginIP;
     }
 
+    public Parent(long l) {
+    }
+
     public Long getParentID() {
         return parentID;
     }

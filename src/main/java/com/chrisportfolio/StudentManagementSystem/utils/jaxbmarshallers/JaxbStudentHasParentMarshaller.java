@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.utils.jaxbmarshallers;
 
+import com.chrisportfolio.StudentManagementSystem.model.Parent;
+import com.chrisportfolio.StudentManagementSystem.model.Student;
 import com.chrisportfolio.StudentManagementSystem.model.StudentHasParent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +17,11 @@ public class JaxbStudentHasParentMarshaller {
     private static final Logger LOGGER = LogManager.getLogger(JaxbStudentHasParentMarshaller.class);
 
     public static void main(String[] args) {
+        StudentHasParent studentHasParent = new StudentHasParent(284515L, new Student(17365429L), "Brown",
+                "Charlie", new Parent(47166622L), "Brown", "Mariam", "Mother", "2025550198", "mariambrown@gmail.com",
+                "16 Grief Street, Shorewood, Minnesota, 55331", "Yes");
 
+        jaxbObjectToXML(studentHasParent);
     }
 
     public static void jaxbObjectToXML(StudentHasParent studentHasParent) {

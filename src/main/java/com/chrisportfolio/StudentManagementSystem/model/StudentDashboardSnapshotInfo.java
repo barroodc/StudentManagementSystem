@@ -132,9 +132,6 @@ public class StudentDashboardSnapshotInfo implements Serializable {
         this.remark = remark;
     }
 
-    public StudentDashboardSnapshotInfo(long studentDashboardSnapshotInfoID, Student student, Teacher teacher, String amaticas, Course math127, double courseCurrentMark, String courseCurrentGrade, double midtermMark, String midtermGrade, double finalExamMark, String finalExamGrade, double finalMark, String finalGrade, Attendance attendance, int i, int i1, int i2, int i3, int i4, int i5, String remark) {
-    }
-
     public Long getStudentDashboardSnapshotInfoID() {
         return studentDashboardSnapshotInfoID;
     }

@@ -18,8 +18,8 @@ public class JaxbStudentDashboardSnapshotInfoMarshaller {
         StudentDashboardSnapshotInfo studentDashboardSnapshotInfo = new StudentDashboardSnapshotInfo(407293L,
                 new Student(17365429L), new Teacher(38430931L), "Amaticas", new Course("Math127"),
                 0.0, "n/a", 0.0, "n/a", 0.0, "n/a",
-                0.0, "n/a", new Attendance(956636L), 0, 0,
-                0, 0, 0, 0, "n/a");
+                0.0, "n/a", new Attendance(956636L), "0", "0",
+                "0", 0L, 0L, 0L, "n/a");
 
         jaxbObjectToXMl(studentDashboardSnapshotInfo);
     }

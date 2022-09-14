@@ -11,6 +11,10 @@ import java.io.Serializable;
 public class StudentHasParent implements Serializable {
 
     @Id
+    @Column(name = "student_and_parent_id")
+    @XmlElement(name = "studentAndParentID")
+    private Long studentHasParentID;
+
     @ManyToOne
     @JoinColumn(name = "student_id")
     @XmlElement(name = "studentID")
@@ -61,9 +65,10 @@ public class StudentHasParent implements Serializable {
         super();
     }
 
-    public StudentHasParent(Student student, String studentLastName, String studentFirstName, Parent parent,
-                            String parentLastName, String parentFirstName, String relationshipToChild, String mobile,
-                            String email, String address, String childLivesWithParent) {
+    public StudentHasParent(Long studentHasParentID, Student student, String studentLastName, String studentFirstName,
+                            Parent parent, String parentLastName, String parentFirstName, String relationshipToChild,
+                            String mobile, String email, String address, String childLivesWithParent) {
+        this.studentHasParentID = studentHasParentID;
         this.student = student;
         this.studentLastName = studentLastName;
         this.studentFirstName = studentFirstName;
@@ -75,6 +80,14 @@ public class StudentHasParent implements Serializable {
         this.email = email;
         this.address = address;
         this.childLivesWithParent = childLivesWithParent;
+    }
+
+    public Long getStudentHasParentID() {
+        return studentHasParentID;
+    }
+
+    public void setStudentHasParentID(Long studentHasParentID) {
+        this.studentHasParentID = studentHasParentID;
     }
 
     public Student getStudent() {

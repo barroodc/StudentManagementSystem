@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentHasParent>
+
+    <studentHasParent>
+        <studentAndParentID>284515</studentAndParentID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <studentLastName>Brown</studentLastName>
+        <studentFirstName>Charlie</studentFirstName>
+        <parentID>47166622</parentID>
+        <parentLastName>Brown</parentLastName>
+        <parentFirstName>Mariam</parentFirstName>
+        <relationshipToChild>Mother</relationshipToChild>
+        <mobile>2025550198</mobile>
+        <email>mariambrown@gmail.com</email>
+        <address>16 Grief Street, Shorewood, Minnesota, 55331</address>
+        <childLivesWithParent>Yes</childLivesWithParent>
+    </studentHasParent>
+
+    <studentAndParent>
+        <studentAndParentID>437360</studentAndParentID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <studentLastName>Van Pelt</studentLastName>
+        <studentFirstName>Lucy</studentFirstName>
+        <parentID>14894168</parentID>
+        <parentLastName>Van Pelt</parentLastName>
+        <parentFirstName>Linda</parentFirstName>
+        <relationshipToChild>Mother</relationshipToChild>
+        <mobile>2029174218</mobile>
+        <email>lindavanpelt@gmail.com</email>
+        <address>19 Grief Street, Shorewood, Minnesota, 55331</address>
+        <childLivesWithParent>Yes</childLivesWithParent>
+    </studentAndParent>
+
+</studentHasParent>

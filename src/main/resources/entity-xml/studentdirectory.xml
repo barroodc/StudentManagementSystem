@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentDirectory>
+    <studentDirectory>
+        <studentDirectoryID>942431</studentDirectoryID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <lastName>Brown</lastName>
+        <firstName>Charlie</firstName>
+        <gradeLevelID>
+            <gradeLevelID>9000</gradeLevelID>
+        </gradeLevelID>
+        <email>charliebrown@gmail.com</email>
+        <address>16 Grief Street, Shorewood, Minnesota, 55331</address>
+        <parentMobile>2025550198</parentMobile>
+        <studentMobile>2025550186</studentMobile>
+    </studentDirectory>
+
+    <studentDirectory>
+        <studentDirectoryID>798320</studentDirectoryID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <lastName>Van Pelt</lastName>
+        <firstName>Lucy</firstName>
+        <gradeLevelID>
+            <gradeLevelID>9001</gradeLevelID>
+        </gradeLevelID>
+        <email>lucyvanpelt@gmail.com</email>
+        <address>19 Grief Street, Shorewood, Minnesota, 55331</address>
+        <parentMobile>2029174218</parentMobile>
+        <studentMobile>2029171639</studentMobile>
+    </studentDirectory>
+
+</studentDirectory>
