@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teacherDirectory>
+    <teacherDirectory>
+        <teacherDirectoryID>854037</teacherDirectoryID>
+        <teacherID>
+            <teacherID>38430931</teacherID>
+        </teacherID>
+        <lastName>Amaticas</lastName>
+        <firstName>Matt</firstName>
+        <departmentID>
+            <departmentID>MathBuildingA</departmentID>
+        </departmentID>
+        <departmentName>Mathematics</departmentName>
+        <email>mattamaticas@gmail.com</email>
+        <address>8 Peanut Ave, Shorewood, Minnesota, 55331</address>
+        <mobile>6262722483</mobile>
+    </teacherDirectory>
+
+    <teacherDirectory>
+        <teacherDirectoryID>405981</teacherDirectoryID>
+        <teacherID>
+            <teacherID>72416461</teacherID>
+        </teacherID>
+        <lastName>Nomial</lastName>
+        <firstName>Polly</firstName>
+        <departmentID>
+            <departmentID>MathBuildingA</departmentID>
+        </departmentID>
+        <departmentName>Mathematics</departmentName>
+        <email>pollynomial@gmail.com</email>
+        <address>12 Peanut Ave, Shorewood, Minnesota, 55331</address>
+        <mobile>4939699735</mobile>
+    </teacherDirectory>
+
+</teacherDirectory>

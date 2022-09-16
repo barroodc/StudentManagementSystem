@@ -25,7 +25,7 @@ public class TeacherScheduleService {
     public TeacherSchedule updateTeacherSchedule(Long teacherScheduleID, TeacherSchedule teacherScheduleInformation) {
         TeacherSchedule teacherSchedule = teacherScheduleRepository.findById(teacherScheduleID).get();
         teacherSchedule.setTeacher(teacherScheduleInformation.getTeacher());
-        teacherSchedule.setDayOfWeek(teacherScheduleInformation.getDayOfWeek());
+        teacherSchedule.setWeekdays(teacherScheduleInformation.getWeekdays());
         teacherSchedule.setTime(teacherScheduleInformation.getTime());
         teacherSchedule.setTeacherLunchBreakRotation(teacherScheduleInformation.getTeacherLunchBreakRotation());
         teacherSchedule.setCourseTaught(teacherScheduleInformation.getCourseTaught());

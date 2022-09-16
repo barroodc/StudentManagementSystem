@@ -17,11 +17,11 @@ public class JaxbStudentScheduleMarshaller {
     public static void main(String[] args) {
 
         Time calcOneTimeSlot = new Time(1,30, 0);
-        Time lunchBreakOne = new Time(10,30, 0);
+        Time studentLunchBreakOne = new Time(10,30, 0);
 
        StudentSchedule studentSchedule = new StudentSchedule(428749L, new Student(17365429L),
                new Classroom(110L), new Course("Math127"), "Calculus 1", "Monday, Wednesday, Friday",
-               calcOneTimeSlot, "Building A", new StudentLunchBreakRotation(259989L), lunchBreakOne);
+               calcOneTimeSlot, "Building A", new StudentLunchBreakRotation(259989L), studentLunchBreakOne);
        jaxbObjectToXML(studentSchedule);
     }
 

@@ -30,7 +30,7 @@ public class JaxbTeacherMarshaller {
         cal.set(Calendar.DAY_OF_MONTH, 15);
         Date mattAmaticasLastLoginDate = cal1.getTime();
 
-       Teacher teacher = new Teacher(38430931L, "mattamaticas@gmail.com", "calcULater", "Matt", "Amaticas",
+       Teacher teacher = new Teacher(38430931L, "mattamaticas@gmail.com", "calcULater", "Amaticas", "Matt",
                mattAmaticasBirthday, "Calculus 1", "9272203486", "6262722483", "Yes", mattAmaticasLastLoginDate,
                "831.572.234.59");
        jaxbObjectToXML(teacher);

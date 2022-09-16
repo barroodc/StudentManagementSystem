@@ -20,10 +20,10 @@ public class JaxbStudentLunchBreakRotationMarshaller {
 
     public static void main(String[] args) {
 
-        Time lunchBreakOne = new Time(10,30, 0);
+        Time studentLunchBreakOne = new Time(10,30, 0);
 
 
-        StudentLunchBreakRotation studentLunchBreakRotation = new StudentLunchBreakRotation(259989L, lunchBreakOne);
+        StudentLunchBreakRotation studentLunchBreakRotation = new StudentLunchBreakRotation(259989L, studentLunchBreakOne);
         jaxbObjectToXML(studentLunchBreakRotation);
     }
 

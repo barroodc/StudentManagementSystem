@@ -38,6 +38,9 @@ public class Department implements Serializable {
         this.departmentName = departmentName;
     }
 
+    public Department(String mathBuildingA) {
+    }
+
     public String getDepartmentID() {
         return departmentID;
     }

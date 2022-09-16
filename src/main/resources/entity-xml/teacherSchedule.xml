@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teacherSchedule>
+
+    <teacherSchedule>
+        <teacherScheduleID>278750</teacherScheduleID>
+        <teacherID>
+            <teacherID>38430931</teacherID>
+        </teacherID>
+        <weekdays>Monday, Wednesday, Friday</weekdays>
+        <time>01:30:00</time>
+        <courseTaught>Calculus 1</courseTaught>
+        <teacherLunchBreakRotationID>
+            <teacherLunchBreakRotationID>859727</teacherLunchBreakRotationID>
+        </teacherLunchBreakRotationID>
+        <timeOfBreak>12:30:00</timeOfBreak>
+    </teacherSchedule>
+
+    <teacherScheudle>
+        <teacherScheduleID>396948</teacherScheduleID>
+        <teacherID>
+            <teacherID>72416461</teacherID>
+        </teacherID>
+        <weekdays>Monday, Wednesday, Friday</weekdays>
+        <time>01:30:00</time>
+        <courseTaught>Calculus 2</courseTaught>
+        <teacherLunchBreakRotationID>
+            <teacherLunchBreakRotationID>859727</teacherLunchBreakRotationID>
+        </teacherLunchBreakRotationID>
+        <timeOfBreak>12:30:00</timeOfBreak>
+    </teacherScheudle>
+
+</teacherSchedule>

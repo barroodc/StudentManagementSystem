@@ -33,6 +33,9 @@ public class TeacherLunchBreakRotation {
         this.timeOfBreak = timeOfBreak;
     }
 
+    public TeacherLunchBreakRotation(long l) {
+    }
+
     public Long getTeacherLunchBreakRotationID() {
         return teacherLunchBreakRotationID;
     }
