@@ -28,8 +28,8 @@ public class StudentService {
         Student std = studentRepository.findById(studentID).get();
         std.setEmail(studentInformation.getEmail());
         std.setPassword(studentInformation.getPassword());
-        std.setFirstName(studentInformation.getFirstName());
         std.setLastName(studentInformation.getLastName());
+        std.setFirstName(studentInformation.getFirstName());
         std.setDob(studentInformation.getDob());
         std.setHomePhone(studentInformation.getHomePhone());
         std.setMobile(studentInformation.getMobile());

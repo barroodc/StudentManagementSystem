@@ -25,12 +25,13 @@ public class Teacher implements Serializable {
     @Column(name = "password")
     @XmlElement(name = "password")
     private String password;
-    @Column(name = "first_name")
-    @XmlElement(name = "firstName")
-    private String firstName;
+
     @Column(name = "last_name")
     @XmlElement(name = "lastName")
     private String lastName;
+    @Column(name = "first_name")
+    @XmlElement(name = "firstName")
+    private String firstName;
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "dob")
@@ -91,14 +92,14 @@ public class Teacher implements Serializable {
     }
 
 
-    public Teacher(Long teacherID, String email, String password, String firstName, String lastName, Date dob,
+    public Teacher(Long teacherID, String email, String password, String lastName, String firstName, Date dob,
                    Department department, String departmentName, String homePhone, String mobile,
                    String tenured, Date lastLoginDate, String lastLoginIP) {
         this.teacherID = teacherID;
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
         this.lastName = lastName;
+        this.firstName = firstName;
         this.dob = dob;
         this.department = department;
         this.departmentName = departmentName;
@@ -136,20 +137,20 @@ public class Teacher implements Serializable {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Date getDob() {

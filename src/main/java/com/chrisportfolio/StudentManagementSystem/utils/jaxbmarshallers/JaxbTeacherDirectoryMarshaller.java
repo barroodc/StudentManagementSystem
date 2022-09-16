@@ -15,6 +15,7 @@ public class JaxbTeacherDirectoryMarshaller {
     private static final Logger LOGGER = LogManager.getLogger(JaxbTeacherDirectoryMarshaller.class);
 
     public static void main(String[] args) {
+        TeacherDirectory teacherDirectory = new TeacherDirectory();
 
     }
 

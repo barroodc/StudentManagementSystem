@@ -34,6 +34,9 @@ public class StudentLunchBreakRotation implements Serializable {
         this.timeOfBreak = timeOfBreak;
     }
 
+    public StudentLunchBreakRotation(long l) {
+    }
+
     public Long getStudentLunchBreakRotationID() {
         return studentLunchBreakRotationID;
     }

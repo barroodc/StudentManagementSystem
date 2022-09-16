@@ -3,7 +3,7 @@
     <classroom>
         <classroomID>110</classroomID>
         <course>
-            <courseID>127</courseID>
+            <courseID>Math127</courseID>
         </course>
         <section>1</section>
         <remarks>Building A</remarks>
@@ -12,7 +12,7 @@
     <classroom>
         <classroomID>115</classroomID>
         <course>
-            <courseID>137</courseID>
+            <courseID>Math137</courseID>
         </course>
         <section>1</section>
         <remarks>Building A</remarks>

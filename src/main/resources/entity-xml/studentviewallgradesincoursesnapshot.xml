@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentViewAllGradesInCourseSnapshot>
+    <studentViewAllGradesInCourseSnapshot>
+        <studentViewAllGradesInCourseSnapshotID>337391</studentViewAllGradesInCourseSnapshotID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <teacherID>
+            <teacherID>38430931</teacherID>
+        </teacherID>
+        <teacherLastName>Amaticas</teacherLastName>
+        <teacherFirstName>Matt</teacherFirstName>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <homeworkAssignmetnID>
+            <homeworkAssignmentID>80368</homeworkAssignmentID>
+        </homeworkAssignmetnID>
+        <overallHomeworkGrade>0.0</overallHomeworkGrade>
+        <examID>
+            <examID>2794</examID>
+        </examID>
+        <overallExamGrade>0.0</overallExamGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+    </studentViewAllGradesInCourseSnapshot>
+
+    <studentViewAllGradesInCourseSnapshot>
+        <studentViewAllGradesInCourseSnapshotID>868923</studentViewAllGradesInCourseSnapshotID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <teacherID>
+            <teacherID>72416461</teacherID>
+        </teacherID>
+        <teacherLastName>Nomial</teacherLastName>
+        <teacherFirstName>Polly</teacherFirstName>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <homeworkAssignmetnID>
+            <homeworkAssignmentID>85475</homeworkAssignmentID>
+        </homeworkAssignmetnID>
+        <overallHomeworkGrade>0.0</overallHomeworkGrade>
+        <examID>
+            <examID>1432</examID>
+        </examID>
+        <overallExamGrade>0.0</overallExamGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+    </studentViewAllGradesInCourseSnapshot>
+
+</studentViewAllGradesInCourseSnapshot>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentSchedule>
+    <studentScedule>
+        <studentScheduleID>428749</studentScheduleID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <classroomID>
+            <classroomID>110</classroomID>
+        </classroomID>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <weekdays>Monday, Wednesday, Friday</weekdays>
+        <time>01:30:00</time>
+        <location>Building A</location>
+        <studentLunchBreakRotationID>
+            <studentLunchBreakRotationID>259989</studentLunchBreakRotationID>
+        </studentLunchBreakRotationID>
+        <timeOfBreak>10:30:00</timeOfBreak>
+    </studentScedule>
+
+    <studentScedule>
+        <studentScheduleID>605314</studentScheduleID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <classroomID>
+            <classroomID>115</classroomID>
+        </classroomID>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <weekdays>Monday, Wednesday, Friday</weekdays>
+        <time>01:30:00</time>
+        <location>Building A</location>
+        <studentLunchBreakRotationID>
+            <studentLunchBreakRotationID>259989</studentLunchBreakRotationID>
+        </studentLunchBreakRotationID>
+        <timeOfBreak>10:30:00</timeOfBreak>
+    </studentScedule>
+
+</studentSchedule>

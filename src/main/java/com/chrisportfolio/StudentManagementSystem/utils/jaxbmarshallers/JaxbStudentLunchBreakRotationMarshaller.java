@@ -10,6 +10,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 import java.io.File;
+import java.sql.Time;
+import java.util.Calendar;
+import java.util.Date;
 
 public class JaxbStudentLunchBreakRotationMarshaller {
 
@@ -17,6 +20,11 @@ public class JaxbStudentLunchBreakRotationMarshaller {
 
     public static void main(String[] args) {
 
+        Time lunchBreakOne = new Time(10,30, 0);
+
+
+        StudentLunchBreakRotation studentLunchBreakRotation = new StudentLunchBreakRotation(259989L, lunchBreakOne);
+        jaxbObjectToXML(studentLunchBreakRotation);
     }
 
     public static void jaxbObjectToXML(StudentLunchBreakRotation studentLunchBreakRotation) {

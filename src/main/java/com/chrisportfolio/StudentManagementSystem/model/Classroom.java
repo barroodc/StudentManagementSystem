@@ -44,6 +44,9 @@ public class Classroom implements Serializable {
         this.remarks = remarks;
     }
 
+    public Classroom(long l) {
+    }
+
     public Long getClassroomID() {
         return classroomID;
     }

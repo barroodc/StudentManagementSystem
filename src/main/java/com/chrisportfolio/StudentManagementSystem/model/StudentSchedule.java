@@ -35,9 +35,9 @@ public class StudentSchedule implements Serializable {
     @XmlElement(name = "courseName")
     private String courseName;
 
-    @Column(name = "day_of_week")
-    @XmlElement(name = "dayOfWeek")
-    private String dayOfWeek;
+    @Column(name = "weekdays")
+    @XmlElement(name = "weekdays")
+    private String weekdays;
 
     @Column(name = "time")
     @XmlElement(name = "time")
@@ -61,14 +61,14 @@ public class StudentSchedule implements Serializable {
     }
 
     public StudentSchedule(Long studentScheduleID, Student student, Classroom classroom, Course course, String courseName,
-                           String dayOfWeek, Time time, String location, StudentLunchBreakRotation studentLunchBreakRotation,
+                           String weekdays, Time time, String location, StudentLunchBreakRotation studentLunchBreakRotation,
                            Time timeOfBreak) {
         this.studentScheduleID = studentScheduleID;
         this.student = student;
         this.classroom = classroom;
         this.course = course;
         this.courseName = courseName;
-        this.dayOfWeek = dayOfWeek;
+        this.weekdays = weekdays;
         this.time = time;
         this.location = location;
         this.studentLunchBreakRotation = studentLunchBreakRotation;
@@ -115,12 +115,12 @@ public class StudentSchedule implements Serializable {
         this.courseName = courseName;
     }
 
-    public String getDayOfWeek() {
-        return dayOfWeek;
+    public String getWeekdays() {
+        return weekdays;
     }
 
-    public void setDayOfWeek(String dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
+    public void setWeekdays(String weekdays) {
+        this.weekdays = weekdays;
     }
 
     public Time getTime() {
