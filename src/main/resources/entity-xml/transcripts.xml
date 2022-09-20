@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transcripts>
+    <transcripts>
+        <transcriptID>54443</transcriptID>
+        <student>
+            <studentID>17365429</studentID>
+        </student>
+        <className>Calculus 1</className>
+        <yearOrSemester>Freshman</yearOrSemester>
+        <finalGrade>n/a</finalGrade>
+        <credits>3.0</credits>
+    </transcripts>
+
+    <transcripts>
+        <transcriptID>94261</transcriptID>
+        <student>
+            <studentID>38688296</studentID>
+        </student>
+        <className>Calculus 2</className>
+        <yearOrSemester>Freshman</yearOrSemester>
+        <finalGrade>n/a</finalGrade>
+        <credits>3.0</credits>
+    </transcripts>
+</transcripts>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teacherViewAllGradesInCourse>
+
+    <teacherViewAllGradesInCourse>
+        <teacherViewAllGradesInCourseID>59973</teacherViewAllGradesInCourseID>
+        <studentID>
+            <studentID>17365429</studentID>
+        </studentID>
+        <studentLastName>Brown</studentLastName>
+        <studentFirstName>Charlie</studentFirstName>
+        <courseID>
+            <courseID>Math127</courseID>
+        </courseID>
+        <courseName>Calculus 1</courseName>
+        <homeworkAssignmentID>80368</homeworkAssignmentID>
+        <overallHomeworkGrade>0.0</overallHomeworkGrade>
+        <examID>
+            <examID>2794</examID>
+        </examID>
+        <overallExamGrade>n/a</overallExamGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+    </teacherViewAllGradesInCourse>
+
+    <teacherViewAllGradesInCourse>
+        <teacherViewAllGradesInCourseID>36794</teacherViewAllGradesInCourseID>
+        <studentID>
+            <studentID>38688296</studentID>
+        </studentID>
+        <studentLastName>Van Pelt</studentLastName>
+        <studentFirstName>Lucy</studentFirstName>
+        <courseID>
+            <courseID>Math137</courseID>
+        </courseID>
+        <courseName>Calculus 2</courseName>
+        <homeworkAssignmentID>85475</homeworkAssignmentID>
+        <overallHomeworkGrade>0.0</overallHomeworkGrade>
+        <examID>
+            <examID>1432</examID>
+        </examID>
+        <overallExamGrade>n/a</overallExamGrade>
+        <midtermMark>0.0</midtermMark>
+        <midtermGrade>n/a</midtermGrade>
+        <finalExamMark>0.0</finalExamMark>
+        <finalExamGrade>n/a</finalExamGrade>
+        <courseCurrentMark>0.0</courseCurrentMark>
+        <courseCurrentGrade>n/a</courseCurrentGrade>
+        <finalMark>0.0</finalMark>
+        <finalGrade>n/a</finalGrade>
+    </teacherViewAllGradesInCourse>
+
+</teacherViewAllGradesInCourse>

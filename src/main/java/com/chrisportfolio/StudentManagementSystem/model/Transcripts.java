@@ -50,6 +50,9 @@ public class Transcripts implements Serializable {
         this.credits = credits;
     }
 
+    public Transcripts(long l) {
+    }
+
     public Long getTranscriptID() {
         return transcriptID;
     }

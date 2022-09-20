@@ -14,17 +14,12 @@ public class JaxbTranscriptsMarshaller {
 
     private static final Logger LOGGER = LogManager.getLogger(JaxbTranscriptsMarshaller.class);
 
-    /*
-    Need to also fix this to incorporate 5 classes.
-     */
-
-    /*
     public static void main(String[] args) {
-       Transcripts transcripts = new Transcripts(2656653243L, new Student(17365429L), );
+       Transcripts transcripts = new Transcripts(54443L, new Student(17365429L), "Calculus 1", "Freshman",
+               "n/a", 3.0);
        jaxbObjectToXML(transcripts);
     }
 
-     */
 
     public static void jaxbObjectToXML(Transcripts transcripts) {
 
