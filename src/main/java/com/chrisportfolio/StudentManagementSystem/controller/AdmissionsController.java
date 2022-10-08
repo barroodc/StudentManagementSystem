@@ -1,18 +1,15 @@
 package com.chrisportfolio.StudentManagementSystem.controller;
 
 import com.chrisportfolio.StudentManagementSystem.model.Admissions;
-import com.chrisportfolio.StudentManagementSystem.model.Student;
 import com.chrisportfolio.StudentManagementSystem.repository.AdmissionsRepository;
-import com.chrisportfolio.StudentManagementSystem.repository.StudentRepository;
 import com.chrisportfolio.StudentManagementSystem.service.AdmissionsService;
-import com.chrisportfolio.StudentManagementSystem.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/admissionsApi")
 public class AdmissionsController {
 
     @Autowired
@@ -20,6 +17,8 @@ public class AdmissionsController {
 
     @Autowired
     AdmissionsRepository admissionsRepository;
+
+
     @RequestMapping(value = "admissions", method = RequestMethod.POST)
     public Admissions createAdmissions(@RequestBody Admissions admissions) {
         return admissionsService.createAdmissions(admissions);

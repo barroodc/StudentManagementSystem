@@ -3,6 +3,7 @@ package com.chrisportfolio.StudentManagementSystem.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -120,11 +121,11 @@ public class Student implements Serializable{
     @XmlTransient
     private Set<StudentSchedule> studentSchedule;
 
-    @OneToMany
+    @OneToMany(mappedBy = "student")
     @XmlTransient
     private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
 
-    @OneToMany
+    @OneToMany(mappedBy = "student")
     @XmlTransient
     private Set<Transcripts> transcripts;
     public Student() {

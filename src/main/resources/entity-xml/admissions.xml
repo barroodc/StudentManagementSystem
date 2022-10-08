@@ -9,7 +9,7 @@
         <applicantName>Charlie Brown</applicantName>
         <incomingYear>Freshman</incomingYear>
         <status>Approved</status>
-        <lastModified>2021-12-12T19:05:37.686-04:00</lastModified>
+        <lastModified>2021-12-12</lastModified>
         <inquiries>n/a</inquiries>
     </admissions>
 
@@ -22,7 +22,7 @@
         <applicantName>Lucy Van Pelt</applicantName>
         <incomingYear>Freshman</incomingYear>
         <status>Approved</status>
-        <lastModified>2021-12-09T23:08:37.521-04:00</lastModified>
+        <lastModified>2021-12-09</lastModified>
         <inquiries>n/a</inquiries>
     </admissions>
 </admissions>

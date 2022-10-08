@@ -37,7 +37,7 @@ public class GradeLevel implements Serializable {
     @XmlTransient
     private Set<CourseRoster> courseRoster;
 
-    @OneToMany(mappedBy = "studentDirectory")
+    @OneToMany(mappedBy = "gradeLevel")
     @XmlTransient
     private Set<StudentDirectory> studentDirectory;
 

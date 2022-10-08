@@ -1,6 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAttribute;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -19,7 +21,7 @@ public class Admissions implements Serializable {
     @XmlElement(name = "admissionsID")
     private Long admissionsID;
 
-    @Column(name = "student_id")
+
     @XmlElement(name = "studentID")
     @ManyToOne
     @JoinColumn(name = "student_id")

@@ -7,15 +7,15 @@
         <password>goodgrief72</password>
         <lastName>Brown</lastName>
         <firstName>Charlie</firstName>
-        <dob>2008-10-09T12:10:15.646-04:00</dob>
+        <dob>2008-10-09</dob>
         <homePhone>5053152585</homePhone>
         <mobile>2025550186</mobile>
-        <firstDayOnCampus>2022-09-11T08:00:00.000-04:00</firstDayOnCampus>
+        <firstDayOnCampus>2022-09-11</firstDayOnCampus>
         <studentLevel>Freshman</studentLevel>
         <gpa>0.0</gpa>
         <satScore>0</satScore>
         <actScore>0</actScore>
-        <lastLoginDate>2022-06-06T19:05:15.655-04:00</lastLoginDate>
+        <lastLoginDate>2022-06-06</lastLoginDate>
         <lastLoginIP>165.220.147.72</lastLoginIP>
     </student>
 
