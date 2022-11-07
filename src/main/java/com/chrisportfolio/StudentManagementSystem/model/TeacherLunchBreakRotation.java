@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.sql.Time;
@@ -22,6 +24,7 @@ public class TeacherLunchBreakRotation {
 
     @OneToMany(mappedBy = "teacherLunchBreakRotation")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherSchedule> teacherSchedule;
 
     public TeacherLunchBreakRotation() {

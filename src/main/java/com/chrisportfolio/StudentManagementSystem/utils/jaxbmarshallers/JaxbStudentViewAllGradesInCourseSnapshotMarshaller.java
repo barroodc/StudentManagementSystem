@@ -14,7 +14,7 @@ public class JaxbStudentViewAllGradesInCourseSnapshotMarshaller {
 
     private static final Logger LOGGER = LogManager.getLogger(JaxbStudentViewAllGradesInCourseSnapshotMarshaller.class);
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         StudentViewAllGradesInCourseSnapshot studentViewAllGradesInCourseSnapshot =
                 new StudentViewAllGradesInCourseSnapshot(337391L, new Student(17365429L),
                         new Teacher(38430931L), "Amaticas", "Matt", new Course("Math127"), "Calculus 1",
@@ -23,6 +23,8 @@ public class JaxbStudentViewAllGradesInCourseSnapshotMarshaller {
 
         jaxbObjectToXML(studentViewAllGradesInCourseSnapshot);
     }
+
+     */
 
     public static void jaxbObjectToXML(StudentViewAllGradesInCourseSnapshot studentViewAllGradesInCourseSnapshot) {
 

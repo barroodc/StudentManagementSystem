@@ -1,6 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -51,6 +52,7 @@ public class Parent implements Serializable {
 
     @OneToMany(mappedBy = "parent")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentHasParent> studentHasParent;
 
     public Parent() {

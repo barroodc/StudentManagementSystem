@@ -26,26 +26,19 @@ public class CourseHasGradeLevel implements Serializable {
     @XmlElement(name = "courseName")
     private String courseName;
 
-    @ManyToOne
-    @JoinColumn(name = "grade_level_id")
-    @XmlElement(name = "gradeLevelID")
-    private GradeLevel gradeLevel;
-
-    @Column(name = "grade_name")
-    @XmlElement(name = "gradeName")
-    private String gradeName;
+    @Column(name = "grade_level_name")
+    @XmlElement(name = "gradeLevelName")
+    private String gradeLevelName;
 
     public CourseHasGradeLevel() {
         super();
     }
 
-    public CourseHasGradeLevel(String courseHasGradeLevel, Course course, String courseName,
-                               GradeLevel gradeLevel, String gradeName) {
+    public CourseHasGradeLevel(String courseHasGradeLevel, Course course, String courseName, String gradeLevelName) {
         this.courseHasGradeLevel = courseHasGradeLevel;
         this.course = course;
         this.courseName = courseName;
-        this.gradeLevel = gradeLevel;
-        this.gradeName = gradeName;
+        this.gradeLevelName = gradeLevelName;
     }
 
     public String getCourseHasGradeLevel() {
@@ -72,19 +65,11 @@ public class CourseHasGradeLevel implements Serializable {
         this.courseName = courseName;
     }
 
-    public GradeLevel getGradeLevel() {
-        return gradeLevel;
+    public String getGradeLevelName() {
+        return gradeLevelName;
     }
 
-    public void setGradeLevel(GradeLevel gradeLevel) {
-        this.gradeLevel = gradeLevel;
-    }
-
-    public String getGradeName() {
-        return gradeName;
-    }
-
-    public void setGradeName(String gradeName) {
-        this.gradeName = gradeName;
+    public void setGradeLevelName(String gradeLevelName) {
+        this.gradeLevelName = gradeLevelName;
     }
 }

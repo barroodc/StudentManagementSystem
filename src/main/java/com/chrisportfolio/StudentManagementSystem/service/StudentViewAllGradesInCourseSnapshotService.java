@@ -28,10 +28,9 @@ public class StudentViewAllGradesInCourseSnapshotService {
         StudentViewAllGradesInCourseSnapshot studentViewAllGradesInCourseSnapshot =
                 studentViewAllGradesInCourseSnapshotRepository.findById(studentViewAllGradesInCourseSnapshotID).get();
         studentViewAllGradesInCourseSnapshot.setStudent(studentViewAllGradesInCourseSnapshotInformation.getStudent());
-        studentViewAllGradesInCourseSnapshot.setTeacherLastName(studentViewAllGradesInCourseSnapshotInformation.
-                getTeacherLastName());
-        studentViewAllGradesInCourseSnapshot.setTeacherFirstName(studentViewAllGradesInCourseSnapshotInformation.
-                getTeacherFirstName());
+        studentViewAllGradesInCourseSnapshot.setTeacher(studentViewAllGradesInCourseSnapshotInformation.getTeacher());
+        studentViewAllGradesInCourseSnapshot.setTeacherLastName(studentViewAllGradesInCourseSnapshotInformation.getTeacherLastName());
+        studentViewAllGradesInCourseSnapshot.setTeacherFirstName(studentViewAllGradesInCourseSnapshotInformation.getTeacherFirstName());
         studentViewAllGradesInCourseSnapshot.setCourse(studentViewAllGradesInCourseSnapshotInformation.getCourse());
         studentViewAllGradesInCourseSnapshot.setCourseName(studentViewAllGradesInCourseSnapshotInformation.
                 getCourseName());

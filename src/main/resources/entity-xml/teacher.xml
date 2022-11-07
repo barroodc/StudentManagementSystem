@@ -6,12 +6,14 @@
         <password>calcULater</password>
         <lastName>Amaticas</lastName>
         <firstName>Matt</firstName>
-        <dob>1970-08-11T21:24:45.795-04:00</dob>
+        <dob>1970/08/11</dob>
+        <departmentID>MathBuildingA</departmentID>
+        <departmentName>Mathematics</departmentName>
         <subject>Calculus 1</subject>
         <homePhone>9272203486</homePhone>
         <mobile>6262722483</mobile>
         <tenured>Yes</tenured>
-        <lastLoginDate>2022-07-17T21:24:45.806-04:00</lastLoginDate>
+        <lastLoginDate>2022/07/17</lastLoginDate>
         <lastLoginIP>831.572.234.59</lastLoginIP>
     </teacher>
 
@@ -22,12 +24,13 @@
             <password>niceQuads</password>
             <lastName>Nomial</lastName>
             <firstName>Polly</firstName>
-            <dob>1975-10-15T21:24:45.795-04:00</dob>
+            <dob>1975-10-15</dob>
+            <departmentID>MathBuildingA</departmentID>
             <subject>Calculus 2</subject>
             <homePhone>5665039792</homePhone>
             <mobile>4939699735</mobile>
             <tenured>Yes</tenured>
-            <lastLoginDate>2022-08-19T21:24:45.806-04:00</lastLoginDate>
+            <lastLoginDate>2022/08/19</lastLoginDate>
             <lastLoginIP>131.238.23.246</lastLoginIP>
         </teacher>
     </teacher>

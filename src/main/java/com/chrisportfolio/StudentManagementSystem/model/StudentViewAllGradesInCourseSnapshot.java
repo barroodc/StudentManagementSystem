@@ -31,7 +31,6 @@ public class StudentViewAllGradesInCourseSnapshot {
     @Column(name = "teacher_first_name")
     @XmlElement(name = "teacherFirstName")
     private String teacherFirstName;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id")
     @XmlElement(name = "courseID")

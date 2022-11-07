@@ -7,7 +7,7 @@
         </studentID>
         <studentLastName>Brown</studentLastName>
         <studentFirstName>Charlie</studentFirstName>
-        <teacherID/>
+        <teacherID>38430931</teacherID>
         <teacherLastName>Amaticas</teacherLastName>
         <teacherFirstName>Matt</teacherFirstName>
         <courseID>
@@ -23,13 +23,13 @@
 
 
     <homeworkAssingmentResultsStudentView>
-        <homeworkAssignmentResultsStudentViewID>85887</homeworkAssignmentResultsStudentViewID>
+        <homeworkAssignmentResultsStudentViewID>858870</homeworkAssignmentResultsStudentViewID>
         <studentID>
             <studentID>38688296</studentID>
         </studentID>
         <studentLastName>Van Pelt</studentLastName>
         <studentFirstName>Lucy</studentFirstName>
-        <teacherID/>
+        <teacherID>72416461</teacherID>
         <teacherLastName>Nomial</teacherLastName>
         <teacherFirstName>Polly</teacherFirstName>
         <courseID>

@@ -2,9 +2,7 @@
 <reportCard>
     <reportCard>
     <reportCardID>6957668</reportCardID>
-    <student>
         <studentID>17365429</studentID>
-    </student>
     <studentName>Charlie Brown</studentName>
     <gradeLevel>Freshman</gradeLevel>
     <subjectOne>Calculus 1</subjectOne>
@@ -36,9 +34,7 @@
 
     <reportCard>
         <reportCardID>4633525</reportCardID>
-        <student>
             <studentID>38688296</studentID>
-        </student>
         <studentName>Lucy Van Pelt</studentName>
         <gradeLevel>Freshman</gradeLevel>
         <subjectOne>Calculus 2</subjectOne>

@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -10,7 +12,6 @@ import java.util.Set;
 @Table(name = "grade_level")
 @XmlRootElement(name = "gradeLevel")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"gradeLevelID", "student", "name", "description"})
 public class GradeLevel implements Serializable {
 
     @Id
@@ -31,14 +32,12 @@ public class GradeLevel implements Serializable {
 
     @OneToMany(mappedBy = "gradeLevel")
     @XmlTransient
-    private Set<CourseHasGradeLevel> courseHasGradeLevel;
-
-    @OneToMany(mappedBy = "gradeLevel")
-    @XmlTransient
+    @JsonIgnore
     private Set<CourseRoster> courseRoster;
 
     @OneToMany(mappedBy = "gradeLevel")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDirectory> studentDirectory;
 
     public GradeLevel() {
@@ -86,14 +85,6 @@ public class GradeLevel implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Set<CourseHasGradeLevel> getCourseHasGradeLevel() {
-        return courseHasGradeLevel;
-    }
-
-    public void setCourseHasGradeLevel(Set<CourseHasGradeLevel> courseHasGradeLevel) {
-        this.courseHasGradeLevel = courseHasGradeLevel;
     }
 
     public Set<CourseRoster> getCourseRoster() {

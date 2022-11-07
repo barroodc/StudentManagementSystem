@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -35,18 +37,22 @@ public class Exam implements Serializable {
 
     @OneToMany(mappedBy = "exam")
     @XmlTransient
+    @JsonIgnore
     private Set<ExamResultsStudentView> examResultsStudentView;
 
     @OneToMany(mappedBy = "exam")
     @XmlTransient
+    @JsonIgnore
     private Set<ExamResultsTeacherView> examResultsTeacherView;
 
     @OneToMany(mappedBy = "exam")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot;
 
     @OneToMany(mappedBy = "exam")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
 
     public Exam() {

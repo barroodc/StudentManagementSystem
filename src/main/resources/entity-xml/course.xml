@@ -2,6 +2,7 @@
 <course>
     <course>
         <courseID>Math127</courseID>
+        <teacherID>38430931</teacherID>
         <name>Calculus 1</name>
         <credits>3.0</credits>
         <description>Differential Calculus</description>
@@ -9,11 +10,10 @@
 
     <course>
         <courseID>Math137</courseID>
+        <teacherID>72416461</teacherID>
         <name>Calculus 2</name>
         <credits>3.0</credits>
         <description>Integral Calculus</description>
     </course>
-
-
 </course>
 

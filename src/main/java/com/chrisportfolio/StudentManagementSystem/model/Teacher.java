@@ -1,6 +1,9 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -35,16 +38,22 @@ public class Teacher implements Serializable {
     @Column(name = "dob")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "dob")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Date dob;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
     @XmlElement(name = "departmentID")
-    private Department department;
+    //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    public Department department = new Department("MathBuildingA");
 
     @Column(name = "department_name")
     @XmlElement(name = "departmentName")
-    private String departmentName;
+    private String departmentName = "Mathematics";
+
+    @Column(name = "subject")
+    @XmlElement(name = "subject")
+    private String subject;
 
     @Column(name = "home_phone")
     @XmlElement(name = "homePhone")
@@ -65,26 +74,32 @@ public class Teacher implements Serializable {
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<Course> course;
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignment> homeworkAssignment;
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot;
 
     @OneToMany(mappedBy = "teacher")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherDirectory> teacherDirectory;
 
     public Teacher() {
@@ -92,9 +107,9 @@ public class Teacher implements Serializable {
     }
 
 
-    public Teacher(Long teacherID, String email, String password, String lastName, String firstName, Date dob,
-                   Department department, String departmentName, String homePhone, String mobile,
-                   String tenured, Date lastLoginDate, String lastLoginIP) {
+    public Teacher(Long teacherID, String email, String password, String lastName, String firstName,
+                   Date dob, Department department, String departmentName, String subject,
+                   String homePhone, String mobile, String tenured, Date lastLoginDate, String lastLoginIP) {
         this.teacherID = teacherID;
         this.email = email;
         this.password = password;
@@ -103,6 +118,7 @@ public class Teacher implements Serializable {
         this.dob = dob;
         this.department = department;
         this.departmentName = departmentName;
+        this.subject = subject;
         this.homePhone = homePhone;
         this.mobile = mobile;
         this.tenured = tenured;
@@ -112,6 +128,8 @@ public class Teacher implements Serializable {
 
     public Teacher(long l) {
     }
+
+
 
     public Long getTeacherID() {
         return teacherID;
@@ -175,6 +193,14 @@ public class Teacher implements Serializable {
 
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getHomePhone() {

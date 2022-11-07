@@ -6,10 +6,10 @@
         <password>IloveCharlie123</password>
         <lastName>Brown</lastName>
         <firstName>Mariam</firstName>
-        <dob>1968-05-27T21:11:44.952-04:00</dob>
+        <dob>1968/05/27</dob>
         <homePhone>5053152585</homePhone>
         <mobile>2025550198</mobile>
-        <lastLoginDate>2022-06-06T21:11:44.960-04:00</lastLoginDate>
+        <lastLoginDate>2022-06-06</lastLoginDate>
         <lastLoginIP>165.220.147.72</lastLoginIP>
     </parent>
 
@@ -19,10 +19,10 @@
         <password>IloveLucy456</password>
         <lastName>Van Pelt</lastName>
         <firstName>Linda</firstName>
-        <dob>1972-02-21T09:26:14.872-4:00</dob>
+        <dob>1972/02/21</dob>
         <homePhone>3088784008</homePhone>
         <mobile>2029174218</mobile>
-        <lastLoginDate>2022-06-06T21:11:44.960-4:00</lastLoginDate>
+        <lastLoginDate>2022/06/06</lastLoginDate>
         <lastLoginIP>165.220.150.72</lastLoginIP>
     </parent>
 </parent>

@@ -1,5 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -18,7 +21,7 @@ public class Course implements Serializable {
     @XmlElement(name = "courseID")
     private String courseID;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_id")
     @XmlElement(name = "teacherID")
     private Teacher teacher;
@@ -34,42 +37,52 @@ public class Course implements Serializable {
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<Classroom> classroom;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<CourseHasGradeLevel> courseHasGradeLevel;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<CourseRoster> courseRoster;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignment> homeworkAssignment;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsTeacherView> homeworkAssignmentResultsTeacherView;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentSchedule> studentSchedule;
 
     @OneToOne(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private StudentViewAllGradesInCourseSnapshot studentViewAllGradesInCourseSnapshot;
 
     @OneToMany(mappedBy = "course")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
     public Course() {
         super();

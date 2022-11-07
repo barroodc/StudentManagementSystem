@@ -1,6 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -51,12 +52,12 @@ public class HomeworkAssignment implements Serializable {
 
     @Column(name = "assignment_name")
     @XmlElement(name = "assignmentName")
-    private String assignmentName;
+    private String assignmentName = "Differential Equations";
 
     @Column(name = "assigned_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     @XmlElement(name = "assignedDate")
-    private Date assignedDate;
+    private Date assignedDate = new Date("2022/09//14");
 
     @Column(name = "due_date")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
@@ -65,18 +66,22 @@ public class HomeworkAssignment implements Serializable {
 
     @OneToMany
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
     @OneToMany
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsTeacherView> homeworkAssignmentResultsTeacherView;
 
     @OneToMany
     @XmlTransient
+    @JsonIgnore
     private Set<StudentViewAllGradesInCourseSnapshot> studentViewAllGradesInCourseSnapshot;
 
     @OneToMany
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
 
     public HomeworkAssignment() {

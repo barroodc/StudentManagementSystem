@@ -25,9 +25,7 @@ public class CourseHasGradeLevelService {
         CourseHasGradeLevel courseHasGradeLevel = courseHasGradeLevelRepository.findById(String.valueOf(courseHasGradeLevelID)).get();
         courseHasGradeLevel.setCourse(courseHasGradeLevelInformation.getCourse());
         courseHasGradeLevel.setCourseName(courseHasGradeLevelInformation.getCourseName());
-        courseHasGradeLevel.setGradeLevel(courseHasGradeLevelInformation.getGradeLevel());
-        courseHasGradeLevel.setGradeName(courseHasGradeLevelInformation.getGradeName());
-
+        courseHasGradeLevel.setGradeLevelName(courseHasGradeLevel.getGradeLevelName());
         return courseHasGradeLevelRepository.save(courseHasGradeLevel);
     }
 

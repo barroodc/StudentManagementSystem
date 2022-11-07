@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -45,6 +47,7 @@ public class Attendance implements Serializable {
 
     @OneToMany(mappedBy = "attendance")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
     public Attendance() {

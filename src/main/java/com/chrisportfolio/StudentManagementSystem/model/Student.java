@@ -1,7 +1,8 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 
 import javax.persistence.*;
@@ -27,7 +28,6 @@ public class Student implements Serializable{
     @Column(name = "password")
     @XmlElement(name = "password")
     private String password;
-
     @Column(name = "last_name")
     @XmlElement(name = "lastName")
     private String lastName;
@@ -71,62 +71,77 @@ public class Student implements Serializable{
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<Admissions> admissions;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<Attendance> attendance;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<CourseRoster> courseRoster;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<ExamResultsStudentView> examResultsStudentView;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<ExamResultsTeacherView> examResultsTeacherView;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<GradeLevel> gradeLevel;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsStudentView> homeworkAssignmentResultsStudentView;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<HomeworkAssignmentResultsTeacherView> homeworkAssignmentResultsTeacherView;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDashboardSnapshotInfo> studentDashboardSnapshotInfo;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<ReportCard> reportCard;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentDirectory> studentDirectory;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentHasParent> studentHasParent;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<StudentSchedule> studentSchedule;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherViewAllGradesInCourse> teacherViewAllGradesInCourse;
 
     @OneToMany(mappedBy = "student")
     @XmlTransient
+    @JsonIgnore
     private Set<Transcripts> transcripts;
     public Student() {
         super();

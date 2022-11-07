@@ -14,7 +14,7 @@
         <gradeLevelID>
             <gradeLevelID>9000</gradeLevelID>
         </gradeLevelID>
-        <birthday>2008-10-09T12:10:15.646-04:00</birthday>
+        <birthday>2008/10/09</birthday>
         <age>13</age>
         <gender>Male</gender>
     </courseRoster>
@@ -33,7 +33,7 @@
         <gradeLevelID>
             <gradeLevelID>9001</gradeLevelID>
         </gradeLevelID>
-        <birthday>2008-04-17T19:05:15.646-04:00</birthday>
+        <birthday>2008/04/17</birthday>
         <age>14</age>
         <gender>Female</gender>
     </courseRoster>

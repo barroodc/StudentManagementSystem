@@ -1,5 +1,7 @@
 package com.chrisportfolio.StudentManagementSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -9,7 +11,6 @@ import java.util.Set;
 @Table(name = "department")
 @XmlRootElement(name = "department")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"departmentID", "departmentName"})
 public class Department implements Serializable {
 
     @Id
@@ -21,12 +22,14 @@ public class Department implements Serializable {
     @XmlElement(name = "departmentName")
     private String departmentName;
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     @XmlTransient
+    @JsonIgnore
     private Set<Teacher> teacher;
 
     @OneToMany(mappedBy = "department")
     @XmlTransient
+    @JsonIgnore
     private Set<TeacherDirectory> teacherDirectory;
 
     public Department() {
@@ -38,7 +41,7 @@ public class Department implements Serializable {
         this.departmentName = departmentName;
     }
 
-    public Department(String mathBuildingA) {
+    public Department(String departmentID) {
     }
 
     public String getDepartmentID() {

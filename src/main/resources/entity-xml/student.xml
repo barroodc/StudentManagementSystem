@@ -10,12 +10,12 @@
         <dob>2008-10-09</dob>
         <homePhone>5053152585</homePhone>
         <mobile>2025550186</mobile>
-        <firstDayOnCampus>2022-09-11</firstDayOnCampus>
+        <firstDayOnCampus>2022/09/11</firstDayOnCampus>
         <studentLevel>Freshman</studentLevel>
         <gpa>0.0</gpa>
         <satScore>0</satScore>
         <actScore>0</actScore>
-        <lastLoginDate>2022-06-06</lastLoginDate>
+        <lastLoginDate>2022/06/06</lastLoginDate>
         <lastLoginIP>165.220.147.72</lastLoginIP>
     </student>
 
@@ -25,15 +25,15 @@
         <password>charliesGrief5464</password>
         <lastName>Van Pelt</lastName>
         <firstName>Lucy</firstName>
-        <dob>2008-04-17T19:05:15.646-04:00</dob>
+        <dob>2008/04/17</dob>
         <homePhone>3088784008</homePhone>
         <mobile>2029171639</mobile>
-        <firstDayOnCampus>2022-09-11T08:00:00.000-04:00</firstDayOnCampus>
+        <firstDayOnCampus>2022/09/11</firstDayOnCampus>
         <studentLevel>Freshman</studentLevel>
         <gpa>0.0</gpa>
         <satScore>0</satScore>
         <actScore>0</actScore>
-        <lastLoginDate>2022-06-06T19:10:15.655-04:00</lastLoginDate>
+        <lastLoginDate>2022/06/06</lastLoginDate>
         <lastLoginIP>165.220.150.72</lastLoginIP>
     </student>
 
